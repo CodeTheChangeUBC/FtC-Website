@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  # Define the root of the webpage
+  root 'static_pages#home'
+
   get 'static_pages/home'
 
   get 'static_pages/getinvolved'
