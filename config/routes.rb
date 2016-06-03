@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
 
-  get 'static_pages/get-involved'
+  get 'static_pages/getinvolved'
 
   get 'static_pages/about'
 
