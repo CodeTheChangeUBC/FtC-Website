@@ -10,7 +10,7 @@ class StaticPagesControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success
-    assert_select "title", "Home | " + @webpage_header
+    assert_select "title", @webpage_header
   end
 
   test "should get get-involved" do
