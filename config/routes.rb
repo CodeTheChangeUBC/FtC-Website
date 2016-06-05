@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
-  get 'getinvolved' => 'static_pages#getinvolved'
+  get 'get-involved' => 'static_pages#get_involved', as: "get_involved"
   get 'events' => 'static_pages#events'
+  get 'contact' => 'static_pages#contact'
+  get 'events/vow-of-silence' => 'static_pages#vow_of_silence', as: "vow_of_silence"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
