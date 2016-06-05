@@ -1,6 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* CSS file for the custom styling of the site. Styles here will be 
+applied globally */
+
+/* Variables */
+
+$white: #fff;
+$light_gray: #777;
+$gray: #555;
+$medium_gray: #eaeaea;
+$dark_gray: #222;
+$light_green: rgb(0,204,0);
+
 /* universal */
 
 body {
@@ -17,8 +29,56 @@ textarea {
 
 .center {
   text-align: center;
+  h1 {
+  	margin-bottom: 10px;
+  }
 }
 
-.center h1 {
-  margin-bottom: 10px;
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 14px;
+  font-weight: bold;
+  &:hover {
+  	color: $white;
+  	text-decoration: none;
+  }
+ }
+	
+
+/* Footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $medium_gray;
+  color: $light_gray;
+  margin-bottom: 0px;
+  a {
+  	color: $gray;
+  	&:hover {
+  		color: $dark_gray;
+  	}
+  }
+  small {
+  	float: left;
+  }
+  ul {
+  	float: right;
+  	list-style: none;
+  	li {
+  		float: left;
+  		margin-left: 15px;
+  	}
+  }
+  #ctclink {
+  	color: $light_green;
+  }
 }
+

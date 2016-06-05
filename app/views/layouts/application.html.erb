@@ -5,44 +5,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-  <![endif]-->
+  <%= render 'layouts/shim' %>
 </head>
 <body>
-	<!-- Global header to be inherited by every page on the site -->
-	<header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-      	<div class="navbar-header">
-      	  <%= link_to "FtC UBC", '#', id: "logo", class: "navbar-brand" %>	
-      	</div>
-        <nav>
-          <ul class="nav navbar-nav">
-          	<li><%= link_to "Home",   '#' %></li>
-          	<li class="dropdown">
-      		  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
-        	  <span class="caret"></span></a>
-        	  <ul class="dropdown-menu">
-        		<li><%= link_to "Global Events Page",  '#' %></li>  	
-          		<li><%= link_to "Main Event 1",   '#' %></li>
-          		<li><%= link_to "Main Event 2",   '#' %></li>
-          		<li><%= link_to "Main Event 3",   '#' %></li>
-        	  </ul>
-      		</li>
-            <li><%= link_to "Calendar",   '#' %></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Join",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+	<!-- Insert global header --> 
+	<%= render 'layouts/header' %>
 
     <!-- Yields to content from individual page -->
     <div class="container">
       <%= yield %>
+      <!-- Insert global footer -->
+      <%= render 'layouts/footer' %>
     </div>
 </body>
 </html>
