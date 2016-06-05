@@ -12,6 +12,9 @@ $gray: #555;
 $medium_gray: #eaeaea;
 $dark_gray: #222;
 $light_green: rgb(0,204,0);
+$medium_green: rgb(0,153,51);
+$dark_green: rgb(0,104,0);
+$ftc_blue: rgb(0, 184, 230);
 
 /* universal */
 
@@ -35,6 +38,32 @@ textarea {
 }
 
 /* header */
+
+.navbar {
+  background-color: $medium_green; 
+  border-bottom-width: 7px;
+  border-bottom-color: $ftc_blue; 
+  .navbar-nav {
+    li {
+      a {
+        color: $white;
+      }
+      &:hover {
+      background-color: $dark_green;
+      }
+    }
+    .dropdown-menu {
+      li {
+        a {
+          color: $ftc_blue;
+        }
+      }
+      #list_of_main_events {
+        text-align: center;        
+      }
+    }
+  }
+}
 
 #logo {
   float: left;
