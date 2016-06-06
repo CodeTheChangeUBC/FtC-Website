@@ -12,5 +12,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   	assert_select "a[href=?]", events_path
   	assert_select "a[href=?]", contact_path, count: 2
     assert_select "a[href=?]", vow_of_silence_path
+    assert_select "a[href=?]", ee_dance_challenge_path
+    assert_select "a[href=?]", mini_we_day_path
   end
 end
