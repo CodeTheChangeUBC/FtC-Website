@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'events' => 'static_pages#events'
   get 'contact' => 'static_pages#contact'
   get 'events/vow-of-silence' => 'static_pages#vow_of_silence', as: "vow_of_silence"
+  get 'events/ee-dance-challenge' => 'static_pages#ee_dance_challenge', as: "ee_dance_challenge"
+  get 'events/mini-we-day' => 'static_pages#mini_we_day', as: "mini_we_day"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

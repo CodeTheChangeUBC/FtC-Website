@@ -16,4 +16,10 @@ class StaticPagesController < ApplicationController
 
   def vow_of_silence
   end
+
+  def ee_dance_challenge
+  end
+
+  def mini_we_day
+  end
 end

@@ -42,4 +42,18 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
     assert_select "title", "Vow of Silence | " + @webpage_header
   end
+
+  test "should get EE dance challenge" do
+    get :ee_dance_challenge
+    assert_response :success
+    assert_select "title", "Evolution Endurance Dance Challenge | " + @webpage_header
+  end
+
+  test "should get mini we day" do
+    get :mini_we_day
+    assert_response :success
+    assert_select "title", "Mini We Day | " + @webpage_header
+  end
+
+
 end
