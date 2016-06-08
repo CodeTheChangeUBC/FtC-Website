@@ -90,19 +90,26 @@ footer {
   		color: $dark_gray;
   	}
   }
+  .ctc-left-nav {
+    float: left;
+    li {
+      float: left;
+    }
+  }
   small {
-  	float: left;
+    float: left;
+    margin-left: 20px;
+    #ctclink {
+      color: $light_green;
+    }
   }
   ul {
-  	float: right;
+    float: right;
   	list-style: none;
   	li {
   		float: left;
   		margin-left: 15px;
   	}
-  }
-  #ctclink {
-  	color: $light_green;
   }
 }
 
