@@ -129,6 +129,19 @@ footer {
     }
   }
 }
+
+.jumbotron-about {
+  background-image : url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
+  height : 500px;
+  h1 {
+    color: white; 
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    font-size: 100px;
+  }
+}
+
 /* Main Page Carousel */ 
 
 .carousel-inner {
