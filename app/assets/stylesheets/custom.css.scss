@@ -12,9 +12,10 @@ $gray: #555;
 $medium_gray: #eaeaea;
 $dark_gray: #222;
 $light_green: rgb(0,204,0);
-$medium_green: rgb(0,153,51);
 $dark_green: rgb(0,104,0);
-$ftc_blue: rgb(0, 184, 230);
+
+$ftc_blue: #00ABDB;
+$ftc_green: #29B349;
 
 /* universal */
 
@@ -40,16 +41,16 @@ textarea {
 /* header */
 
 .navbar {
-  background-color: $medium_green; 
+  background-color: $white; 
   border-bottom-width: 7px;
-  border-bottom-color: $ftc_blue; 
+  border-bottom-color: $ftc_green;
   .navbar-nav {
     li {
       a {
-        color: $white;
+        color: $ftc_blue;
       }
       &:hover {
-      background-color: $dark_green;
+      background-color: $ftc_green;
       }
     }
     .dropdown-menu {
@@ -69,15 +70,7 @@ textarea {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: $white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 14px;
-  font-weight: bold;
-  &:hover {
-  	color: $white;
-  	text-decoration: none;
-  }
+  padding-top: 3px;
  }
 	
 
@@ -87,6 +80,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $medium_gray;
+  border-width: 100%;
   color: $light_gray;
   margin-bottom: 0px;
   a {
@@ -110,4 +104,7 @@ footer {
   	color: $light_green;
   }
 }
+ 
+
+
 
