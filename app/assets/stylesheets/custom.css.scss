@@ -44,6 +44,7 @@ textarea {
   background-color: $white; 
   border-bottom-width: 7px;
   border-bottom-color: $ftc_green;
+  padding-bottom: 0px;
   .navbar-nav {
     li {
       a {
@@ -104,7 +105,38 @@ footer {
   	color: $light_green;
   }
 }
- 
 
+/* Page Banners */ 
+
+.jumbotron-home {
+  background: url("filler1.png");
+  background-position: center;
+  color: $ftc_green;
+  height: 90vh;
+  .container-fluid {
+    padding-top: 38px;
+  }
+  .links {
+    padding-top: 80px;
+    .btn {
+      margin: 15px;
+      padding-left: 40px;
+      padding-right: 40px;
+      background-color: $ftc_blue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+/* Main Page Carousel */ 
+
+.carousel-inner {
+  text-align: center;
+  height: 80vh;
+  img {
+      margin: 0 auto;
+  }
+}
 
 
