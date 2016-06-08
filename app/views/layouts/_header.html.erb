@@ -25,7 +25,11 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Get Involved",   get_involved_path %></li>
             <li><%= link_to "Contact Us",  contact_path %></li>
-            <li><%= link_to "Log in", '#' %></li>
+            <li><%= link_to '#' do %>
+                  <span class="glyphicon glyphicon-user"></span>
+                  Log in
+                <% end %>
+            </li>
           </ul>
         </nav>
       </div>

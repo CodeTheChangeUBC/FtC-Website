@@ -83,7 +83,7 @@ footer {
   border-top: 1px solid $medium_gray;
   border-width: 100%;
   color: $light_gray;
-  margin-bottom: 0px;
+  margin-bottom: 50px;
   a {
   	color: $gray;
   	&:hover {
@@ -131,8 +131,8 @@ footer {
 }
 
 .jumbotron-about {
-  background-image : url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
-  height : 500px;
+  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
+  height: 500px;
   h1 {
     color: white; 
     text-align: center;
@@ -147,6 +147,14 @@ footer {
 .carousel-inner {
   text-align: center;
   height: 80vh;
+  background-color: $ftc_green;
+  .carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
   img {
       margin: 0 auto;
   }
