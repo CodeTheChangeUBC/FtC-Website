@@ -127,6 +127,18 @@ footer {
   }
 }
 
+.jumbotron-events {
+  background-image: url('http://blacktieportraits.co.uk/wp-content/uploads/2013/06/IMG_5848a.jpg'); 
+  height: 500px;
+  h1 {
+    color: white; 
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    font-size: 100px;
+  }
+}
+
 .jumbotron-home {
   background: image-url("filler1.png");
   background-position: center;
@@ -201,6 +213,8 @@ footer {
     }
   }
 }
+
+
 
 
 
