@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   get 'about' => 'static_pages#about'
   get 'get-involved' => 'static_pages#get_involved', as: "get_involved"
-  get 'events' => 'static_pages#events'
+  get 'what-we-do' => 'static_pages#what_we_do', as: "what_we_do"
   get 'contact' => 'static_pages#contact'
-  get 'events/vow-of-silence' => 'static_pages#vow_of_silence', as: "vow_of_silence"
-  get 'events/ee-dance-challenge' => 'static_pages#ee_dance_challenge', as: "ee_dance_challenge"
-  get 'events/mini-we-day' => 'static_pages#mini_we_day', as: "mini_we_day"
+  get 'what-we-do/vow-of-silence' => 'static_pages#vow_of_silence', as: "vow_of_silence"
+  get 'what-we-do/ee-dance-challenge' => 'static_pages#ee_dance_challenge', as: "ee_dance_challenge"
+  get 'what-we-do/mini-we-day' => 'static_pages#mini_we_day', as: "mini_we_day"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

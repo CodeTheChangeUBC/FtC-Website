@@ -9,7 +9,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   	assert_select "a[href=?]", root_path
   	assert_select "a[href=?]", get_involved_path
   	assert_select "a[href=?]", about_path
-  	assert_select "a[href=?]", events_path
+  	assert_select "a[href=?]", what_we_do_path
   	assert_select "a[href=?]", contact_path
     assert_select "a[href=?]", vow_of_silence_path 
     assert_select "a[href=?]", ee_dance_challenge_path

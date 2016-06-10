@@ -25,10 +25,10 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "About | " + @webpage_header
   end
 
-  test "should get events" do
-    get :events
+  test "should get what we do" do
+    get :what_we_do
     assert_response :success
-    assert_select "title", "Events | " + @webpage_header
+    assert_select "title", "What We Do | " + @webpage_header
   end
 
   test "should get contact us" do

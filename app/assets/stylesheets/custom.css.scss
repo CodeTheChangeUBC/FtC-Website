@@ -7,6 +7,7 @@ applied globally. */
 /* Variables */
 
 $white: #fff;
+$lighter_gray: rgb(230,230,230);
 $light_gray: #777;
 $gray: #555;
 $medium_gray: #eaeaea;
@@ -115,18 +116,6 @@ footer {
 
 /* Page Banners */ 
 
-.jumbotron-about {
-  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
-  height: 500px;
-  h1 {
-    color: white; 
-    text-align: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    font-size: 100px;
-  }
-}
-
 .jumbotron-home {
   background: image-url("filler1.png");
   background-position: center;
@@ -148,6 +137,34 @@ footer {
     }
   }
 }
+
+.jumbotron-events {
+  background-image: url('https://0f3bc0c63b7cc451db84-b66e42270defacb03c715eb9f7ad5a09.ssl.cf3.rackcdn.com/_assets/images/free-the-children-10-by-10.jpg');
+  height: 50vh;
+  h1 {
+    color: white; 
+    text-align: center;
+    padding-top: 40px;
+    font-size: 100px;
+  }
+  h2 {
+    color: white;
+    text-align: center;
+    padding-bottom: 150px;
+  }
+
+}
+.jumbotron-about {
+  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
+  height: 50vh;
+  h1 {
+    color: white; 
+    text-align: center;
+    padding-top: 50px;
+    font-size: 100px;
+  }
+}
+
 
 /* Homepage Carousel */ 
 
@@ -201,6 +218,49 @@ footer {
     }
   }
 }
+
+/* Event Page items */ 
+
+.event-divs {
+  background-color: $lighter_gray;
+  .event-div-1 {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  .event-div-2 {
+    padding-top: 20px;
+    margin-left: 85px;
+    margin-right: 85px;
+    padding-bottom: 10px;
+  }
+  .img-responsive {
+    border-style: solid;
+    border-color: $ftc_green;
+    border-width: 4px;
+  }
+  .im1 {
+    float: left;
+    margin-right: 10px;
+  }
+  .im2 {
+    float: right;
+    margin-left: 5px;
+  }
+  .btn {
+    margin: auto;
+    background-color: $ftc_green;
+    border-color: $ftc_green;
+  }
+  .btn-1 {
+    margin-left: 450px;
+  }
+  .btn-2 {
+    margin-left: 450px;
+  }
+}
+
 
 
 
