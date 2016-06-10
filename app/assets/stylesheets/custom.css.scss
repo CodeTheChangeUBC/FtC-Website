@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 /* CSS file for the custom styling of the site. Styles here will be 
-applied globally */
+applied globally. */
 
 /* Variables */
 
@@ -78,12 +78,12 @@ textarea {
 /* Footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: 10px;
   padding-top: 5px;
   border-top: 1px solid $medium_gray;
   border-width: 100%;
   color: $light_gray;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   a {
   	color: $gray;
   	&:hover {
@@ -115,6 +115,18 @@ footer {
 
 /* Page Banners */ 
 
+.jumbotron-about {
+  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
+  height: 500px;
+  h1 {
+    color: white; 
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    font-size: 100px;
+  }
+}
+
 .jumbotron-home {
   background: image-url("filler1.png");
   background-position: center;
@@ -137,19 +149,7 @@ footer {
   }
 }
 
-.jumbotron-about {
-  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
-  height: 500px;
-  h1 {
-    color: white; 
-    text-align: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    font-size: 100px;
-  }
-}
-
-/* Main Page Carousel */ 
+/* Homepage Carousel */ 
 
 .carousel-inner {
   text-align: center;
@@ -164,7 +164,36 @@ footer {
   }
   img {
       margin: 0 auto;
+      margin-top: 20px;
   }
 }
+
+/* Homepage items */ 
+
+.homepage-itemshow {
+  padding-bottom: 30px;
+  h2 {
+    color: $ftc_green;
+    text-align: center;
+  }
+  h3 {
+    color: $ftc_green;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .container {
+    text-align: justify;
+    img {
+      padding-right: 5px;
+      float: left;
+      &:hover {
+        
+      }
+    }
+  }
+}
+
+
+
 
 
