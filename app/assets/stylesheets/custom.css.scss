@@ -79,7 +79,7 @@ textarea {
 /* Footer */
 
 footer {
-  margin-top: 10px;
+  margin-top: 50px;
   padding-top: 5px;
   border-top: 1px solid $medium_gray;
   border-width: 100%;
@@ -139,12 +139,12 @@ footer {
 }
 
 .jumbotron-events {
-  background-image: url('https://0f3bc0c63b7cc451db84-b66e42270defacb03c715eb9f7ad5a09.ssl.cf3.rackcdn.com/_assets/images/free-the-children-10-by-10.jpg');
+  background-image: url('http://blacktieportraits.co.uk/wp-content/uploads/2013/06/IMG_5848a.jpg'); 
   height: 50vh;
   h1 {
     color: white; 
     text-align: center;
-    padding-top: 40px;
+    padding-top: 70px;
     font-size: 100px;
   }
   h2 {
@@ -152,8 +152,8 @@ footer {
     text-align: center;
     padding-bottom: 150px;
   }
+} 
 
-}
 .jumbotron-about {
   background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
   height: 50vh;
@@ -222,7 +222,7 @@ footer {
 /* Event Page items */ 
 
 .event-divs {
-  background-color: $lighter_gray;
+  background-color: $ftc_green;
   .event-div-1 {
     margin-left: 100px;
     margin-right: 100px;
@@ -230,6 +230,9 @@ footer {
     padding-bottom: 30px;
   }
   .event-div-2 {
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: $light_gray;
     padding-top: 20px;
     margin-left: 85px;
     margin-right: 85px;
@@ -237,7 +240,7 @@ footer {
   }
   .img-responsive {
     border-style: solid;
-    border-color: $ftc_green;
+    border-color: black;
     border-width: 4px;
   }
   .im1 {
@@ -250,16 +253,26 @@ footer {
   }
   .btn {
     margin: auto;
-    background-color: $ftc_green;
-    border-color: $ftc_green;
+    background-color: $ftc_blue;
+    border-color: $ftc_blue;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .btn-1 {
-    margin-left: 450px;
+    margin-left: 460px;
   }
   .btn-2 {
-    margin-left: 450px;
+    margin-left: 460px;
   }
 }
+
+.filler-events {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
 
 
 
