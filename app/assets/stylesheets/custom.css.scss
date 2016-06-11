@@ -55,6 +55,12 @@ textarea {
       background-color: $ftc_green;
       }
     }
+    .dropdown {
+      dropdown-toggle:active {
+        background-color: $ftc_green !important;
+        color: white !important;
+      }
+    }
     .dropdown-menu {
       li {
         a {
@@ -199,16 +205,26 @@ footer {
     padding-bottom: 20px;
   }
   .container {
+    background-color: $ftc_blue;
     text-align: justify;
+    .col-sm-4 {
+      padding-top: 10px;
+      align-content: center;
+      p {
+        padding: 10px;
+      }
+    }
+    middle {
+        border-style: solid;
+        border-width: 0px 0px 2px 2px;
+        border-color: gray;
+    }
     .img-responsive {
       overflow: hidden;
-      float: left;
       img {
-        padding-right: 5px;
-        margin: 0;
         border-style: solid;
-        border-color: $ftc_blue;
-        border-width: 0px;
+        border-color: white;
+        border-width: 2px;
         &:hover {
           padding-right: 0px;
           border-width: 5px;
