@@ -272,6 +272,22 @@ footer {
   padding-bottom: 30px;
 }
 
+/* Contact Page */ 
+
+.contact-main {
+  padding-top: 40px;
+  .col-sm-6 {
+    background-color: $ftc_green;
+    color: white;  
+    text-align: right;
+    margin-left: -20px;
+  }
+}
+
+.contact-info {
+  padding-top: 20px;
+}
+
 
 
 
