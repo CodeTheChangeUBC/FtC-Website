@@ -129,6 +129,7 @@ footer {
   height: 90vh;
   .container-fluid {
     padding-top: 38px;
+    background-color: rgba(250,250,250,0.6);
   }
   .links {
     padding-top: 80px;
@@ -144,21 +145,6 @@ footer {
   }
 }
 
-.jumbotron-events {
-  background-image: url('http://blacktieportraits.co.uk/wp-content/uploads/2013/06/IMG_5848a.jpg'); 
-  height: 50vh;
-  h1 {
-    color: white; 
-    text-align: center;
-    padding-top: 70px;
-    font-size: 100px;
-  }
-  h2 {
-    color: white;
-    text-align: center;
-    padding-bottom: 150px;
-  }
-} 
 
 .jumbotron-about {
   background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
@@ -235,7 +221,23 @@ footer {
   }
 }
 
-/* Event Page items */ 
+/* What-we-do Page items */ 
+
+.jumbotron-events {
+  background-image: url('http://blacktieportraits.co.uk/wp-content/uploads/2013/06/IMG_5848a.jpg'); 
+  height: 50vh;
+  h1 {
+    color: white; 
+    text-align: center;
+    padding-top: 70px;
+    font-size: 100px;
+  }
+  h2 {
+    color: white;
+    text-align: center;
+    padding-bottom: 150px;
+  }
+} 
 
 .event-divs {
   background-color: $ftc_green;
@@ -288,6 +290,37 @@ footer {
   padding-bottom: 30px;
 }
 
+/* Single Event Pages */
+
+.jumbotron-event {
+  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
+  .event-background {
+    margin-top: -50px;
+    margin-left: -30px;
+    margin-right: -30px;
+    background-color: rgba(250,250,250,0.8);
+    padding-bottom: 50px;
+    h1 {
+      padding: 20px;
+    }
+    .upcoming {
+      padding-bottom: 30px;
+      border-style: solid;
+      border-width: 0px 0px 2px 0px;
+      .btn {
+        background-color: $ftc_blue;
+        border-color: $ftc_blue;
+        margin: 15px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+
+
 /* Contact Page */ 
 
 .contact-main {
@@ -303,6 +336,8 @@ footer {
 .contact-info {
   padding-top: 20px;
 }
+
+
 
 
 

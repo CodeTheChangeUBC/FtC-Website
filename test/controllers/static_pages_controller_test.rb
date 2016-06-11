@@ -52,7 +52,7 @@ class StaticPagesControllerTest < ActionController::TestCase
   test "should get mini we day" do
     get :mini_we_day
     assert_response :success
-    assert_select "title", "Mini We Day | " + @webpage_header
+    assert_select "title", "Mini WE Day | " + @webpage_header
   end
 
 

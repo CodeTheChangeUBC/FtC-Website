@@ -1,4 +1,36 @@
 <% provide(:title, "Vow of Silence") %>
 
-<h1>The Vow of Silence</h1>
-<h2>Free the Children UBC Main Event</h2>
+<div class="jumbotron jumbotron-event">
+  <div class="center container-fluid event-background">
+	<h1>The Vow of Silence</h1>	
+	<p>(Event Description) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<div class="container center upcoming">
+		<h3>Upcoming Event Info</h3>
+		<p>Where: < Event Location ></p>
+		<p>When: < Event time ></p>
+		<p>Other: < Details ></p>
+		<%= link_to "Register now!", get_involved_path, class: "btn btn-lg btn-primary" %> 
+		<%= link_to "Volunteer", get_involved_path, class: "btn btn-lg btn-primary" %> 
+	</div>
+
+  	<div class="container center past">
+  	  <h2>Past holdings of the Vow of Silence</h2>
+  	  <h4><a href="#2014">2014</a> / <a href="#2013">2013</a></h4>
+
+  	  <div class="container past-event" id="2014">
+  	  	<h3>2014</h3>
+  		Image Galley, videos, anything. 
+  	  </div>
+  	  <div class="container past-event" id="2013">
+  	  	<h3>2013</h3>
+  		Image Galley, videos, anything. 
+  	  </div>
+  	</div>
+  </div>
+</div>
