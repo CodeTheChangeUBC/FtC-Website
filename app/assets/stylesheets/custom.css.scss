@@ -47,18 +47,20 @@ textarea {
   border-bottom-color: $ftc_green;
   padding-bottom: 0px;
   .navbar-nav {
+    .open {
+      a {
+        &:hover {
+          background-color: $ftc_green;
+          color: white;
+        }
+      }
+    }
     li {
       a {
         color: $ftc_blue;
       }
       &:hover {
-      background-color: $ftc_green;
-      }
-    }
-    .dropdown {
-      dropdown-toggle:active {
-        background-color: $ftc_green !important;
-        color: white !important;
+        background-color: $ftc_green;
       }
     }
     .dropdown-menu {
@@ -200,15 +202,15 @@ footer {
   background-image: url('http://blacktieportraits.co.uk/wp-content/uploads/2013/06/IMG_5848a.jpg'); 
   height: 50vh;
   h1 {
-    color: white; 
+    color: black; 
     text-align: center;
-    padding-top: 70px;
     font-size: 100px;
+    margin-top: 0px;
   }
   h2 {
     color: white;
     text-align: center;
-    padding-bottom: 150px;
+    padding-top: 70px;
   }
 } 
 
@@ -273,6 +275,7 @@ footer {
     margin-right: -30px;
     background-color: rgba(250,250,250,0.8);
     padding-bottom: 50px;
+    margin-bottom: -50px;
     h1 {
       padding: 20px;
     }
@@ -311,7 +314,7 @@ footer {
 /* Get Involved */ 
 
 .jumbotron-involved {
-  background-image: url('http://blacktieportraits.co.uk/wp-content/uploads/2013/06/IMG_5848a.jpg'); 
+  background: image-url('filler3'); 
   height: 50vh;
   h1 {
     color: white; 

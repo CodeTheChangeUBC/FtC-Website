@@ -55,15 +55,18 @@
 	<div class="row">
 
     	<div class="col-md-7">
-        	<a href="#">
+        	<a href="">
             	<img class="img-responsive" src="http://cdn.freethechildren.com/wp-content/uploads/2015/12/who-we-are-1.jpg" alt="">
        	 </a>
     	</div>
-   	 <div class="col-md-5">
-        	<h3>Event 1</h3>
+   	 	<div class="col-md-5">
+        	<h3>Vow of Silence</h3>
         	<h4>Subheading</h4>
        	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        	<a class="btn btn-primary" href="#">Learn More <span class="glyphicon glyphicon-chevron-right"></span></a>
+       	 	<%= link_to vow_of_silence_path do %>
+               Learn more
+               <span class="glyphicon glyphicon-chevron-right"></span>
+                <% end %>
     	</div>
 	</div>
 	<hr>
@@ -74,10 +77,13 @@
        	 </a>
     	</div>
    	 <div class="col-md-5 col-md-pull-7">
-        	<h3>Event 2</h3>
+        	<h3>Mini WE Day</h3>
         	<h4>Subheading</h4>
        	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        	<a class="btn btn-primary" href="#">Learn More <span class="glyphicon glyphicon-chevron-right"></span></a>
+        	<%= link_to mini_we_day_path do %>
+               Learn more
+               <span class="glyphicon glyphicon-chevron-right"></span>
+            <% end %>
     	</div>
 	</div>
 	<hr>
@@ -88,10 +94,13 @@
        	 </a>
     	</div>
    	 <div class="col-md-5">
-        	<h3>Event 3</h3>
+        	<h3>Evolution Endurance Dance Challenge</h3>
         	<h4>Subheading</h4>
        	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        	<a class="btn btn-primary" href="#">Learn More <span class="glyphicon glyphicon-chevron-right"></span></a>
+        	<%= link_to ee_dance_challenge_path do %>
+               Learn more
+               <span class="glyphicon glyphicon-chevron-right"></span>
+            <% end %>
     	</div>
 	</div>
 </div>
