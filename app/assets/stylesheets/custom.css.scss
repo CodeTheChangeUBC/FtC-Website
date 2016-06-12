@@ -46,12 +46,31 @@ textarea {
   border-bottom-width: 7px;
   border-bottom-color: $ftc_green;
   padding-bottom: 0px;
+  .navbar-header {
+    .navbar-toggle {
+      border-width: 0px;
+      &:hover {
+        background-color: white;
+        border-width: 1px;
+        border-color: $ftc_green;
+      }
+      &:focus {
+        background-color: white;
+      }
+      .icon-bar {
+        background-color: $ftc_green;
+      }     
+    }
+  }
   .navbar-nav {
     .open {
       a {
         &:hover {
           background-color: $ftc_green;
           color: white;
+        }
+        &:focus {
+          background-color: $ftc_green;
         }
       }
     }
