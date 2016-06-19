@@ -1,5 +1,7 @@
-<div class="container">
-	Welcome to Free the Children at UBC, <% @user.name %>
+<% provide(:title, @user.name) %>
+
+<div class="container center">
+	<h1><%= @user.name %></h1>
 </div>
 
 <div class="container">

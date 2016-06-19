@@ -4,6 +4,34 @@
 	<h1>Get Involved!</h1>
 </div>
 
-<div class="container"> 
-	<p>Page to completed when database is setup</p>
+<div class="container">
+	<p> FTC at UBC can be found at ... </p>
+	<p> We hold meetings ... </p>
+</div>
+
+<div class="container center">
+	<h3>Sign up as a new member</h3>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <!-- If sign up attempt contains errors, display them. Code for display in
+      app/views/shared/_error_messages.html.erb -->
+   	  <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>

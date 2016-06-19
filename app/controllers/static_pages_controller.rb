@@ -2,9 +2,6 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def get_involved
-  end
-
   def about
   end
 

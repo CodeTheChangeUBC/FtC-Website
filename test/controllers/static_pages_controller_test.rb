@@ -13,12 +13,6 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", @webpage_header
   end
 
-  test "should get get-involved" do
-    get :get_involved
-    assert_response :success
-    assert_select "title", "Get Involved | " + @webpage_header
-  end
-
   test "should get about" do
     get :about
     assert_response :success
