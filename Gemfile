@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 
 # Rails version
 gem 'rails',        '4.2.2'
+gem 'bcrypt',       '3.1.7'
 # Use SCSS for stylesheets
 gem 'sass-rails',   '5.0.2'
 # Bootstrap gem
