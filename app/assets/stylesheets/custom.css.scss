@@ -147,7 +147,7 @@ footer {
   }
 }
 
-/* Page Banners */ 
+/* Homepage Page */ 
 
 .jumbotron-home {
   background: image-url("filler4.png");
@@ -171,21 +171,6 @@ footer {
   }
 }
 
-
-.jumbotron-about {
-  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
-  height: 50vh;
-  h1 {
-    color: white; 
-    text-align: center;
-    padding-top: 50px;
-    font-size: 100px;
-  }
-}
-
-
-/* Homepage Carousel */ 
-
 .carousel-inner {
   text-align: center;
   height: 80vh;
@@ -203,8 +188,6 @@ footer {
   }
 }
 
-/* Homepage items */ 
-
 .homepage-mission {
   margin-top: -30px;
   padding-top: 30px;
@@ -221,7 +204,21 @@ footer {
   }
 }
 
-/* What-we-do Page items */ 
+/* Who we are (about) page */ 
+
+.jumbotron-about {
+  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
+  height: 50vh;
+  h1 {
+    color: white; 
+    text-align: center;
+    padding-top: 50px;
+    font-size: 100px;
+  }
+}
+
+
+/* What-we-do Page */ 
 
 .jumbotron-events {
   background-image: url('http://blacktieportraits.co.uk/wp-content/uploads/2013/06/IMG_5848a.jpg'); 
@@ -336,7 +333,7 @@ footer {
   padding-top: 20px;
 }
 
-/* Get Involved */ 
+/* Get Involved Page */ 
 
 .jumbotron-involved {
   background: image-url('filler3'); 
@@ -382,6 +379,22 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+/* Log in Page */ 
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
 
 
