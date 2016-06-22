@@ -8,6 +8,14 @@ emilie:
   email: ems@Iluvyou.com
   password_digest: <%= User.digest("Haalloooooo") %> 
 
+<% 30.times do |i| %>
+user_<%= i %>:
+  name: <%= "User #{i}" %>
+  email: <%= "user-#{i}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
+
+
 
 
 
