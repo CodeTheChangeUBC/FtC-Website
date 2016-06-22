@@ -5,6 +5,7 @@ class UsersControllerTest < ActionController::TestCase
   def setup
   	@user = users(:tester)
   	@second_user = users(:emilie)
+    @admin = users(:admin)
     @webpage_header = "FTC UBC"
   end
 
@@ -40,4 +41,33 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to root_url
   end
 
+  test "should redirect index when not logged in" do
+  	get :index
+  	assert_redirected_to login_url
+  end
+
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'User.count' do
+      delete :destroy, id: @admin
+    end
+    assert_redirected_to login_url
+  end
+
+  test "should redirect destroy when logged in as a non-admin" do
+    log_in_as(@second_user)
+    assert_no_difference 'User.count' do
+      delete :destroy, id: @admin
+    end
+    assert_redirected_to root_url
+  end
+
+  test "should not allow the admin attribute to be edited via the web" do
+    log_in_as(@user)
+    assert_not @user.admin?
+    patch :update, id: @user, user: { password:              'password',
+                                      password_confirmation: 'password',
+                                      admin: true }
+    assert_not @user.admin?
+  end
+  
 end

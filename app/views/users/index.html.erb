@@ -1,0 +1,11 @@
+<% provide(:title, 'All users') %>
+<h1 class="center">All users</h1>
+
+<div class="center"><%= will_paginate %></div>
+
+<ul class="users">
+  <!-- Render each user with content in _user partial -->
+  <%= render @users %>
+</ul>
+
+<div class="center"><%= will_paginate %></div>

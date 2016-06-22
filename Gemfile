@@ -21,6 +21,9 @@ gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc',         '0.4.0', group: :doc
+# Let user index page be paginated
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
@@ -29,6 +32,8 @@ group :development, :test do
   gem 'web-console', '2.0.0.beta3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring',      '1.1.3'
+  # Use fake users to fill out index
+  gem 'faker',       '1.4.2'
 end
 
 group :test do
