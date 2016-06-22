@@ -8,6 +8,12 @@ emilie:
   email: ems@Iluvyou.com
   password_digest: <%= User.digest("Haalloooooo") %> 
 
+admin: 
+  name: Administrator
+  email: admin@admin.ca
+  password_digest: <%= User.digest('password') %>
+  admin: true
+
 <% 30.times do |i| %>
 user_<%= i %>:
   name: <%= "User #{i}" %>

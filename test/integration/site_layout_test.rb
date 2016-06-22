@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class SiteLayoutTest < ActionDispatch::IntegrationTest
+
+  def setup
+    @user = users(:tester)
+  end
   
   test "layout links" do 
   	get root_path
@@ -14,5 +18,16 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", vow_of_silence_path 
     assert_select "a[href=?]", ee_dance_challenge_path
     assert_select "a[href=?]", mini_we_day_path
+    assert_select "a[href=?]", login_path, count: 1
+    assert_select "a[href=?]", edit_user_path(@user), count: 0
+    assert_select "a[href=?]", logout_path, count: 0
+
+    # Sign in user
+    log_in_as(@user)
+    assert_redirected_to @user
+    get edit_user_path(@user)
+    assert_template 'users/edit'
+    delete logout_path(@user)
+    assert_redirected_to root_path
   end
 end
