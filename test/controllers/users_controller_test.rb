@@ -15,6 +15,11 @@ class UsersControllerTest < ActionController::TestCase
     assert_select "title", "Get Involved | " + @webpage_header
   end
 
+  test "should get index" do
+    get :index
+    assert_response :success
+  end
+
   test "should redirect edit when not logged in" do
     get :edit, id: @user
     assert_not flash.empty?
@@ -41,11 +46,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to root_url
   end
 
-  test "should redirect index when not logged in" do
-  	get :index
-  	assert_redirected_to login_url
-  end
-
+  
   test "should redirect destroy when not logged in" do
     assert_no_difference 'User.count' do
       delete :destroy, id: @admin
