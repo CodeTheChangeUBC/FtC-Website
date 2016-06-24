@@ -7,12 +7,16 @@ User.create!(name:  "Admin",
              email: "admin@freethechildren.com",
              password:              "foobar",
              password_confirmation: "foobar", 
+             activated: true,
+             activated_at: Time.zone.now,
              admin: true)
 
 User.create!(name:  "Example User",
              email: "test@foobar.com",
              password:              "foobar",
-             password_confirmation: "foobar")
+             password_confirmation: "foobar",
+             activated: true,
+             activated_at: Time.zone.now)
 
 
 # These test users will only populate a database in development mode. 
@@ -24,7 +28,9 @@ if Rails.env.development?
   		User.create!(name:  name,
         	       	 email: email,
             	   	 password: password,
-               		 password_confirmation: password)
+               		 password_confirmation: password,
+                   activated: true,
+                   activated_at: Time.zone.now)
   end
 	
 end
