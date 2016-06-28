@@ -14,23 +14,19 @@ class ActiveSupport::TestCase
   end
 
   # Logs in a test user
-  def log_in_as(user, options = {})
-  	password = options[:password] || 'password'
-  	remember_me = options[:remember_me] || '1'
-  	if integration_test?
-  		post login_path, session: { email: user.email, 
-  									              password: password, 
-  									              remember_me: remember_me }
-  	else
-  		session[:user_id] = user.id
-  	end
+  def log_in_as(user)
+  	session[:user_id] = user.id
   end
 
-  private 
+end
 
-  	# Returns true inside an integration test
-  	def integration_test?
-  		defined?(post_via_redirect)
-  	end
+class ActionDispatch::IntegrationTest
+
+  # Log in as a particular user
+  def log_in_as(user, password: 'password', remember_me: '1')
+    post login_path, params: { session: { email: user.email, 
+                                          password: password, 
+                                          remember_me: remember_me } } 
+  end
 
 end

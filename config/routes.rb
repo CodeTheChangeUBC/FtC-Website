@@ -5,16 +5,16 @@ Rails.application.routes.draw do
   # Define the root of the webpage
   root 'static_pages#home'
 
-  get     'about'                          => 'static_pages#about'
-  get     'get-involved'                   => 'users#new'
-  get     'what-we-do'                     => 'static_pages#what_we_do', as: "what_we_do"
-  get     'contact'                        => 'static_pages#contact'
-  get     'what-we-do/vow-of-silence'      => 'static_pages#vow_of_silence', as: "vow_of_silence"
-  get     'what-we-do/ee-dance-challenge'  => 'static_pages#ee_dance_challenge', as: "ee_dance_challenge"
-  get     'what-we-do/mini-we-day'         => 'static_pages#mini_we_day', as: "mini_we_day"
-  get     'login'                          => 'sessions#new'
-  post    'login'                          => 'sessions#create'
-  delete  'logout'                         => 'sessions#destroy'
+  get     '/about',                          to: 'static_pages#about'
+  get     '/get-involved',                   to: 'users#new'
+  get     '/what-we-do',                     to: 'static_pages#what_we_do', as: "what_we_do"
+  get     '/contact',                        to: 'static_pages#contact'
+  get     '/what-we-do/vow-of-silence',      to: 'static_pages#vow_of_silence', as: "vow_of_silence"
+  get     '/what-we-do/ee-dance-challenge',  to: 'static_pages#ee_dance_challenge', as: "ee_dance_challenge"
+  get     '/what-we-do/mini-we-day',         to: 'static_pages#mini_we_day', as: "mini_we_day"
+  get     '/login',                          to: 'sessions#new'
+  post    '/login',                          to: 'sessions#create'
+  delete  '/logout',                         to: 'sessions#destroy'
 
   # RESOURCES (Models) =====================================================================================
   resources :users
