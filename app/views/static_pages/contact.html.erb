@@ -6,7 +6,21 @@
 	</div>
 </div>
 
-<div class="container contact-info">
+<div class="container contact-split">
+  <div class="col-sm-6 contact-info">
 	<p>You can locate us at ... </p>
-	<p>Or you can contact us directly using this snazzy form (which will later be implemented in rails)</p>
+  </div>
+  <div class="col-sm-6">
+  	<p>Or you can contact us directly: </p>
+	<% @mbox_placeholder = 'Your Message (maximum 1000 characters, minimum 20)*' %>
+	<%= form_for @message, url: contact_path do |f| %>
+	  <%= f.text_field :name, placeholder: 'Name*', class: 'form-control' %>
+   	  <%= f.email_field :email, placeholder: 'Email*', class: 'form-control' %>
+   	  <%= f.text_field :subject, placeholder: 'Subject', class: 'form-control' %>
+  	  <%= f.text_area :content, placeholder: @mbox_placeholder, class: 'form-control' %>
+  	  <%= f.submit "Send", class: "btn btn-primary" %>
+  	  <p>*Required Field</p>
+	<% end %>
+  </div>
 </div>
+

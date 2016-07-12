@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'password_resets/new'
-
-  get 'password_resets/edit'
-
   # URLS ===================================================================================================
 
   # Define the root of the webpage
@@ -13,6 +9,7 @@ Rails.application.routes.draw do
   get     '/get-involved',                   to: 'users#new'
   get     '/what-we-do',                     to: 'static_pages#what_we_do', as: "what_we_do"
   get     '/contact',                        to: 'static_pages#contact'
+  post    '/contact',                        to: 'contact_forms#create'
   get     '/what-we-do/vow-of-silence',      to: 'static_pages#vow_of_silence', as: "vow_of_silence"
   get     '/what-we-do/ee-dance-challenge',  to: 'static_pages#ee_dance_challenge', as: "ee_dance_challenge"
   get     '/what-we-do/mini-we-day',         to: 'static_pages#mini_we_day', as: "mini_we_day"

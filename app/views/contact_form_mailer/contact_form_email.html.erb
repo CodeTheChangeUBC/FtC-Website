@@ -1,0 +1,9 @@
+<h1>New Contact Form Email</h1>
+
+<p>Message sent by <%= @message[:name] %> from <%= @message[:email] %></p>
+
+<p>Subject: <%= @message[:subject] || "None" %></p>
+
+<p>Message: </p>
+
+<p><%= @message[:content] %></p>

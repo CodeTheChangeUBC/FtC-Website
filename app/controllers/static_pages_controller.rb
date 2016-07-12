@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+    @message = ContactFormMessage.new
   end
 
   def vow_of_silence
@@ -19,4 +20,5 @@ class StaticPagesController < ApplicationController
 
   def mini_we_day
   end
+
 end
