@@ -1,13 +1,19 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, @user.name) %> 
 
 <div class="container center">
 	<h1><%= @user.name %></h1>
 </div>
 
 <div class="container">
-	<h3>Your upcoming events</h3>
+  <% if current_user == @user %>
+	<h3>My upcoming events</h3>
+  <% else %>
+    <h3>Their Upcoming Events</h3>
+  <% end %>
 </div>
 
-<div class="container">
+<% if current_user == @user %>
+  <div class="container">
 	<h3>Upcoming Events for Free the Children</h3>
-</div>
+  </div>
+<% end %>

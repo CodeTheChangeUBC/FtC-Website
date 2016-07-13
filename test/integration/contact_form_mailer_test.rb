@@ -9,12 +9,39 @@ class ContactFormMailerTest < ActionDispatch::IntegrationTest
 
   test "invalid contact form message" do
   	get contact_path
+  	# Invalid name, valid email and content
   	post contact_path, params: { 
   						 contact_form_message: { 
   							name: "", 
+  							email: "email@valid.com", 
+  							subject: "subject",
+  							content: @content 
+  						  }
+  						} 
+  	follow_redirect!
+  	assert_not flash.empty?
+  	assert_equal 0, ActionMailer::Base.deliveries.size 
+  	get contact_path
+  	# Valid name and content, invalid email
+  	post contact_path, params: { 
+  						 contact_form_message: { 
+  							name: "valid name", 
   							email: "", 
   							subject: "subject",
   							content: @content 
+  						  }
+  						} 
+  	follow_redirect!
+  	assert_not flash.empty?
+  	assert_equal 0, ActionMailer::Base.deliveries.size 
+  	get contact_path
+  	# Valid name and email, invalid content
+  	post contact_path, params: { 
+  						 contact_form_message: { 
+  							name: "valid name", 
+  							email: "email@valid.com", 
+  							subject: "subject",
+  							content: "Too short"
   						  }
   						} 
   	follow_redirect!
@@ -27,11 +54,16 @@ class ContactFormMailerTest < ActionDispatch::IntegrationTest
   	post contact_path, params: { 
   						 contact_form_message: { 
   							name: "Test User", 
-  							email: "user@example.com", 
+  							email: "user@example.com",
+  							subject: "subject", 
   							content: @content 
   						  }
   						} 
   	assert_equal 1, ActionMailer::Base.deliveries.size
+  	mail = ActionMailer::Base.deliveries.first 
+  	assert_equal "Contact Form Message", mail.from
+  	assert_equal ["ben.ih.chugg@gmail.com"], mail.to
+  	assert_equal "New message from Test User", mail.subject
   end
 
 end

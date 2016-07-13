@@ -1,6 +1,9 @@
-New Contact Form message sent by <%= @message[:name] %> from <%= @message[:email] %>
+<% @subject = @message[:subject] %>
+New Contact Form Message 
 
-Subject: <%= @message[:subject] %>
+Sent by <%= @message[:name] %> from <%= @message[:email] %>
+
+Subject: <%= @subject == nil ? "None" : @subject %>
 
 Message: 
 

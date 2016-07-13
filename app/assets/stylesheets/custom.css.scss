@@ -329,8 +329,20 @@ footer {
   }
 }
 
-.contact-info {
-  padding-top: 20px;
+.contact-split {
+  padding-top: 30px;
+  .contact-form {
+    border-style: solid;
+    border-color: $light_gray;
+    border-width: 0 1px 0 0;
+    .btn {
+      background-color: $ftc_blue;
+      border-color: $ftc_blue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 /* Get Involved Page */ 
