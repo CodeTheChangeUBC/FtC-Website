@@ -7,7 +7,7 @@ class ContactFormMailerTest < ActionDispatch::IntegrationTest
   	@content = "This is valid content for a message"
   end
 
-  test "invalid contact form message" do
+  test "name should be present" do
   	get contact_path
   	# Invalid name, valid email and content
   	post contact_path, params: { 
@@ -21,6 +21,9 @@ class ContactFormMailerTest < ActionDispatch::IntegrationTest
   	follow_redirect!
   	assert_not flash.empty?
   	assert_equal 0, ActionMailer::Base.deliveries.size 
+  end
+
+  test "email should be present" do 
   	get contact_path
   	# Valid name and content, invalid email
   	post contact_path, params: { 
@@ -34,6 +37,26 @@ class ContactFormMailerTest < ActionDispatch::IntegrationTest
   	follow_redirect!
   	assert_not flash.empty?
   	assert_equal 0, ActionMailer::Base.deliveries.size 
+  end
+
+  test "email should be valid" do 
+    get contact_path
+    # Valid name and content, invalid email
+    post contact_path, params: { 
+               contact_form_message: { 
+                name: "valid name", 
+                email: "email@invalid", 
+                subject: "subject",
+                content: @content 
+                }
+              } 
+    follow_redirect!
+    assert_not flash.empty?
+    assert_equal 0, ActionMailer::Base.deliveries.size 
+  end
+
+
+  test "content must be long enough" do
   	get contact_path
   	# Valid name and email, invalid content
   	post contact_path, params: { 
