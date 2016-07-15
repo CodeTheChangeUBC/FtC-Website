@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-	before_action :admin_user, only: [:new, :update, :destroy]
+	before_action :admin_user, only: [:new, :edit, :update, :destroy]
 
 	def new
 	    @event = Event.new
@@ -29,6 +29,7 @@ class EventsController < ApplicationController
 	end
 
 	def update
+		@event = Event.find(params[:id])
 		if @event.update_attributes(event_params)
 			flash[:success] = "Event updated!"
 			redirect_to @event
@@ -53,6 +54,9 @@ class EventsController < ApplicationController
 
 		# Verifies if current user is an admin
 		def admin_user
-			redirect_to(root_url) unless admin?
+			unless admin? 
+				flash[:danger] = "Only administrators have access to this page"
+				redirect_back_or(root_url) 
+			end
 		end
 end
