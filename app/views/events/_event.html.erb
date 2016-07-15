@@ -1,0 +1,13 @@
+<!-- Partial for showing a single minor event. Each minor event on index page
+is subject to this styling. -->
+
+<li>
+  <h2><%= link_to event.title, event %></h2>
+  <% if admin? %>
+  	| <%= link_to "delete", event, 
+  							method: :delete, 
+  							data: { confirm: "Are you sure you want to delete 
+  											 #{event.title}?" } %>
+  <% end %>
+	
+</li>

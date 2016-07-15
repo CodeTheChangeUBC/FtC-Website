@@ -1,1 +1,9 @@
+ <% provide(:title, @event.title) %>
+
  <h1>Show a single event</h1>
+
+ <div class="container center">
+ 	<h1><%= @event.title %></h1>
+ 	<h4>Description:</h4>
+ 	<p><%= @event.description %></p>
+ </div>

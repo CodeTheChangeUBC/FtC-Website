@@ -19,4 +19,12 @@ class EventTest < ActiveSupport::TestCase
   	@event.description = ""
   	assert_not @event.valid?
   end
+
+  test "should set attr_accessors"  do
+    @event.num_volunteers = 2
+    @event.date = Date.current
+    @event.start_time = Time.current
+    @event.duration = 2
+    assert @event.valid?
+  end
 end
