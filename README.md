@@ -1,36 +1,50 @@
-# FtC-Website
-Websystem for Free the Children, UBC. Created by Code the Change - UBC Chapter.
+# FtC Website
+*Websystem for Free the Children, UBC. Created by Code the Change - UBC Chapter.*
 
-== PROJECT INFO == 
+[See site here during development.](nameless-river-95813.herokuapp.com)
 
-- Rails version currently being used: 4.2.2
+
+### Project Info
+
+- Rails version currently being used: 5.0.0. (See Gemfile)
 
 - Deployment Instructions: 
-	LOCALLY: 
+  * **Locally**: 
 	You can deploy on your local machine by typing "rails server" at the command line and visiting
 	http://localhost:3000/
-	REMOTELY: 
+  * **Remotely**: 
 	Run command "heroku open" in your command line. 
 	If you've made changes and want to push to heroku, run "git push heroku <your_branch_name>:master", 
 	which pushes changes from your local branch to the heroku master branch. 
 
-- Test Suite:
-	Run unit tests (found in directory /test/) by typing "rake test" or "rake test:<test_module>".   
 
-- Configuration: 
-	Update the gems specified in the gemfile by running
+- Test Suite
+  * Run unit tests (found in directory /test) by typing "rails test" or "rake test:\<test_module>".   
 
 
-Things to cover in future:  
+- Configuration
+  * Update the gems specified in the gemfile by running "bundle install"
 
-* System dependencies
 
-* Configuration
+ - Database
+   * **Locally**
+     1. To update database after update or adding a model run "rake db:migrate". This migrates the current schema. 
+     2. To seed the database run "rake db:seed"
+     3. To reset the database and reload the current database run "rake db:reset db:migrate"
+     4. To destroy the databse, create and migrate it run "rake db:reset db:migrate"
+   * **Remotely (heroku)**
+     1. To drop the database "heroku pg:reset DATABASE"
+     2. To migrate the current schema "heroku run rake db:migrate"
+     3. To populate the database with seed data "heroku run rake db:seed"
+     4. To cover last two in one action, run "heroku run rake db:setup"
 
-* Database creation
 
-* Database initialization
+### TODO 
+*See Milestones* 
 
-* Services (job queues, cache servers, search engines, etc.)
+- Allow users to sign up for event
+- Update a user's profile to reflect their events
+- Sign in and sign up using Facebook and Google APIs
+- Integrate a Content Management System for easy handoff
 
 
