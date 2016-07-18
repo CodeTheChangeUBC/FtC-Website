@@ -28,6 +28,11 @@ gem 'jquery-rails',            '4.1.1'
 # Turbolinks makes following links in your web application faster. 
 gem 'turbolinks',              '5.0.0.beta2'
 gem 'jbuilder',                '2.4.1'
+# For secure handling of Environment variables
+gem 'figaro'
+# Gems for user-sign in APIs
+gem 'omniauth-oauth2',          '~> 1.3.1'
+gem 'omniauth-facebook',        '2.0.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'

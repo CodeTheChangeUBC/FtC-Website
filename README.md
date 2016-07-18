@@ -31,7 +31,8 @@
      1. To update database after update or adding a model run "rake db:migrate". This migrates the current schema. 
      2. To seed the database run "rake db:seed"
      3. To reset the database and reload the current database run "rake db:reset db:migrate"
-     4. To destroy the databse, create and migrate it run "rake db:reset db:migrate"
+     4. To destroy the database, create and migrate it run "rake db:reset db:migrate"
+     5. After modifying the database, to run tests first run "rake db:test:prepare"
    * **Remotely (heroku)**
      1. To drop the database "heroku pg:reset DATABASE"
      2. To migrate the current schema "heroku run rake db:migrate"

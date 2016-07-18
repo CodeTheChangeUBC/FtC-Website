@@ -23,6 +23,8 @@
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
+    <p><%= link_to "Sign in using Facebook", "/auth/facebook", id: "sign_in" %></p>
+
     <p>Not a member? <%= link_to "Sign up now!", get_involved_path %></p>
   </div>
 </div>

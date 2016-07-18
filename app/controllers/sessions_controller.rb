@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
+  
   def new
   end
 
   def create
-  	user = User.find_by(email: params[:session][:email].downcase)
+  	user = User.find_by(email: params[:session][:email].downcase) 
   	if user && user.authenticate(params[:session][:password])
       if user.activated?
         log_in user
@@ -18,11 +19,23 @@ class SessionsController < ApplicationController
   	else
   		flash.now[:danger] = 'Invalid email/password combination'
   		render 'new'
+    end
   end
-end
+
+  def create_facebook
+    begin 
+      user = User.from_omniauth(env["omniauth.auth"])
+      log_in user
+    rescue
+      flash[:warning] = "There was an error during the authentication 
+                         process. "
+    end    
+      redirect_back_or user
+  end
 
   def destroy
-  	log_out if logged_in?
-  	redirect_to root_url
+    log_out if logged_in?
+    redirect_to root_url
   end
+
 end
