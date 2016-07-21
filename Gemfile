@@ -33,6 +33,7 @@ gem 'figaro'
 # Gems for user-sign in APIs
 gem 'omniauth-oauth2',          '~> 1.3.1'
 gem 'omniauth-facebook',        '2.0.1'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'

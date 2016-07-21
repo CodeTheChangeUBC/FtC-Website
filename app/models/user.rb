@@ -69,18 +69,20 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
-  # For facebook API
+  # For APIs
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
+      provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name unless user.name != nil
       user.email =  SecureRandom.hex + '@example.com' unless user.email != nil
       user.activated = true
+      user.activated_at = Time.zone.now unless user.activated_at != nil
       user.password = SecureRandom.urlsafe_base64 unless user.password != nil
       user.save!
     end
-end
+  end
 
 
   private 
@@ -95,4 +97,5 @@ end
       self.activation_token = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+
 end

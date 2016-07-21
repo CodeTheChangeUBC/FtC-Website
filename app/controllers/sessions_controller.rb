@@ -22,15 +22,17 @@ class SessionsController < ApplicationController
     end
   end
 
-  def create_facebook
+  # Initialize user through facebook or google API
+  def create_with_api
     begin 
       user = User.from_omniauth(env["omniauth.auth"])
       log_in user
+      redirect_back_or user
     rescue
       flash[:warning] = "There was an error during the authentication 
                          process. "
-    end    
-      redirect_back_or user
+      redirect_to root_url
+    end
   end
 
   def destroy
