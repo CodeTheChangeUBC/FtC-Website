@@ -31,7 +31,7 @@
            <% if logged_in? %>
             <% if admin? %>
               <li><%= link_to "All Users", users_path %></li>
-              <%= render 'layouts/event_handling' %>
+              <%= render 'layouts/admin_actions' %>
             <% else %>
               <li><%= link_to "The Team", users_path %></li>
             <% end %>

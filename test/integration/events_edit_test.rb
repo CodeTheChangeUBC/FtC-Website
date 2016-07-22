@@ -4,7 +4,7 @@ class EventsEditTest < ActionDispatch::IntegrationTest
   
   def setup
   	@event = events(:event)
- 	@admin = users(:admin)
+ 	  @admin = users(:admin)
   end
 
   test "successful edit" do
@@ -12,7 +12,7 @@ class EventsEditTest < ActionDispatch::IntegrationTest
   	get edit_event_path(@event)
   	assert_template 'events/edit'
   	patch event_path(@event), params: { event: { title: "New title", 
-  												 description: "New description" } }
+  												                       description: "New description" } }
 	assert_not flash.empty?
 	assert_redirected_to @event
 	@event.reload  												 
@@ -23,7 +23,7 @@ class EventsEditTest < ActionDispatch::IntegrationTest
   test "unsuccesful edit due to no title" do 
   	log_in_as(@admin)
 	patch event_path(@event), params: { event: { title: "", 
-	                                		  	 description: @event.description } }
+	                                		  	     description: @event.description } }
 	assert_not flash.empty?
 	assert_template 'events/edit'
   end
@@ -31,7 +31,7 @@ class EventsEditTest < ActionDispatch::IntegrationTest
   test "unsuccesful edit due to no description" do 
   	log_in_as(@admin)
 	patch event_path(@event), params: { event: { title: @event.title, 
-	                                		  	 description: "" } }
+	                                		  	     description: "" } }
 	assert_not flash.empty?
 	assert_template 'events/edit'
   end
