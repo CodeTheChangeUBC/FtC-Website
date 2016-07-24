@@ -1,7 +1,7 @@
 <!-- Partial for the standard user fill in form of name, email, password 
       and password comfirmation --> 
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, html: { multipart: true }) do |f| %>
   <% @object = @user %>
   <%= render 'shared/error_messages' %>
 
@@ -17,5 +17,17 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+  <%= image_tag @user.avatar.url if @user.avatar? %>
+  <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
+
   <%= f.submit yield(:form_button), class: "btn btn-primary" %>
 <% end %>
+
+<script type="text/javascript">
+  $('#user_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

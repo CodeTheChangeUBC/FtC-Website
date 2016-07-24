@@ -25,9 +25,16 @@ class SessionsController < ApplicationController
   # Initialize user through facebook or google API
   def create_with_api
     begin 
+      @num_users = User.all.size
       user = User.from_omniauth(env["omniauth.auth"])
       log_in user
-      redirect_back_or user
+      if @num_users == (User.all.size - 1)
+        redirect_to edit_user_path(user)
+        flash[:success] = "Log in successful! Please set a password and update 
+                             any additional information."
+      else 
+        redirect_back_or user
+      end
     rescue
       flash[:warning] = "There was an error during the authentication 
                          process. "

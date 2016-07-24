@@ -2,6 +2,7 @@
 
 <div class="container center">
 	<h1><%= @user.name %></h1>
+	<%= image_tag @user.avatar.url if @user.avatar? %>
 </div>
 
 <div class="container">
