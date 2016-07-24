@@ -2,7 +2,7 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
-# These first two users will be an admin and example user everywhere, includiing in production. 
+# Admin user
 User.create!(name:  "Admin",
              email: "admin@freethechildren.com",
              password:              "foobar",
@@ -11,6 +11,20 @@ User.create!(name:  "Admin",
              activated_at: Time.zone.now,
              admin: true)
 
+10.times do |n|
+  name = "Execute #{n+1}"
+  email = "Executive#{n+1}@example.com"
+  password = "fake_password"
+  User.create!(name: name, 
+               email: email, 
+               password: password, 
+               password_confirmation: password, 
+               activated: true,
+               activated_at: Time.zone.now, 
+               exec: true)
+end
+
+# Example user, non-admin. 
 User.create!(name:  "Example User",
              email: "test@foobar.com",
              password:              "foobar",
@@ -19,18 +33,16 @@ User.create!(name:  "Example User",
              activated_at: Time.zone.now)
 
 
-# These test users will only populate a database in development mode. 
-if Rails.env.development?  
-	99.times do |n|
-  		name  = Faker::Name.name
-  		email = "example-#{n+1}@foobar.org"
-  		password = "password"
-  		User.create!(name:  name,
-        	       	 email: email,
-            	   	 password: password,
-               		 password_confirmation: password,
-                   activated: true,
-                   activated_at: Time.zone.now)
-  end
-	
+# For now, populate database with fake users. 
+99.times do |n|
+ 		name  = Faker::Name.name
+ 		email = "example-#{n+1}@foobar.org"
+		password = "password"
+ 		User.create!(name:  name,
+       	       	 email: email,
+           	   	 password: password,
+            		 password_confirmation: password,
+                 activated: true,
+                 activated_at: Time.zone.now)
 end
+	

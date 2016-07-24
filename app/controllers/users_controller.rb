@@ -14,7 +14,8 @@ class UsersController < ApplicationController
 
   def index
     # Show users iff they are activated
-    @users = User.where(activated: true).paginate(page: params[:page])
+    @execs = User.where(exec: true, activated: true)
+    @users = User.where(exec: false, activated: true).paginate(page: params[:page])
   end
 
   def create 
