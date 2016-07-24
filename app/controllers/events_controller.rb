@@ -11,7 +11,6 @@ class EventsController < ApplicationController
 			flash[:success] = "Event created successfully"
 			redirect_to @event
 		else 
-			flash[:alert] = "Oops, something went wrong. Please try again."
 			render :new
 		end
 	end
@@ -34,7 +33,6 @@ class EventsController < ApplicationController
 			flash[:success] = "Event updated!"
 			redirect_to @event
 		else
-			flash[:alert] = "Update failed."
 			render :edit
 		end
 	end
@@ -52,11 +50,4 @@ class EventsController < ApplicationController
 										  :start_time, :duration, :date)
 		end
 
-		# Verifies if current user is an admin
-		def admin_user
-			unless admin? 
-				flash[:danger] = "Only administrators have access to this page"
-				redirect_back_or(root_url) 
-			end
-		end
 end

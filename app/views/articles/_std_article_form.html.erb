@@ -1,6 +1,8 @@
 <!-- Partial for article form -->
 
 <%= form_for(@article) do |f| %>
+	<% @object = @article %>
+	<%= render 'shared/error_messages' %>
     <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
     <%= f.text_area :text, placeholder: 'Write your heart out!', class: 
    		'form-control' %>
