@@ -12,7 +12,7 @@ User.create!(name:  "Admin",
              admin: true)
 
 10.times do |n|
-  name = "Execute #{n+1}"
+  name = "Executive #{n+1}"
   email = "Executive#{n+1}@example.com"
   password = "fake_password"
   User.create!(name: name, 

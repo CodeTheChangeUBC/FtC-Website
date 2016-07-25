@@ -71,29 +71,34 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
-  # Returns true if user is an exec
-  def exec?
-    self.exec?
-  end
-
   # Make this user an exec
   def make_exec
     self.exec = true
+  end
+
+  # Return true if user has image_url != nil
+  def picture
+    if self.avatar?
+      self.avatar.url
+    elsif self.image_url != nil
+      self.image_url
+    else
+      false
+    end
   end
 
   # For APIs
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
-      provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name unless user.name != nil
       user.email =  SecureRandom.hex + '@example.com' unless user.email != nil
-      user.avatar = auth.info.image unless user.avatar?
+      user.image_url = auth.info.image # unless (user.avatar? || user.image_url != nil) 
       user.activated = true
       user.activated_at = Time.zone.now unless user.activated_at != nil
       user.password = SecureRandom.urlsafe_base64 unless user.password != nil
-      user.save!
+      user.save! 
     end
   end
 

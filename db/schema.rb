@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724044309) do
+ActiveRecord::Schema.define(version: 20160725023018) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160724044309) do
     t.string   "uid"
     t.string   "avatar"
     t.boolean  "exec",              default: false
+    t.string   "image_url"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
