@@ -1,0 +1,31 @@
+<% provide(:title, 'Documents') %>
+
+<div class="center"><%= will_paginate %></div>
+
+<div class="center">
+	<h1>Club Documents</h1>
+</div>
+<br />
+<div class="container">
+ <% if admin? %>
+   <%= link_to "New Document", new_document_path, class: "btn btn-primary" %>
+ <% end %>
+ <br />
+ <br />
+ <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Download Link</th>
+      <% if admin? %>
+       <th>Actions</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @documents %>
+  </tbody>
+ </table>
+</div>
+
+<div class="center"><%= will_paginate %></div>

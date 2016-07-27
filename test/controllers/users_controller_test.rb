@@ -72,5 +72,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                                               admin: true } }
     assert_not @user.admin?
   end
+
+  test "should not allow the exec attribute to be edited via the web" do
+    log_in_as(@user)
+    assert_not @user.exec?
+    patch user_path(@user), params: { user: { password:              'password',
+                                              password_confirmation: 'password',
+                                              exec: true } }
+    assert_not @user.exec?
+  end
+  
   
 end

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# 50 Public documents
+document:
+  name: document
+  attachment: attachment_url
+  public: true
+
+<% 49.times do |i| %>
+document_<%= i %>:
+  name: <%= "Public Document #{i}" %>
+  attachment: "fake_url"
+  public: true
+<% end %>
+
+# 10 private documents
+<% 10.times do |i| %>
+document_<%= i+51 %>:
+  name: <%= "Private Document #{i}" %>
+  attachment: "fake_url"
+<% end %>
+
+

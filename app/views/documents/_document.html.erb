@@ -1,0 +1,12 @@
+<% if document.public? || (!document.public? && logged_in?) %>
+ <tr>
+   <td><%= document.name %></td>
+   <td><%= link_to "Download", document.attachment_url %></td>
+   <% if admin? %>
+     <td><%= link_to "Delete",  document, 
+  	 					    	 method: :delete, 
+  							     class: "btn btn-danger", 
+  							     confirm: "Are you sure that you wish to delete #{document.name}?" %></td>
+   <% end %>
+ </tr>
+<% end %>

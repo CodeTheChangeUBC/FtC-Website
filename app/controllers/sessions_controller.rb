@@ -26,9 +26,6 @@ class SessionsController < ApplicationController
   def create_with_api
     begin 
       @num_users = User.all.size
-      puts "REQUEST ================================================="
-      puts request.env["omniauth.auth"].to_yaml
-      puts "REQUEST ================================================="
       user = User.from_omniauth(request.env["omniauth.auth"])
       log_in user
       if @num_users == (User.all.size - 1)

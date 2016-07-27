@@ -45,4 +45,29 @@ User.create!(name:  "Example User",
                  activated: true,
                  activated_at: Time.zone.now)
 end
+
+# For now, populate the database with fake documents
+
+# Public documents
+10.times do |n|
+  name = "Public Document #{n+1} (Fake, Will not open)"
+  attachment_url = "fake_url"
+  Document.create!(name: name, 
+                   attachment: attachment_url, 
+                   public: true)
+end
+
+# Private documents
+10.times do |n|
+  name = "Member Only Document #{n+1} (Fake, Will not open)"
+  attachment_url = "fake_url"
+  Document.create!(name: name, 
+                   attachment: attachment_url)
+end
+
+
+
+
+
+
 	

@@ -1,0 +1,20 @@
+<% provide(:title, 'Upload Document') %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <p><em>Please note that the name of the document when downloaded will be the same as the attachment name when uploading. The name field is simple for display purposes on the site.</em></p>
+  	<br />
+	<%= form_for @document, html: { multipart: true } do |f| %>
+	  <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.label :attachment %>
+      <%= f.file_field :attachment, class: 'form-control' %>
+      <%= f.label :public, class: 'checkbox inline' do %>
+        <%= f.check_box :public %>
+        <span>Check if this document is public</span>
+      <% end %> 
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+    <br />
+  </div>
+</div>

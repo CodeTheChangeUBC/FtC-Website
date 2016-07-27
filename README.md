@@ -45,7 +45,6 @@
 
 - Allow users to sign up for event
 - Update a user's profile to reflect their events
-- Sign in and sign up using Facebook and Google APIs
 - Integrate a Content Management System for easy handoff
 
 
