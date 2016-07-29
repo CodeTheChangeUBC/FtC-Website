@@ -10,13 +10,23 @@
 	<p> We hold meetings ... </p>
 </div>
 
-<div class="container center">
-	<h3>Sign up as a new member</h3>
-</div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= render 'std_user_form' %>
-    <%= link_to "Sign up using Facebook", "/auth/facebook", id: "sign_up_facebook" %>
-    <%= link_to "Sign up using Google+", "/auth/google", id: "sign_up_google" %>
-  </div>
+<div class="container signup">
+	<h2 class="col-sm-offset-2">join as a new member</h2>
+
+	<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-sm-5 signup-plugins">
+			<h4>Sign up with social media or manually create a new account</h4>
+			<div class="facebook-signup">
+				<%= link_to image_tag("sign_up_facebook", alt: "Sign up Facebook", size: "250x50"	), "/auth/facebook", id: "sign_up_facebook" %> 
+			</div>
+			<div class="google-signup">
+    			<%= link_to image_tag("sign_up_google", alt: "Sign up Google+", size: "250x48"),
+    	 			"/auth/google", id: "sign_up_google" %>		
+    	 	</div>
+		</div>
+		<div class="col-sm-7 signup-form">
+			<%= render 'std_user_form' %>	
+		</div>
+	</div>
+
 </div>

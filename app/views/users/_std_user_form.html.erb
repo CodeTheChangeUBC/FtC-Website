@@ -4,21 +4,23 @@
 <%= form_for(@user, html: { multipart: true }) do |f| %>
   <% @object = @user %>
   <%= render 'shared/error_messages' %>
+  <%= f.text_field :name, placeholder: 'name', class: 'form-control' %>
+  <%= f.email_field :email,placeholder: 'email', class: 'form-control' %>
+  <%= f.password_field :password, placeholder: 'password', class: 'form-control' %>
+  <%= f.password_field :password_confirmation, placeholder: 'password-confirmation', 
+    class: 'form-control' %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-  <%= image_tag @user.avatar.url if @user.avatar? %>
-  <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
+  <% unless request.original_fullpath == '/get-involved' %>
+    <strong>Choose a profile picture</strong>
+    <br/>
+    <div class="col-sm-4">
+      <%= image_tag(@user.picture, alt: "avatar", size: "50x50") %>
+    </div>
+    <div class="col-sm-8">
+      <br />
+      <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %>  
+    </div>
+  <% end %>
 
   <%= f.submit yield(:form_button), class: "btn btn-primary" %>
 <% end %>

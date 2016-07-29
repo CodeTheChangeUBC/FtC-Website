@@ -372,15 +372,53 @@ input {
   height: auto !important;
 }
 
-.row {
-  .btn {
-    background-color: $ftc_blue;
-    border-color: $ftc_blue;
-    &:hover {
-      text-decoration: underline;
+.signup {
+  padding-top: 20px;
+  h2 {
+    text-align: left;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    color: $light_gray;
+  }
+  .signup-plugins {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    h4 {
+      color: $light_gray;
+    }
+    img {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    .facebook-signup {
+      padding-top: 30px;
+    }
+    .google-signup {
+      padding-top: 30px;
+    }
+  }
+  .signup-form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background-color: $lighter_gray;
+    border-radius: 5px;
+    .btn {
+      background-color: $ftc_blue;
+      border-color: $ftc_blue;
+      &:hover {
+        text-decoration: underline;
+        opacity: 0.5;
+      }
     }
   }
 }
+
+input[type=file] {
+  border-width: 0;
+}
+
 
 #error_explanation {
   color: red;
@@ -434,9 +472,12 @@ input {
   .btn {
     background-color: $ftc_blue;
     border-color: $ftc_blue;
+    &:hover {
+      text-decoration: underline;
+      opacity: 0.5;
+    }
   }
 }
-
 
 .apis {
   padding-top: 20px;

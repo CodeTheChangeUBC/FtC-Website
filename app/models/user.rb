@@ -83,7 +83,7 @@ class User < ActiveRecord::Base
     elsif self.image_url != nil
       self.image_url
     else
-      false
+      'generic_avatar'
     end
   end
 
