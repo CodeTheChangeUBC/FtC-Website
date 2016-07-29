@@ -1,31 +1,44 @@
 <% provide(:title, "Log in") %>
 
-<div class="container center">
-	<h1>Log in</h1>
-</div>
+<div class="container log-in-page"></div>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
+  <div class="col-sm-6 col-sm-offset-3 main-signin">
+    <div class="log-in-top">
+      <h2>Login</h2>
+      <p>Please enter your email and password</p>
+    </div>
+    <div class="form">
+      <div class="fields">
+        <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= link_to "forgot password?", new_password_reset_path %>
-      <%= f.password_field :password, class: 'form-control' %>
+        <%= f.label :password %>
+        <%= link_to "forgot password?", new_password_reset_path %>
+        <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :remember_me, class: 'checkbox inline' do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
-      <% end %>
+        <%= f.label :remember_me, class: 'checkbox inline' do %>  
+          <%= f.check_box :remember_me %>
+          <span>Remember me on this computer</span>
+        <% end %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <p><%= link_to "Sign in using Facebook", "/auth/facebook", id: "sign_in_google" %></p>
-    <p><%= link_to "Sign up using Google+", "/auth/google", id: "sign_in_google" %></p>
-
-    <p>Not a member? <%= link_to "Sign up now!", get_involved_path %></p>
+        <%= f.submit "Sign in!", class: "btn btn-primary" %>
+        <% end %>
+        <p>Not a member? <%= link_to "Sign up now!", get_involved_path %></p>   
+      </div>
+    </div>
   </div>
+
+  <div class="col-sm-6 col-sm-offset-3 apis center">
+    <h3>... or</h3>
+    <div class="social_plugins">
+      <%= link_to image_tag("sign_in_facebook", alt: "Sign in Facebook", size: "250x49"), 
+            "/auth/facebook", id: "sign_in_facebook" %>
+      <%= link_to image_tag("sign_in_google", alt: "Sign in Google", size: "250x50"), 
+            "/auth/google", id: "sign_in_google" %>
+    </div>
+  </div>
+
 </div>
+
