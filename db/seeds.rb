@@ -11,7 +11,7 @@ User.create!(name:  "Admin",
              activated_at: Time.zone.now,
              admin: true)
 
-10.times do |n|
+9.times do |n|
   name = "Executive #{n+1}"
   email = "Executive#{n+1}@example.com"
   password = "fake_password"

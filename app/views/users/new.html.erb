@@ -25,7 +25,18 @@
     	 	</div>
 		</div>
 		<div class="col-sm-7 signup-form">
-			<%= render 'std_user_form' %>	
+			<%= form_for(@user, html: { multipart: true }, id: "info-form") do |f| %>
+  				<% @object = @user %>
+  				<%= render 'shared/error_messages' %>
+
+  
+  				<%= f.text_field :name, placeholder: 'name', class: 'form-control' %>
+  				<%= f.email_field :email,placeholder: 'email', class: 'form-control' %>
+  				<%= f.password_field :password, placeholder: 'password', class: 'form-control' %>
+  				<%= f.password_field :password_confirmation, placeholder: 'password-confirmation', 
+    				class: 'form-control' %>
+  				<%= f.submit yield(:form_button), class: "btn btn-primary" %>
+			<% end %>
 		</div>
 	</div>
 

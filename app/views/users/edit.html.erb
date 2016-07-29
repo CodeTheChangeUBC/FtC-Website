@@ -1,9 +1,40 @@
 <% provide(:title, "Edit user") %>
 <% provide(:form_button, "Save changes") %>
-<h1>Update your profile</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= render 'std_user_form' %>
-  </div>
+<div class="container col-sm-4 col-sm-offset-2 edit-info">
+	<h2>update your profile.</h2>
+	<div class="row">
+  		<div>
+    		<%= form_for(@user, html: { multipart: true }, id: "info-form") do |f| %>
+  				<% @object = @user %>
+  				<%= render 'shared/error_messages' %>
+
+    			<div class="center avatar">
+      				<p><%= image_tag(@user.picture, size: "150x150") %></p>
+    			</div>
+    			<p><strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/    gif,image/png', id: 'uploader' %> </p>
+
+    			<%= f.label :name %> 
+				  <%= f.text_field :name, placeholder: 'name', class: 'form-control' %>
+				  <%= f.label :email %>
+  				<%= f.email_field :email,placeholder: 'email', class: 'form-control' %>
+  				<%= f.label :password %>
+  				<%= f.password_field :password, placeholder: 'password', class: 'form-control' %>
+  				<%= f.label :password_confirmation %>
+  				<%= f.password_field :password_confirmation, placeholder: 'password-confirmation', 
+    				class: 'form-control' %>
+  				<%= f.submit yield(:form_button), class: "btn btn-primary" %>
+			<% end %>
+  		</div>
+	</div>	
 </div>
+
+<script type="text/javascript">
+  $('#user_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
+

@@ -321,6 +321,39 @@ footer {
   }
 }
 
+/* Edit Event page */ 
+
+.create-event {
+  h2 {
+    color: $light_gray;
+    padding-bottom: 20px;
+  }
+}
+
+/* New AND Edit of club updates */
+
+.create-update {
+  h2 {
+    color: $light_gray;
+    padding-bottom: 20px;
+  }
+}
+
+/* New Document */
+
+.new-document {
+  padding-top: 30px;
+  .checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    span {
+      margin-left: 20px;
+      font-weight: normal;
+    }
+  }
+}
+
 /* Contact Page */ 
 
 .contact-main {
@@ -349,7 +382,7 @@ footer {
   }
 }
 
-/* Get Involved Page */ 
+/* Get Involved Page AND user edit page */ 
 
 .jumbotron-involved {
   background: image-url('filler3'); 
@@ -435,6 +468,36 @@ input[type=file] {
   }
 }
 
+.edit-info {
+  background-color: $lighter_gray;
+  border-radius: 10px;
+  h2 {
+    color: $light_gray;
+  }
+  .row {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
+  .avatar {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  img {
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $ftc_green;
+  }
+  .btn {
+    background-color: $ftc_blue;
+    border-color: $ftc_blue;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
 /* Log in Page */ 
 
 .checkbox {
@@ -512,6 +575,29 @@ input[type=file] {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $lighter_gray;
+  }
+  .admin-options {
+    float: right;
+    padding-right: 20px;
+  }
+}
+
+.execs {
+  background-color: $lighter_gray;
+  border-radius: 10px;
+  .exec-info {
+    .picture-title {
+      display: inline-block;
+      img {
+        float: left;
+        border-radius: 50%;
+      }
+      ul {
+        float: right;
+      }
+    }
+    padding-top: 15px;
+    color: $light_gray;
   }
 }
 

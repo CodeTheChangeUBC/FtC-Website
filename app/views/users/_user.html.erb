@@ -2,14 +2,16 @@
 is subject to this styling. -->
 
 <li>
+  <%= image_tag user.picture, size: "50x50" %>
   <%= link_to user.name, user %>
-  <%= image_tag user.picture if user.picture %>
-  <% if admin? && !current_user?(user) %>
-  	| <%= link_to "delete", user, 
+  <div class="admin-options">
+    <% if admin? && !current_user?(user) %>
+  	   <%= link_to "delete", user, 
   							method: :delete, 
   							data: { confirm: "Are you sure you want to delete #{user.name}				?" } %>
-  | <%= link_to "Set as exec", user, 
+     | <%= link_to "Set as exec", user, 
   							method: user.make_exec,
   							data: { confirm: "Make #{user.name} an executive?" } %>
-  <% end %>
+    <% end %>
+  </div>
 </li>
