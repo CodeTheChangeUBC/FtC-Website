@@ -84,7 +84,7 @@ class ContactFormMailerTest < ActionDispatch::IntegrationTest
   						} 
   	assert_equal 1, ActionMailer::Base.deliveries.size
   	mail = ActionMailer::Base.deliveries.first 
-  	assert_equal "Contact Form Message", mail.from
+  	assert_equal ["noreply@freethechildren.com"], mail.from
   	assert_equal ["ben.ih.chugg@gmail.com"], mail.to
   	assert_equal "New message from Test User", mail.subject
   end

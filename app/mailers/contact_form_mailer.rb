@@ -5,7 +5,7 @@ class ContactFormMailer < ApplicationMailer
 		@subject = "New message from #{@message[:name]}"
 		# Ben's email for testing purposes. Replace later with FTC's email. 
 		mail to: "ben.ih.chugg@gmail.com", 
-			 from: "Contact Form Message", 
+			 from: "noreply@freethechildren.com", 
 			 subject: @subject
 	end
 

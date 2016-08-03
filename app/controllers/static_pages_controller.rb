@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+
   def home
   end
 
@@ -21,4 +22,7 @@ class StaticPagesController < ApplicationController
   def mini_we_day
   end
 
+  def fundraising
+  end
+ 
 end

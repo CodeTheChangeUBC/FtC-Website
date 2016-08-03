@@ -1,9 +1,8 @@
-<% @subject = @message[:subject] %>
 <h1>New Message</h1>
 
 <h5>Details:</h5>
 <p>Message sent by <%= @message[:name] %> from <%= @message[:email] %>.</p>
-<p>Subject: <%= @subject == nil ? "None" : @subject %></p>
+<p>Subject: <%= @message[:subject] == nil ? "None" : @message[:subject] %></p>
 
 <p>Message: </p>
 

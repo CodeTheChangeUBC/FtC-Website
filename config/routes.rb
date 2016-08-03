@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get     '/what-we-do/vow-of-silence',      to: 'static_pages#vow_of_silence', as: "vow_of_silence"
   get     '/what-we-do/ee-dance-challenge',  to: 'static_pages#ee_dance_challenge', as: "ee_dance_challenge"
   get     '/what-we-do/mini-we-day',         to: 'static_pages#mini_we_day', as: "mini_we_day"
+  get     '/fundraising',                    to: 'static_pages#fundraising'
   get     '/login',                          to: 'sessions#new'
   post    '/login',                          to: 'sessions#create'
   delete  '/logout',                         to: 'sessions#destroy'
