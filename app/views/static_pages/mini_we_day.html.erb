@@ -3,22 +3,18 @@
 <div class="jumbotron jumbotron-event">
   <div class="center container-fluid event-background">
 	<h1>Mini <%= link_to image_tag("WE_logo", alt: "WE", size: "80x80") %> Day</h1>	
-	<p><i>“The difference between what we do and what we are capable of doing would suffice to solve most of the world’s problems.”</i><br> - Mahatma Ghandi. <p>
-
-	<p>We Day is a call to action, it is a day to end youth apathy and inspire action in its place. Join us for an afternoon filled with engaging speakers covering topics like Aboriginal Issues, Homelessness, International Philanthropy and much more. There will also be entertainment from local bands, improv groups and spoken word poets. </p>
-
-	<p>Join us as we gear up for a year of philanthropy! Inspire yourself and those around you to look beyond the world we know and step boldly into a fight for liberty and freedom for all.</p>
+	<p><%= phrase('mini-we-day-description') %></p>
 
 	<div class="container center upcoming">
-		<h3>Upcoming Event Info</h3>
-		<p>Where: TBA</p>
-		<p>When: TBA</p>
-		<%= link_to "Register now!", get_involved_path, class: "btn btn-lg btn-primary" %> 
-		<%= link_to "Volunteer", get_involved_path, class: "btn btn-lg btn-primary" %> 
-	</div>
+    <h3><%= phrase('mini-we-day-upcoming-event-info') %></h3>
+    <p><%= phrase('mini-we-day-where-info') %></p>
+    <p><%= phrase('mini-we-day-when-info') %></p>
+    <%= link_to "Register now!", get_involved_path, class: "btn btn-lg btn-primary" %> 
+    <%= link_to "Volunteer", get_involved_path, class: "btn btn-lg btn-primary" %> 
+  </div>
 
   	<div class="container center past">
-  	  <h2>Past WE Days</h2>
+  	  <h2><%= phrase('mini-we-day-past-events') %></h2>
   	  <h4><a href="#2014">2014</a> / <a href="#2013">2013</a></h4>
 
   	  <div class="container past-event" id="2014">

@@ -1,12 +1,12 @@
 <% provide(:title, "What We Do") %>
 
 <div class="jumbotron jumbotron-events">
-	<h1>What we do</h1>
-	<h2>- Our Events -</h2>
+	<h1><%= phrase('what-we-do-title') %></h1>
+	<h2><%= phrase('what-we-do-subhead') %></h2>
 </div>
 
 <div class="container filler-events">
-	<p>Free the Children is organization which supports ... for reasons ..... Check some of them out below. </p>
+	<p><%= phrase('what-we-do-top-description') %></p>
 </div>
 
 <div class="container-fluid event-divs">
@@ -14,12 +14,7 @@
 		<div class="img-responsive im1">
 			<%= link_to image_tag("filler1.png", alt: "img1", size: "150x150"), '#' %>
 		</div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cilclum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p><%= phrase('what-we-do-info1') %></p>
 		<div class="btn-1">
 			<%= link_to "Link", '#', class: "btn btn-lg btn-primary" %> 
 		</div>
@@ -29,12 +24,7 @@
 		<div class="img-responsive im2">
 			<%= link_to image_tag("filler1.png", alt: "img1", size: "150x150"), '#' %>
 		</div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p><%= phrase('what-we-do-info2') %></p>
 		<div class="btn-2">
 			<%= link_to "Link", '#', class: "btn btn-lg btn-primary" %> 
 		</div>
@@ -42,13 +32,7 @@
 </div>
 
 <div class="container filler-events">
-	<p> Free the Children also hosts a number of events every year. <p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p><%= phrase('what-we-do-bottom-description') %></p>
 </div>
 
 <div class="container">     
@@ -60,9 +44,9 @@
        	 </a>
     	</div>
    	 	<div class="col-md-5">
-        	<h3>Vow of Silence</h3>
-        	<h4>Subheading</h4>
-       	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+        	<h3><%= phrase('what-we-do-div1-head') %></h3>
+        	<h4><%= phrase('what-we-do-div1-subhead') %></h4>
+       	 	<p><%= phrase('what-we-do-div1-description') %></p>
        	 	<%= link_to vow_of_silence_path do %>
                Learn more
                <span class="glyphicon glyphicon-chevron-right"></span>
@@ -77,10 +61,10 @@
        	 </a>
     	</div>
    	 <div class="col-md-5 col-md-pull-7">
-        	<h3>Mini WE Day</h3>
-        	<h4>Subheading</h4>
-       	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        	<%= link_to mini_we_day_path do %>
+        	<h3><%= phrase('what-we-do-div2-head') %></h3>
+        	<h4><%= phrase('what-we-do-div2-subhead') %></h4>
+       	 	<p><%= phrase('what-we-do-div2-description') %></p>
+       	 	<%= link_to mini_we_day_path do %>
                Learn more
                <span class="glyphicon glyphicon-chevron-right"></span>
             <% end %>
@@ -94,10 +78,10 @@
        	 </a>
     	</div>
    	 <div class="col-md-5">
-        	<h3>Evolution Endurance Dance Challenge</h3>
-        	<h4>Subheading</h4>
-       	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-        	<%= link_to ee_dance_challenge_path do %>
+        	<h3><%= phrase('what-we-do-div3-head') %></h3>
+        	<h4><%= phrase('what-we-do-div3-subhead') %></h4>
+       	 	<p><%= phrase('what-we-do-div3-description') %></p>
+       	 	<%= link_to ee_dance_challenge_path do %>
                Learn more
                <span class="glyphicon glyphicon-chevron-right"></span>
             <% end %>

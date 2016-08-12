@@ -2,23 +2,19 @@
 
 <div class="jumbotron jumbotron-event">
   <div class="center container-fluid event-background">
-	<h1>The Vow of Silence</h1>	
-	<p>Up for a challenge? Try being silent for 24 hours! (No talk, no text, no Facebook ... think you can handle it?)</p>
-	
-	<p>We will be silent to allow the voices of those who are quieted, to be heard. Let your silence be the voice for thousands of children across the world that need our support.</p>
-
-	<p><b>JOIN UBC FREE THE CHILDREN IN OUR FIGHT AGAINST SLAVERY AND POVERTY. HELP SUPPORT CHILDREN'S EDUCATION AND TAKE THE VOW</b></p>
-
-	<div class="container center upcoming">
-		<h3>Upcoming Event Info</h3>
-		<p>Where: TBA</p>
-		<p>When: TBA</p>
-		<%= link_to "Register now!", get_involved_path, class: "btn btn-lg btn-primary" %> 
-		<%= link_to "Volunteer", get_involved_path, class: "btn btn-lg btn-primary" %> 
-	</div>
+	 <h1><%= phrase('vos-header') %></h1>  
+    <p><%= phrase('vos-description') %></p>
+  
+    <div class="container center upcoming">
+      <h3><%= phrase('vos-upcoming-event-info') %></h3>
+      <p><%= phrase('vos-where-info') %></p>
+      <p><%= phrase('vos-when-info') %></p>
+      <%= link_to "Register now!", get_involved_path, class: "btn btn-lg btn-primary" %> 
+      <%= link_to "Volunteer", get_involved_path, class: "btn btn-lg btn-primary" %> 
+    </div>
 
   	<div class="container center past">
-  	  <h2>Past holdings of the Vow of Silence</h2>
+  	  <h2><%= phrase('vos-past-events') %></h2>
   	  <h4><a href="#2014">2014</a> / <a href="#2013">2013</a></h4>
 
   	  <div class="container past-event" id="2014">

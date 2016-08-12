@@ -2,28 +2,19 @@
 
 <div class="jumbotron jumbotron-event">
   <div class="center container-fluid event-background">
-	<h1>Evolution Endurance Dance Challenge!</h1>	
-	<p>So you think you can dance until you literally hit the floor? You may have run a marathon, but have you danced a DANCE-A-THON?</p>
-
-	<p>Free the Children presents: Evolution EDC (Endurance Dance Challenge), a night to dance through the ages (for ages) and win rad prizes! There will be an ALL AGES dance arena where the last team and person dancing will win our GRAND PRIZES and be BESTOWED with the title of Endurance Dance Champions.</p>
-
-	<p>Grab your friends and raid your mom and dad's closets as the DJ will be blasting you to the past with the golden oldies of the 60s, 70s, 80s, 90s, 2000s, and of course the jams of today! We will also be giving out prizes to those with the best costumes!</p>
-
-	<p>And of course, a party ain't a party without a BEER GARDEN with a grand view of those on the dance floor! Grab some drinks at the 19+ bar to catch a breath and steal some dance pointers from partiers boogie-ing below.</p>
-
-	<p>Come as an individual marathoner or as a team! Everyone will be given race plates, but this is an ENDURANCE DANCE CHALLENGE so those who cannot twerk, wop or bop any longer will be eliminated from the competition! BUT that doesn't mean you're booted from the party. You can still do the running man to your heart's content or you can spectate from our BEER GARDEN!
-	</p>
-
+	<h1><%= phrase('ee-dance-challenge-header') %></h1>	
+	<p><%= phrase('ee-dance-challenge-description') %></p>
+	
 	<div class="container center upcoming">
-		<h3>Upcoming Event Info</h3>
-		<p>Where: TBA</p>
-		<p>When: TBA</p>
+		<h3><%= phrase('ee-upcoming-event-info') %></h3>
+		<p><%= phrase('ee-where-info') %></p>
+		<p><%= phrase('ee-when-info') %></p>
 		<%= link_to "Register now!", get_involved_path, class: "btn btn-lg btn-primary" %> 
 		<%= link_to "Volunteer", get_involved_path, class: "btn btn-lg btn-primary" %> 
 	</div>
 
   	<div class="container center past">
-  	  <h2>Past Dance Challenges</h2>
+  	  <h2><%= phrase('past-ee-events') %></h2>
   	  <h4><a href="#2014">2014</a> / <a href="#2013">2013</a></h4>
 
   	  <div class="container past-event" id="2014">

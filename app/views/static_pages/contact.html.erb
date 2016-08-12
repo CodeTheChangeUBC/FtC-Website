@@ -2,13 +2,13 @@
 
 <div class="container-fluid contact-main">
 	<div class="col-sm-6">
-		<h1>Contact Us</h1>
+		<h1><%= phrase('contact-us-header') %></h1>
 	</div>
 </div>
 
 <div class="container contact-split">
   <div class="col-sm-6 contact-form">
-  	<p><b>Contact us directly</b></p>
+  	<p><b><%= phrase('contact-us-directly') %></b></p>
 	<% @mbox_placeholder = 'Your Message (maximum 1000 characters, minimum 20)*' %>
 	<%= form_for @message, url: contact_path do |f| %>
 	  <%= f.text_field :name, placeholder: 'Name*', class: 'form-control' %>
@@ -20,8 +20,8 @@
 	<% end %>
   </div>
   <div class="col-sm-6 contact-info">
-	<p><b>Or come visit!</b></p>
-	<p>You can locate us ...</p>
+	<p><b><%= phrase('contact-us-location') %></b></p>
+	<p><%= phrase('contact-us-location-description') %></p>
   </div>
   
 </div>

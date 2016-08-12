@@ -1,8 +1,8 @@
 <div class="jumbotron jumbotron-home">
 	<div class="center container-fluid">
 	  <div class="text-holder">
-		<h1>Free the Children at UBC</h1>
-		<h2>Some sort of quote or nothing</h2>
+		<h1><%= phrase('home-page-main-title') %></h1>
+		<h2><%= phrase('home-page-sub-title') %></h2>
 
 		<div class="links"> 
 			<%= link_to "Join", get_involved_path, class: "btn btn-lg btn-primary" %> 
@@ -15,35 +15,11 @@
 <div class="homepage-mission">
   <div class="container">
     <div class="col-sm-8">
-    <p><b>Free the Children at UBC</b> is a Club that lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p><b><%= phrase('home-page-desc-bold') %></b><%= phrase('home-page-description') %></p>
     </div>
     <div class="col-sm-4 img-responsive">
       <%= link_to image_tag("filler1.png", alt: "img1", size: "300x150"), what_we_do_path, id: "im1" %>
     </div>
-    <!-- <div class="col-sm-4">
-      
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut.</p>
-    </div>
-    <div class="col-sm-4 middle">
-      <div class="img-responsive center">
-      <%= link_to image_tag("filler1.png", alt: "img1", size: "300x150"), what_we_do_path, id: "im2" %>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut.</p>
-    </div>
-    <div class="col-sm-4">
-      <div class="img-responsive center">
-      <%= link_to image_tag("filler1.png", alt: "img1", size: "300x150"), what_we_do_path, id: "im3" %>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut. </p>
-    </div> -->
   </div>
 </div>
 
@@ -62,52 +38,32 @@
     	<div class="item active">
       		<%= link_to image_tag("carnival", alt: "carnival"), '#' %>
       		<div class="carousel-caption">
-      			<h3>Caption 1</h3>
-      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<h3><%= phrase('home-page-carousel-caption1') %></h3>
+      			<p><%= phrase('home-page-carousel-desc1') %></p>
       		</div>
     	</div>
 
     	<div class="item">
       		<%= link_to image_tag("carnival", alt: "carnival"), '#', class: "img-responsive center-block" %>
       		<div class="carousel-caption">
-      			<h3>Caption 1</h3>
-      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<h3><%= phrase('home-page-carousel-caption2') %></h3>
+      			<p><%= phrase('home-page-carousel-desc2') %></p>
       		</div>      		
     	</div>
 
     	<div class="item">
       		<%= link_to image_tag("carnival", alt: "carnival"), '#' %>
       		<div class="carousel-caption">
-      			<h3>Caption 1</h3>
-      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<h3><%= phrase('home-page-carousel-caption3') %></h3>
+      			<p><%= phrase('home-page-carousel-desc3') %></p>
       		</div>
     	</div>
 
     	<div class="item">
       		<%= link_to image_tag("carnival", alt: "carnival"), '#' %>
       		<div class="carousel-caption">
-      			<h3>Caption 1</h3>
-      			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      			<h3><%= phrase('home-page-carousel-caption4') %></h3>
+      			<p><%= phrase('home-page-carousel-desc4') %></p>
       		</div>      		
     	</div>
   	</div>
