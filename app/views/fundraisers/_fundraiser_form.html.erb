@@ -1,0 +1,10 @@
+<!-- Form for creating new fundraising progress bar -->
+
+<%= form_for(@new_fundraiser, url: { controller: 'fundraisers', 
+										  action: 'create' }) do |f| %>
+	<%= f.label :fundraising_progress %>
+	<%= f.text_field :progress, class: 'form-control' %>
+	<%= f.label :fundraising_target %>
+	<%= f.text_field :target, class: 'form-control' %>
+	<%= f.submit "Create new fundraiser", class: "btn btn-primary" %>
+<% end %>

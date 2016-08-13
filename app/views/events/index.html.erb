@@ -1,12 +1,17 @@
  <% provide(:title, "Events") %>
 
  <h1>List of all events</h1>
-
- <div class="container center">
+ <div class="container center events-calendar">
  	<%= render @events %>
  </div>
-
  <div class="container fundraising">
-	<h1><%= phrase('fundraising-title') %></h1>
-	<p><%= phrase('fundraising-description') %></p>
-</div>
+ 	<div class="container col-sm-4 col-sm-offset-4 new-fundraiser">
+ 		<% if admin? %>
+ 			<%= render 'fundraisers/fundraiser_form' %>
+		<% end %>
+ 	</div>
+ 	<div class="container center fundraiser">
+ 		<%= render partial: 'fundraisers/fundraiser', collection: @fundraisers %>	
+ 	</div>
+ </div>
+

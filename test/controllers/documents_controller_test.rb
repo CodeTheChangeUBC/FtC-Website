@@ -3,7 +3,7 @@ require 'test_helper'
 class DocumentsControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @documents = documents(:document)
+    @document = documents(:document)
     @user = users(:tester)
     @admin = users(:admin)
     @webpage_header = "FTC UBC"
@@ -49,5 +49,11 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
-
+  test "should redirect destroy when not admin" do
+    log_in_as(@user)
+    assert_no_difference 'Document.count' do
+      delete document_path(@document)
+    end
+    assert_redirected_to root_url
+  end
 end

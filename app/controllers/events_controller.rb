@@ -21,6 +21,10 @@ class EventsController < ApplicationController
 
 	def index
 		@events = Event.all
+		@fundraisers = Fundraiser.all
+		if admin?
+			@new_fundraiser = Fundraiser.new
+		end
 	end
 
 	def edit
