@@ -2,92 +2,46 @@
 
 <div class="jumbotron jumbotron-events">
 	<h1><%= phrase('what-we-do-title') %></h1>
-	<h2><%= phrase('what-we-do-subhead') %></h2>
 </div>
 
-<div class="container filler-events">
+<div class="container center events-filler-top">
+  <h3><%= phrase('what-we-do-top-description-head') %></h3>
 	<p><%= phrase('what-we-do-top-description') %></p>
 </div>
 
-<div class="container-fluid event-divs">
-	<div class="event-div-1">
-		<div class="img-responsive im1">
-			<%= link_to image_tag("filler1.png", alt: "img1", size: "150x150"), '#' %>
-		</div>
-		<p><%= phrase('what-we-do-info1') %></p>
-		<div class="btn-1">
-			<%= link_to "Link", '#', class: "btn btn-lg btn-primary" %> 
-		</div>
-	</div>
-
-	<div class="container-fluid event-div-2">
-		<div class="img-responsive im2">
-			<%= link_to image_tag("filler1.png", alt: "img1", size: "150x150"), '#' %>
-		</div>
-		<p><%= phrase('what-we-do-info2') %></p>
-		<div class="btn-2">
-			<%= link_to "Link", '#', class: "btn btn-lg btn-primary" %> 
-		</div>
-	</div>
+<div class="container what-we-do-info">
+  <div class="col-sm-8 tile tile-1 center">
+    <%= link_to image_tag("filler2.png"), '#' %>
+    <h3><%= phrase('what-we-do-1') %></h3>
+    <p><%= phrase('hover-text-1') %></p>
+  </div>
+  <div class="col-sm-4 tile tile-2 center">
+    <%= link_to image_tag("im2.png"), '#' %>
+    <h3><%= phrase('what-we-do-2') %></h3>
+    <p><%= phrase('hover-text-2') %></p>
+  </div>
+  <div class="col-sm-6 tile tile-3 center">
+    <%= link_to image_tag("filler1.png"), '#' %>
+    <h3><%= phrase('what-we-do-3') %></h3>
+    <p><%= phrase('hover-text-3') %></p>
+  </div>
+  <div class="col-sm-6 tile tile-4 center">
+    <%= link_to image_tag("filler4.png"), '#' %>
+    <h3><%= phrase('what-we-do-4') %></h3>
+    <p><%= phrase('hover-text-4') %></p>
+  </div>
+  <div class="col-sm-8 tile tile-5 center">
+    <%= link_to image_tag("filler3.png"), '#' %>
+    <h3><%= phrase('what-we-do-5') %></h3>
+    <p><%= phrase('hover-text-5') %></p>
+  </div>
+  <div class="col-sm-4 tile tile-6 center">
+    <%= link_to image_tag("im3.png"), '#' %>
+    <h3><%= phrase('what-we-do-6') %></h3>
+    <p><%= phrase('hover-text-6') %></p>
+  </div>
 </div>
 
-<div class="container filler-events">
+<div class="container center events-filler-bottom">
 	<p><%= phrase('what-we-do-bottom-description') %></p>
 </div>
-
-<div class="container">     
-	<div class="row">
-
-    	<div class="col-md-7">
-        	<a href="">
-            	<img class="img-responsive" src="http://cdn.freethechildren.com/wp-content/uploads/2015/12/who-we-are-1.jpg" alt="">
-       	 </a>
-    	</div>
-   	 	<div class="col-md-5">
-        	<h3><%= phrase('what-we-do-div1-head') %></h3>
-        	<h4><%= phrase('what-we-do-div1-subhead') %></h4>
-       	 	<p><%= phrase('what-we-do-div1-description') %></p>
-       	 	<%= link_to vow_of_silence_path do %>
-               Learn more
-               <span class="glyphicon glyphicon-chevron-right"></span>
-                <% end %>
-    	</div>
-	</div>
-	<hr>
-	<div class="row">
-    	<div class="col-md-7 col-md-push-5">
-        	<a href="#">
-            	<img class="img-responsive" src="http://cdn.freethechildren.com/wp-content/uploads/2015/12/who-we-are-3.jpg" alt="">
-       	 </a>
-    	</div>
-   	 <div class="col-md-5 col-md-pull-7">
-        	<h3><%= phrase('what-we-do-div2-head') %></h3>
-        	<h4><%= phrase('what-we-do-div2-subhead') %></h4>
-       	 	<p><%= phrase('what-we-do-div2-description') %></p>
-       	 	<%= link_to mini_we_day_path do %>
-               Learn more
-               <span class="glyphicon glyphicon-chevron-right"></span>
-            <% end %>
-    	</div>
-	</div>
-	<hr>
-	<div class="row">
-    	<div class="col-md-7">
-        	<a href="#">
-            	<img class="img-responsive" src="http://cdn.freethechildren.com/wp-content/uploads/2015/12/who-we-are-4.jpg" alt="">
-       	 </a>
-    	</div>
-   	 <div class="col-md-5">
-        	<h3><%= phrase('what-we-do-div3-head') %></h3>
-        	<h4><%= phrase('what-we-do-div3-subhead') %></h4>
-       	 	<p><%= phrase('what-we-do-div3-description') %></p>
-       	 	<%= link_to ee_dance_challenge_path do %>
-               Learn more
-               <span class="glyphicon glyphicon-chevron-right"></span>
-            <% end %>
-    	</div>
-	</div>
-</div>
-
-
-

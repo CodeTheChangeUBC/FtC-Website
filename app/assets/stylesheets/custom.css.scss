@@ -152,10 +152,11 @@ footer {
 .jumbotron-home {
   background: image-url("filler4.png");
   background-position: center;
+  background-size: cover;
   color: white;
   height: 90vh;
   .container-fluid {
-    padding-top: 100px;
+    padding-top: 95px;
   }
   .links {
     padding-top: 80px;
@@ -164,6 +165,7 @@ footer {
       padding-left: 40px;
       padding-right: 40px;
       background-color: $ftc_blue;
+      border-color: $ftc_blue;
       &:hover {
         text-decoration: underline;
       }
@@ -174,32 +176,63 @@ footer {
 .carousel-inner {
   text-align: center;
   height: 80vh;
-  background-color: $ftc_green;
-  .carousel-caption {
-    position: relative;
-    left: auto;
-    right: auto;
-    margin-left: 150px;
-    margin-right: 150px;
+  .slide-1 {
+    background: image-url("filler1.png");
+    background-size: cover;
+    height: 100%;
+    .carousel-caption {
+      
+    }
   }
-  img {
-      margin: 0 auto;
-      margin-top: 20px;
+  .slide-2 {
+    background: image-url("filler2.png");
+    background-size: cover;
+    height: 100%;
+    .carousel-caption {
+      color: $ftc_blue;
+    }
+  }
+  .slide-3 {
+    background: image-url("filler3.png");
+    background-size: cover;
+    height: 100%;
+    .carousel-caption {
+      color: $ftc_green;
+    }
+  }
+  .carousel-caption {
+    bottom: 0%;
+    transform: translateY(-50%);
+    h4 {
+      padding-top: 10px;
+      padding-bottom: 5px;
+    }
+    .btn {
+      background-color: yellow;
+      border-color: yellow;
+      color: black;
+      bottom: 0;
+      &:hover {
+        border-color: black;
+      }
+    }
   }
 }
 
 .homepage-mission {
-  margin-top: -30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: $ftc_blue;
+  height: 40vh;
   .container {
-    background-color: $ftc_blue;
+    background-color: white;
     text-align: left;
-    color: white;
+    color: gray;
     font-size: 150%;
     img {
       float: right;
+    }
+    .col-sm-8 {
+      border-style: solid;
+      border-width: 0 2px 0 0;
+      border-color: $ftc_green;
     }
   }
 }
@@ -221,7 +254,7 @@ footer {
 /* What-we-do Page */ 
 
 .jumbotron-events {
-  background-image: url('http://blacktieportraits.co.uk/wp-content/uploads/2013/06/IMG_5848a.jpg'); 
+  background: image-url("filler5.png");
   height: 50vh;
   h1 {
     color: black; 
@@ -236,55 +269,60 @@ footer {
   }
 } 
 
-.event-divs {
-  background-color: $ftc_green;
-  .event-div-1 {
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 10px;
-    padding-bottom: 30px;
+.events-filler-top {
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: $lighter_gray;
+  h3, p {
+    color: gray;
   }
-  .event-div-2 {
-    border-style: solid;
-    border-width: 1px 0px 0px 0px;
-    border-color: $light_gray;
-    padding-top: 20px;
-    margin-left: 85px;
-    margin-right: 85px;
-    padding-bottom: 10px;
-  }
-  .img-responsive {
-    border-style: solid;
-    border-color: black;
-    border-width: 4px;
-  }
-  .im1 {
-    float: left;
-    margin-right: 10px;
-  }
-  .im2 {
-    float: right;
-    margin-left: 5px;
-  }
-  .btn {
-    margin: auto;
-    background-color: $ftc_blue;
-    border-color: $ftc_blue;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .btn-1 {
-    margin-left: 460px;
-  }
-  .btn-2 {
-    margin-left: 460px;
+  p {
+    padding-bottom: 20px;
   }
 }
 
-.filler-events {
-  padding-top: 30px;
-  padding-bottom: 30px;
+.events-filler-bottom {
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: $lighter_gray;
+  p {
+    color: gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+
+.what-we-do-info {
+  h3 {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    color: white;
+  }
+  p {
+    position: absolute;
+    width: 100%;
+    top: 65%;
+    color: white;
+  } 
+  .tile {
+    height: 70vh;
+  }
+  img {
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 70vh;
+    width: 100%;
+    padding: 20px;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 /* Single Event Pages */

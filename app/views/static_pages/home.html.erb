@@ -15,10 +15,10 @@
 <div class="homepage-mission">
   <div class="container">
     <div class="col-sm-8">
-    <p><b><%= phrase('home-page-desc-bold') %></b><%= phrase('home-page-description') %></p>
+    <p><b><%= phrase('mission-statement-bold') %></b> <%= phrase('mission-statement') %></p>
     </div>
     <div class="col-sm-4 img-responsive">
-      <%= link_to image_tag("filler1.png", alt: "img1", size: "300x150"), what_we_do_path, id: "im1" %>
+      <%= link_to image_tag("im2.png", alt: "img1", size: "300x200"), what_we_do_path, id: "im1" %>
     </div>
   </div>
 </div>
@@ -30,41 +30,32 @@
     		<li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
     		<li data-target="#mainCarousel" data-slide-to="1"></li>
     		<li data-target="#mainCarousel" data-slide-to="2"></li>
-    		<li data-target="#mainCarousel" data-slide-to="3"></li>
   		</ol>
 
   	<!-- Wrapper for slides -->
   	<div class="carousel-inner" role="listbox">
-    	<div class="item active">
-      		<%= link_to image_tag("carnival", alt: "carnival"), '#' %>
+    	<div class="item active slide-1">
       		<div class="carousel-caption">
-      			<h3><%= phrase('home-page-carousel-caption1') %></h3>
-      			<p><%= phrase('home-page-carousel-desc1') %></p>
+      			<h2><%= phrase('home-page-carousel-caption1') %></h2>
+      			<h4><%= phrase('home-page-carousel-desc1') %></h4>
+            <%= link_to "Learn more", '#', class: "btn btn-lg btn-primary" %> 
       		</div>
     	</div>
 
-    	<div class="item">
-      		<%= link_to image_tag("carnival", alt: "carnival"), '#', class: "img-responsive center-block" %>
+    	<div class="item slide-2">
       		<div class="carousel-caption">
-      			<h3><%= phrase('home-page-carousel-caption2') %></h3>
-      			<p><%= phrase('home-page-carousel-desc2') %></p>
+      			<h2><%= phrase('home-page-carousel-caption2') %></h2>
+      			<h4><%= phrase('home-page-carousel-desc2') %></h4>
+            <%= link_to "Learn more", '#', class: "btn btn-lg btn-primary" %> 
       		</div>      		
     	</div>
 
-    	<div class="item">
-      		<%= link_to image_tag("carnival", alt: "carnival"), '#' %>
+    	<div class="item slide-3">
       		<div class="carousel-caption">
-      			<h3><%= phrase('home-page-carousel-caption3') %></h3>
-      			<p><%= phrase('home-page-carousel-desc3') %></p>
+      			<h2><%= phrase('home-page-carousel-caption3') %></h2>
+      			<h4><%= phrase('home-page-carousel-desc3') %></h4>
+            <%= link_to "Learn more", '#', class: "btn btn-lg btn-primary" %> 
       		</div>
-    	</div>
-
-    	<div class="item">
-      		<%= link_to image_tag("carnival", alt: "carnival"), '#' %>
-      		<div class="carousel-caption">
-      			<h3><%= phrase('home-page-carousel-caption4') %></h3>
-      			<p><%= phrase('home-page-carousel-desc4') %></p>
-      		</div>      		
     	</div>
   	</div>
 
