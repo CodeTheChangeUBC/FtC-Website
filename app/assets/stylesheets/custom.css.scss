@@ -325,6 +325,19 @@ footer {
   }
 }
 
+/* Events Index */
+
+.jumbotron-all-events {
+  background: image-url('filler6'); 
+  height: 50vh;
+  h1, h2, h3 {
+    color: white; 
+    text-align: center;
+    padding-top: 70px;
+  }
+} 
+
+
 /* Single Event Pages */
 
 .jumbotron-event {

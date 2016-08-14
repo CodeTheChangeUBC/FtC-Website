@@ -3,14 +3,7 @@
 	<p><%= phrase('fundraising-description-' + (fundraiser_counter+1).to_s) %></p>
 	Fundraising Goal: <%= fundraiser.target %> 
 	Fundraising Progress: <%= fundraiser.progress %> 
-
 	<% if admin? %>
-		<%= form_for(fundraiser, :url => fundraiser_path(fundraiser), action: 'update') do |f| %>
-			<%= f.label :fundraising_progress %>
-    		<%= f.text_field :progress, class: 'form-control' %>
-    		<%= f.label :fundraising_target %>
-    		<%= f.text_field :target, class: 'form-control' %>
-    		<%= f.submit "Update", class: "btn btn-primary" %>
-		<% end %>
+		<%= render 'fundraisers/update_fundraiser_modal', fundraiser: fundraiser %>
 	<% end %>
 </li>
