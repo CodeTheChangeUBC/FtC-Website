@@ -21,9 +21,10 @@
           <ul class="nav navbar-nav navbar-right">
            <!-- Change view if user is logged in -->
            <% if logged_in? %>
+              <li><%= link_to "Club Documents", documents_path %></li>
+              <li><%= link_to "Blog", articles_path %></li>
             <% if admin? %>
-              <li><%= link_to "All Users", users_path %></li>
-              <%= render 'layouts/admin_actions' %>
+              <li><%= link_to "All Members", users_path %></li>
             <% else %>
               <li><%= link_to "The Team", users_path %></li>
             <% end %>

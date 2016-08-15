@@ -8,7 +8,7 @@
 <br />
 <div class="container">
  <% if admin? %>
-   <%= link_to "New Document", new_document_path, class: "btn btn-primary" %>
+   <%= render 'documents/new_document_modal', new_document: @document %>
  <% end %>
  <br />
  <br />

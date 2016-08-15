@@ -3,10 +3,7 @@ class DocumentsController < ApplicationController
   
   def index
   	@documents = Document.all.paginate(page: params[:page])
-  end
-
-  def new
-  	@document = Document.new
+    @document = Document.new
   end
 
   def create
@@ -15,7 +12,9 @@ class DocumentsController < ApplicationController
   		flash[:success] = "Document uploaded successfully."
   		redirect_to documents_path
   	else
-  		render :new
+  		render :index
+      flash[:warning] = "Failed to upload document. 
+                        Please ensure the extension is one of .pdf .doc .docx .html or .htm."
   	end
   end
 

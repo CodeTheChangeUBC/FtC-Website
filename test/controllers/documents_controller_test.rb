@@ -20,21 +20,18 @@ class DocumentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new when admin" do
     log_in_as(@admin)
-    get new_document_url
-    assert_response :success
-    assert_select "title", "Upload Document | " + @webpage_header
+    get documents_url
+    assert_select 'button#new-document'
+    assert_select "title", "Documents | " + @webpage_header
   end
 
-  test "should redirect new when not admin" do
+  test "should not have access to new when not admin" do
     # Public 
-    get new_document_url
-    assert_not flash.empty?
-    assert_redirected_to root_url
+    get documents_url
+    assert_select 'button#new-document', count: 0
     # Regular member
     log_in_as(@user)
-    get new_document_url
-    assert_not flash.empty?
-    assert_redirected_to root_url
+    assert_select 'button#new-document', count: 0
   end
 
   test "should redirect create when not admin" do

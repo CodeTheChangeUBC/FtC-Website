@@ -1,0 +1,34 @@
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#newDocument" id="new-document">New Document</button>
+<div id="newDocument" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Upload Document</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row new-document">
+          <div class="col-md-8 col-md-offset-2">
+            <p><em>Please note that the name of the document when downloaded will be the same as the attachment name when uploading. The name field is simply for display purposes on the site.</em></p>
+            <br />
+            <%= form_for new_document, html: { multipart: true }, url: { controller: 'documents', action: 'create' } do |f| %>
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+              <%= f.label :attachment %>
+              <%= f.file_field :attachment, class: 'form-control' %>
+              <%= f.label :public, class: 'checkbox inline' do %>
+                <%= f.check_box :public %>
+                <span>Check if this document is public</span>
+              <% end %> 
+              <%= f.submit "Save", class: "btn btn-primary" %>
+            <% end %>
+            <br />
+            </div> 
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

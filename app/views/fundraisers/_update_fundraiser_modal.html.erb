@@ -4,18 +4,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Update Modal</h4>
+        <h4 class="modal-title">Update Fundraiser Goals and progress</h4>
       </div>
-      <div class="modal-body">
-        <div class="container col-sm-4 col-sm-offset-4 new-fundraiser", style="padding-top: 15px;">
-          <%= form_for(fundraiser, :url => fundraiser_path(fundraiser), action: 'update') do |f| %>
-            <%= f.label :fundraising_progress %>
-            <%= f.text_field :progress, class: 'form-control' %>
-            <%= f.label :fundraising_target %>
-            <%= f.text_field :target, class: 'form-control' %>
-            <%= f.submit "Update", class: "btn btn-primary" %>
+      <div class="container col-sm-4 col-sm-offset-4 update-fundraiser", style="padding-top: 15px;">
+        <%= form_for(fundraiser, :url => fundraiser_path(fundraiser), action: 'update') do |f| %>
+          <%= f.label :fundraising_progress %>
+          <%= f.text_field :progress, class: 'form-control' %>
+          <%= f.label :fundraising_target %>
+          <%= f.text_field :target, class: 'form-control' %>
+          <%= f.submit "Update", class: "btn btn-primary" %>
         <% end %>
-        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
