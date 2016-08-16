@@ -1,9 +1,20 @@
 <% provide(:title, @article.title) %>
 
- <h1>Show a single event</h1>
-
- <div class="container center">
- 	<h1><%= @article.title %></h1>
- 	<h4>Description:</h4>
- 	<p><%= @article.text %></p>
- </div>
+<div class="container-fluid article-title">
+	<h1><%= @article.title %> 
+	<% if admin? %>
+ 	 | <%= render 'update_article_modal' %> 
+ 	 <br />
+ 	<% end %> </h1>
+	<p>Posted <%= time_ago_in_words(@article.created_at) %> ago
+	| <%= link_to "Back to all articles", articles_path %></p>
+	
+</div>
+<div class="container center article-main">
+ 	<div class="container image-holder">
+ 		<!-- TODO Implement image(s) for blog posts -->
+ 	</div>
+ 	<div class="col-sm-8 col-sm-offset-2 description">
+ 		<p><%= @article.text %></p>	
+ 	</div>	
+</div>

@@ -18,10 +18,11 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new if admin" do
   	log_in_as(@admin)
-    get new_article_path
+    get articles_path
     assert_response :success
+    assert_select "button"
     assert flash.empty?
-    assert_select "title", "New Article | " + @webpage_header
+    assert_select "title", "Club Updates | " + @webpage_header
   end
 
   test "should get edit if admin" do
@@ -32,16 +33,14 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Edit Article | " + @webpage_header
   end
  
-  test "should redirect new when not admin" do
+  test "should not have new when not admin" do
   	# Nobody logged in. 
-  	get new_article_path
-  	assert_not flash.empty?
-  	assert_redirected_to root_url
-  	# Logged in as regular user
+  	get articles_path
+  	assert_select "button#new-article", count: 0
+    # Logged in as regular user
   	log_in_as(@user)
-  	get new_article_path
-  	assert_not flash.empty?
-  	assert_redirected_to root_url
+  	get articles_path
+  	assert_select "button#new-article", count: 0
   end
 
   test "should redirect edit when not admin" do

@@ -3,3 +3,9 @@
 article1:
   title: MyString
   text: MyText
+
+<% 30.times do |i| %>
+article_<%= i %>:
+  title: <%= "Article #{i}" %>
+  text: <%= "This is an article" %>
+<% end %>

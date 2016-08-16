@@ -45,6 +45,5 @@
 
 - Allow users to sign up for event
 - Update a user's profile to reflect their events
-- Integrate a Content Management System for easy handoff
 
 

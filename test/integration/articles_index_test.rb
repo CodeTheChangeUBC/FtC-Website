@@ -12,10 +12,11 @@ class ArticlesIndexTest < ActionDispatch::IntegrationTest
     log_in_as(@admin)
     get articles_path
     assert_template 'articles/index'
-    @articles = Article.all
+    assert_select 'div.pagination'
+    @articles = Article.first(5)
     @articles.each do |article|
       assert_select 'a[href=?]', article_path(article), text: article.title
-      assert_select 'a[href=?]', article_path(article), text: 'delete'
+      assert_select 'a[href=?]', article_path(article), text: 'Delete'
     end
     assert_difference 'Article.count', -1 do
       delete article_path(@article)

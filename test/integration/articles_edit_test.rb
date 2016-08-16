@@ -10,7 +10,7 @@ class ArticlesEditTest < ActionDispatch::IntegrationTest
   test "successful edit" do
     log_in_as(@admin)
    	get edit_article_path(@article)
-  	assert_template 'articles/edit'
+    assert_template 'articles/edit'
   	patch article_path(@article), params: { article: { title: "New title", 
   												       text: "New text" } }
 	  assert_not flash.empty?
@@ -22,16 +22,20 @@ class ArticlesEditTest < ActionDispatch::IntegrationTest
 
   test "unsuccesful edit due to no title" do 
      log_in_as(@admin)
-	   patch article_path(@article), params: { article: { title: "", 
+     get edit_article_path(@article)
+     assert_template 'articles/edit'
+     patch article_path(@article), params: { article: { title: "", 
 	                                      		  	     text: @article.text } }
-	   assert_template 'articles/edit'
+	   assert_not_equal @article.title, ""
   end
 
   test "unsuccesful edit due to no text" do 
   	 log_in_as(@admin)
+     get edit_article_path(@article)
+     assert_template 'articles/edit'
 	   patch article_path(@article), params: { article: { title: @article.title, 
 	                                		  	      text: "" } }
-	   assert_template 'articles/edit'
+	   assert_not_equal @article.text, ""
   end
 
 end

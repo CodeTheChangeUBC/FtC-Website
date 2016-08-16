@@ -1,17 +1,13 @@
 class ArticlesController < ApplicationController
 	before_action :admin_user, only: [:new, :edit, :update, :destroy]
 
-	def new
-	    @article = Article.new
-	end
-
 	def create
 		@article = Article.new(event_params)
 		if @article.save
 			flash[:success] = "Article created successfully"
-			redirect_to @article
+			redirect_to articles_path
 		else 
-			render :new
+			render articles_path
 		end
 	end
 
@@ -20,7 +16,9 @@ class ArticlesController < ApplicationController
 	end
 
 	def index
-		@articles = Article.all
+		@articles = Article.all.order('created_at desc').paginate(page: params[:page], 
+																  per_page: 10)
+		@article = Article.new
 	end
 
 	def edit
@@ -33,7 +31,8 @@ class ArticlesController < ApplicationController
 			flash[:success] = "Article updated!"
 			redirect_to @article
 		else
-			render :edit
+			flash[:warning] = "Update failed."
+			redirect_to @article
 		end
 	end
 

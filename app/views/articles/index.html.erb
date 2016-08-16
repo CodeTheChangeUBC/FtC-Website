@@ -1,7 +1,17 @@
 <% provide(:title, "Club Updates") %>
 
- <h1>Blog</h1>
-
- <div class="container center">
- 	<%= render @articles %>
- </div>
+<div class="jumboton jumbotron-articles">
+	<h1><%= phrase('club-updates-title') %></h1>
+	<h2><% if admin? %>
+		<%= render 'articles/new_article_modal' %>
+	<% end %> </h2>
+</div>
+<div class="center"><%= will_paginate %></div>
+<div class="container article-index">
+	<div class="container">
+ 		<%= render @articles %>
+ 	</div>
+</div>
+<div class="center"><%= will_paginate %></div>
+ 
+ 

@@ -1,10 +1,10 @@
 <!-- Partial for article form -->
 
-<%= form_for(@article) do |f| %>
+<%= form_for(@article, action: yield(:form_action)) do |f| %>
 	<% @object = @article %>
 	<%= render 'shared/error_messages' %>
     <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
     <%= f.text_area :text, placeholder: 'Write your heart out!', class: 
    		'form-control' %>
-    <%= f.submit "Post Update!", class: "btn btn-primary" %>
+    <%= f.submit yield(:form_button), class: "btn btn-primary" %>
 <% end %>

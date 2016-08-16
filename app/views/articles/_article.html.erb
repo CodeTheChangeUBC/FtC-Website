@@ -1,16 +1,25 @@
 <!-- Partial for showing a single article. Each article on index page
 is subject to this styling. -->
 
-<li>
-  <h2><%= link_to article.title, article %></h2>
-  <p><%= article.text %> </p>
-  <p>Posted <%= time_ago_in_words(article.created_at) %> ago
-  <% if admin? %>
-  	| <%= link_to "delete", article, 
-  							method: :delete, 
-  							data: { confirm: "Are you sure you want to delete 
-  											 #{article.title}?" } %>
-  <% end %>
-  </p>
-	
-</li>
+<div class="col-sm-8 col-sm-offset-2 article-partial">
+  <div class="col-sm-4 article-picture">
+    TODO: Primary picture will go here. 
+  </div>
+  <div class="col-sm-8 article-text">
+    <h2><%= link_to article.title, article_path(article) %></h2>
+    <p id="text"> <%= article.text[0..200] %>
+    <% if article.text.length >= 200 %>
+      ... <%= link_to "See more", article_path(article) %> </p>
+    <% end %>
+    <p id="errata">
+      Posted <%= time_ago_in_words(article.created_at) %> ago
+      <% if admin? %>
+        | <%= link_to "Delete", article, 
+                method: :delete, 
+                data: { confirm: "Are you sure you want to delete 
+                         #{article.title}?" } %>
+        | <%= link_to "Update", article_path(article) %>
+      <% end %>
+    </p>
+  </div>
+</div>

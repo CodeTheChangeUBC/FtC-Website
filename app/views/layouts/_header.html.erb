@@ -22,7 +22,7 @@
            <!-- Change view if user is logged in -->
            <% if logged_in? %>
               <li><%= link_to "Club Documents", documents_path %></li>
-              <li><%= link_to "Blog", articles_path %></li>
+              <li><%= link_to "Club Updates", articles_path %></li>
             <% if admin? %>
               <li><%= link_to "All Members", users_path %></li>
             <% else %>

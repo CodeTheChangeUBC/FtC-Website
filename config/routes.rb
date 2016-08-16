@@ -23,8 +23,8 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :events
-  resources :articles
+  resources :articles,            only: [:index, :create, :update, :destroy, :edit, :show]
   resources :documents,           only: [:index, :create, :destroy]
-  resources :fundraisers,          only: [:create, :update, :destroy]
+  resources :fundraisers,         only: [:create, :update, :destroy]
   
 end
