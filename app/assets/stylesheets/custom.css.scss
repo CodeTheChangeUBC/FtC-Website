@@ -4,7 +4,11 @@
 /* CSS file for the custom styling of the site. Styles here will be 
 applied globally. */
 
-/* Variables */
+
+/* =================================================
+================== VARIABLES =======================
+===================================================*/
+
 
 $white: #fff;
 $lighter_gray: rgb(230,230,230);
@@ -24,7 +28,11 @@ $ftc_green: #29B349;
   box-sizing:         border-box;
 }
 
-/* universal */
+
+/* =================================================
+=================== UNIVERSAL ======================
+===================================================*/
+
 
 body {
   padding-top: 60px;
@@ -45,7 +53,11 @@ textarea {
   }
 }
 
-/* header */
+
+/* =================================================
+====================== HEADER ======================
+===================================================*/
+
 
 .navbar {
   background-color: $white; 
@@ -109,7 +121,11 @@ textarea {
  }
 	
 
-/* Footer */
+
+/* =================================================
+===================== FOOTER =======================
+===================================================*/
+
 
 footer {
   margin-top: 50px;
@@ -147,7 +163,11 @@ footer {
   }
 }
 
-/* Homepage Page */ 
+
+/* =================================================
+=================== HOMEPAGE =======================
+===================================================*/
+
 
 .jumbotron-home {
   background: image-url("filler4.png");
@@ -238,7 +258,10 @@ footer {
   }
 }
 
-/* Who we are (about) page */ 
+
+/* =================================================
+================ WHO WE ARE ========================
+===================================================*/
 
 .jumbotron-about {
   background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
@@ -253,7 +276,9 @@ footer {
 }
 
 
-/* What-we-do Page */ 
+/* =================================================
+============ WHAT WE DO ============================
+===================================================*/
 
 .jumbotron-events {
   background: image-url("filler5.png");
@@ -328,7 +353,11 @@ footer {
   }
 }
 
-/* Events Index */
+
+/* =================================================
+============ EVENTS AND FUNDRAISERS ================
+===================================================*/
+
 
 .jumbotron-all-events {
   background: image-url('filler6'); 
@@ -341,8 +370,16 @@ footer {
   }
 } 
 
+.jumbotron-fundraising {
+  background: image-url('filler3'); 
+  height: 30vh;
+  h1, h2, h3 {
+    color: white; 
+    text-align: center;
+    padding-top: 40px;
+  }
+} 
 
-/* Single Event Pages */
 
 .jumbotron-event {
   background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
@@ -376,8 +413,6 @@ footer {
   }
 }
 
-/* Edit Event page */ 
-
 .create-event {
   h2 {
     color: $light_gray;
@@ -385,7 +420,51 @@ footer {
   }
 }
 
-/* Club Updates (Articles) */ 
+.fundraiser {
+  h1 {
+    padding-bottom: 20px;
+    color: gray;
+  }
+  .col-sm-4 {
+    text-align: right;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: $lighter_gray;
+    h3 {
+      b {
+        color: $ftc_blue;
+      }
+    }
+  }
+  .col-sm-8 {
+    text-align: left;
+    padding-bottom: 20px;
+  }
+  .fundraising-bar {
+    padding-bottom: 25%;
+  }
+  #fundraising-bar {
+    background-color: $lighter_gray;
+    border-radius: 35px;
+    padding-top: 3px;
+    height: 40px;
+    div {
+      background-color: $ftc_green;
+      height: 90%;
+      border-radius: 20px;
+      p {
+        color: white;
+        padding-top: 7px;
+      }
+    }
+  }
+}
+
+
+/* =================================================
+================== ARTICLES ========================
+===================================================*/
+ 
 
 .jumbotron-articles {
   background: image-url('filler6'); 
@@ -457,8 +536,6 @@ footer {
   }
 }
 
-/* Edit of club updates */
-
 .create-update {
   h2 {
     color: $light_gray;
@@ -466,7 +543,11 @@ footer {
   }
 }
 
-/* New Document */
+
+/* =================================================
+============== CLUB DOCUMENTS ======================
+===================================================*/
+
 
 .new-document {
   padding-top: 30px;
@@ -481,7 +562,11 @@ footer {
   }
 }
 
-/* Contact Page */ 
+
+/* =================================================
+============ CONTACT PAGE ==========================
+===================================================*/
+
 
 .contact-main {
   padding-top: 40px;
@@ -509,7 +594,10 @@ footer {
   }
 }
 
-/* Get Involved Page AND user edit page */ 
+
+/* =================================================
+============ GET INVOLVED ==========================
+===================================================*/
 
 .jumbotron-involved {
   background: image-url('filler3'); 
@@ -596,6 +684,12 @@ input[type=file] {
   }
 }
 
+
+/* =================================================
+============ USERS EDIT ============================
+===================================================*/
+
+
 .edit-info {
   background-color: $lighter_gray;
   border-radius: 10px;
@@ -626,7 +720,11 @@ input[type=file] {
   }
 }
 
-/* Log in Page */ 
+
+/* =================================================
+============= LOGIN PAGE ===========================
+===================================================*/
+
 
 .checkbox {
   margin-top: -10px;
@@ -694,7 +792,11 @@ input[type=file] {
   margin-left: 0;
 }
 
-/* Users Index Page */ 
+
+/* =================================================
+============ USERS INDEX ===========================
+===================================================*/
+
 
 .users {
   list-style: none;

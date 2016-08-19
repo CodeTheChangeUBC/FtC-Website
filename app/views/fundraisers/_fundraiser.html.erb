@@ -1,9 +1,29 @@
-<li class="center fundraising-bar">
-	<h1><%= phrase('fundraising-title-' + (fundraiser_counter+1).to_s) %></h1>
-	<p><%= phrase('fundraising-description-' + (fundraiser_counter+1).to_s) %></p>
-	Fundraising Goal: <%= fundraiser.target %> 
-	Fundraising Progress: <%= fundraiser.progress %> 
+<% fundraising_progress = (fundraiser.progress.to_f/fundraiser.target)*100 %>
+
+<div class="container fundraiser">
+	<h1>Fundraiser Title</h1>
 	<% if admin? %>
-		<%= render 'fundraisers/update_fundraiser_modal', fundraiser: fundraiser %>
+		<p><%= link_to "Edit Fundraiser", edit_fundraiser_path(fundraiser) %></p>
 	<% end %>
-</li>
+	<div class="col-sm-4">
+		<h3>Raised: <b><%= fundraiser.progress %></b></h3>
+		<h3>Goal: <b><%= fundraiser.target %></b></h3>	
+	</div>
+	<div class="col-sm-8">
+		<div class="col-sm-8">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+	</div>
+	<div class="fundraising-bar">
+		<div class="col-sm-10 col-sm-offset-1 center" id="fundraising-bar">
+			<div style="width: <%= fundraising_progress %>%">
+				<p><b><%= fundraising_progress %>%</b></p>
+			</div>
+		</div>
+	</div>
+</div>

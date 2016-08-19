@@ -12,6 +12,10 @@ class FundraisersController < ApplicationController
 		end
 	end
 
+	def edit
+		@fundraiser = Fundraiser.find(params[:id])
+	end
+
 	def update
 		@fundraiser = Fundraiser.find(params[:id])
 		if @fundraiser.update_attributes(fundraiser_params)

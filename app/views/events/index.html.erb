@@ -6,13 +6,15 @@
  <div class="container center events-calendar">
  	<%= render @events %>
  </div>
- <div class="container fundraising" id="fundraising">
+ <div class="jumbotron jumbotron-fundraising">
  	<h2><%= phrase('fundraising-progress-header') %></h2>
+ </div>
+ <div class="container fundraising" id="fundraising">
  	<% if admin? %>
 	 	<%= render 'fundraisers/new_fundraiser_modal' %>
 	<% end %>
  	<div class="container center fundraiser">
- 		<%= render partial: 'fundraisers/fundraiser', collection: @fundraisers %>	
+ 			<%= render partial: 'fundraisers/fundraiser', collection: @fundraisers %>	
  	</div>
  </div>
 

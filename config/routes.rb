@@ -25,6 +25,6 @@ Rails.application.routes.draw do
   resources :events
   resources :articles,            only: [:index, :create, :update, :destroy, :edit, :show]
   resources :documents,           only: [:index, :create, :destroy]
-  resources :fundraisers,         only: [:create, :update, :destroy]
+  resources :fundraisers,         only: [:create, :edit, :update, :destroy] 
   
 end
