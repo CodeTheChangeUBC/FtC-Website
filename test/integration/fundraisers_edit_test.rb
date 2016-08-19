@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FundraisersUpdateTest < ActionDispatch::IntegrationTest
+class FundraisersEditTest < ActionDispatch::IntegrationTest
   
   def setup 
   	@fundraiser = fundraisers(:fundraiser)
@@ -10,7 +10,9 @@ class FundraisersUpdateTest < ActionDispatch::IntegrationTest
 
   test "should not update when not logged in" do
   	patch fundraiser_path(@fundraiser), params: { fundraiser: { progress: 0,
-  										                             target: 0 } }
+  										                                          target: 0, 
+                                                                title: @fundraiser.title, 
+                                                                description: @fundraiser.description } }
   	assert_not_equal 0, @fundraiser.progress
   	assert_not_equal 0, @fundraiser.target
   end
@@ -18,7 +20,9 @@ class FundraisersUpdateTest < ActionDispatch::IntegrationTest
   test "should not update when regular user" do
   	log_in_as(@non_admin)
   	patch fundraiser_path(@fundraiser), params: { fundraiser: { progress: 1,
-  										                             target: 2 } }
+  										                                          target: 2, 
+                                                                title: @fundraiser.title, 
+                                                                description: @fundraiser.description } }
   	assert_not_equal 0, @fundraiser.progress
   	assert_not_equal 0, @fundraiser.target
   end
@@ -26,7 +30,9 @@ class FundraisersUpdateTest < ActionDispatch::IntegrationTest
   test "successful update from admin" do
   	log_in_as(@admin)
   	patch fundraiser_path(@fundraiser), params: { fundraiser: { progress: 1000,
-  										                             target: 2000 } }
+  										                                          target: 2000, 
+                                                                title: @fundraiser.title, 
+                                                                description: @fundraiser.description } }
     @fundraiser.reload
   	assert_equal 1000, @fundraiser.progress
   	assert_equal 2000, @fundraiser.target

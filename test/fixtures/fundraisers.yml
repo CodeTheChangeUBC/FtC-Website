@@ -1,5 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 fundraiser:
+  title: "title"
   target: 1000
   progress: 500
+  description: "description"

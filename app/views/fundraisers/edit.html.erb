@@ -3,10 +3,14 @@
 <div class="col-sm-4 col-sm-offset-4 edit-fundraiser">
 	<h4>Edit Fundraiser</h4>
 	<%= form_for(@fundraiser) do |f| %>
-          <%= f.label :fundraising_progress %>
-          <%= f.text_field :progress, class: 'form-control' %>
-          <%= f.label :fundraising_target %>
-          <%= f.text_field :target, class: 'form-control' %>
-          <%= f.submit "Update", class: "btn btn-primary" %>
+	  <%= f.label :fundraier_title %>
+	  <%= f.text_field :title, class: 'form-control' %>
+      <%= f.label :fundraising_progress %>
+      <%= f.text_field :progress, class: 'form-control' %>
+      <%= f.label :fundraising_target %>
+      <%= f.text_field :target, class: 'form-control' %>
+      <%= f.label :description %>
+	  <%= f.text_field :description, class: 'form-control' %>
+      <%= f.submit "Update", class: "btn btn-primary" %>
      <% end %>
 </div>

@@ -3,6 +3,9 @@ class Fundraiser < ApplicationRecord
 					   numericality: { greater_than: 0 }
 	validates :progress, presence: true, 
 					     numericality: { greater_than_or_equal_to: 0 }
+	validates :title, presence: true
+	validates :description, presence: true, 
+							length: { maximum: 500 }
 	validate :valid_fundraising_values
 	
 	private 

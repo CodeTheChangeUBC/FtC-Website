@@ -12,7 +12,9 @@ class FundraisersControllerTest < ActionDispatch::IntegrationTest
   	log_in_as(@non_admin) 
   	assert_no_difference 'Fundraiser.count' do
   		post fundraisers_path, params: { fundraiser: { target: 1000, 
-  													   progress: 100 } }
+  													   progress: 100, 
+                               title: @fundraiser.title, 
+                               description: @fundraiser.description } }
   	end
   	assert_redirected_to root_url
   end
@@ -21,17 +23,33 @@ class FundraisersControllerTest < ActionDispatch::IntegrationTest
   	log_in_as(@non_admin) 
   	assert_no_difference 'Fundraiser.count' do
   		post fundraisers_path, params: { fundraiser: { target: 1000, 
-  													   progress: 100 } }
+  													   progress: 100, 
+                               title: @fundraiser.title, 
+                               description: @fundraiser.description } }
   	end
   	assert_redirected_to root_url
   end
 
-  test "succesful create when admin" do
+  test "successful create when admin" do
   	log_in_as(@admin)
   	assert_difference 'Fundraiser.count', 1 do
   		post fundraisers_path, params: { fundraiser: { target: 1000, 
-  													   progress: 100 } }
+  													   progress: 100, 
+                               title: "Title",
+                               description: "Description" } }
   	end
   end
-  
+
+  test "should redirect edit when not admin" do
+    log_in_as(@non_admin)
+    get edit_fundraiser_path(@fundraiser)
+    assert_not flash.empty?
+    patch fundraiser_path(@fundraiser), params: { fundraiser: { 
+                               target: 1000, 
+                               progress: 100, 
+                               title: @fundraiser.title, 
+                               description: @fundraiser.description } }
+    assert_not flash.empty?
+    assert_redirected_to root_url
+  end
 end

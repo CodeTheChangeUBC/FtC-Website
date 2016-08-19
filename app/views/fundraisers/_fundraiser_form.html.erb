@@ -2,9 +2,13 @@
 
 <%= form_for(@new_fundraiser, url: { controller: 'fundraisers', 
 										  action: 'create' }) do |f| %>
+	<%= f.label :fundraiser_title %>
+	<%= f.text_field :title, class: 'form-control' %>
 	<%= f.label :fundraising_progress %>
 	<%= f.text_field :progress, class: 'form-control' %>
 	<%= f.label :fundraising_target %>
 	<%= f.text_field :target, class: 'form-control' %>
+	<%= f.label :description %>
+	<%= f.text_area :description, class: 'form-control' %>
 	<%= f.submit "Create new fundraiser", class: "btn btn-primary" %>
 <% end %>

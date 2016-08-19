@@ -1,5 +1,5 @@
 class FundraisersController < ApplicationController
-	before_action :admin_user, only: [:create, :update, :destroy]
+	before_action :admin_user, only: [:create, :update, :destroy, :edit]
 
 	def create 
 		@fundraiser = Fundraiser.new(fundraiser_params)
@@ -37,6 +37,6 @@ class FundraisersController < ApplicationController
 	private 
 
 		def fundraiser_params
-			params.require(:fundraiser).permit(:target, :progress)
+			params.require(:fundraiser).permit(:target, :progress, :title, :description)
 		end
 end
