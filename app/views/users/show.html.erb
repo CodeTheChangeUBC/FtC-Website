@@ -12,6 +12,9 @@
     <h3>Their Upcoming Events</h3>
   <% end %>
 </div>
+<div class="user-upcoming-events">
+    <%= render partial: 'user_event', collection: @user.events %>
+</div>
 
 <% if current_user == @user %>
   <div class="container">

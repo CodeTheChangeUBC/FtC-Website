@@ -1,9 +1,23 @@
  <% provide(:title, @event.title) %>
 
  <h1>Show a single event</h1>
+ <p><%= link_to "Back to all Events", events_url %></p>
 
  <div class="container center">
  	<h1><%= @event.title %></h1>
  	<h4>Description:</h4>
  	<p><%= @event.description %></p>
+ 	<% if admin? %>
+  	<%= link_to "Update", edit_event_path(@event) %>
+  	| <%= link_to "Delete", @event, 
+  							method: :delete, 
+  							data: { confirm: "Are you sure you want to delete 
+  											 #{@event.title}?" } %>
+  	<% end %>
+  	<p>
+  	<% if logged_in? && !current_user.events.include?(@event) %>
+      <%= link_to "Sign up", home_signup_path(event_id: @event.id) %>
+    <% elsif logged_in? && current_user.events.include?(@event) %>
+      <%= link_to "Opt out of Event", home_optout_path(event_id: @event.id) %>
+    <% end %>
  </div>

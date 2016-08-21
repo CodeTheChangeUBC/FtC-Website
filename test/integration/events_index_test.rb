@@ -15,7 +15,7 @@ class EventsIndexTest < ActionDispatch::IntegrationTest
     @events = Event.all
     @events.each do |event|
       assert_select 'a[href=?]', event_path(event), text: event.title
-      assert_select 'a[href=?]', event_path(event), text: 'delete'
+      assert_select 'a[href=?]', event_path(event), text: 'Delete'
     end
     assert_difference 'Event.count', -1 do
       delete event_path(@event)

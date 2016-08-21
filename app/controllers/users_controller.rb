@@ -14,8 +14,8 @@ class UsersController < ApplicationController
 
   def index
     # Show users iff they are activated
-    @execs = User.where(exec: true, activated: true)
-    @users = User.where(exec: false, activated: true).paginate(page: params[:page])
+    @execs = User.where(exec: true, activated: true, admin: false)
+    @users = User.where(exec: false, activated: true, admin: false).paginate(page: params[:page])
   end
 
   def create 
@@ -46,6 +46,24 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url 
+  end
+
+  def sign_up_for_event
+    @event = Event.find(params[:event_id])
+    @user = current_user
+    if @user.sign_up_for_event(@event)
+      flash[:success] = "You've been signed up for #{@event.title}!"
+    end
+    redirect_to @event
+  end
+
+  def opt_out_of_event
+    @event = Event.find(params[:event_id])
+    @user = current_user
+    if @user.opt_out_of_event(@event)
+      flash[:info] = "You're no longer signed up for #{@event.title}"
+    end
+    redirect_back_or events_url
   end
 
   private 

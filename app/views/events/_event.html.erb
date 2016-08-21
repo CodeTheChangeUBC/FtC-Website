@@ -1,13 +1,18 @@
 <!-- Partial for showing a single minor event. Each minor event on index page
 is subject to this styling. -->
 
-<li>
+<div>
   <h2><%= link_to event.title, event %></h2>
   <% if admin? %>
-  	| <%= link_to "delete", event, 
+  	<%= link_to "Update", edit_event_path(event) %>
+  	| <%= link_to "Delete", event, 
   							method: :delete, 
   							data: { confirm: "Are you sure you want to delete 
   											 #{event.title}?" } %>
   <% end %>
-	
-</li>
+  <% if logged_in? && !current_user.events.include?(event) %>
+  	<%= link_to "Sign up", home_signup_path(event_id: event.id) %>
+  <% elsif logged_in? && current_user.events.include?(event) %>
+  	<%= link_to "Opt out of Event", home_optout_path(event_id: event.id) %>
+  <% end %>
+</div>

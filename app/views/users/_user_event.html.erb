@@ -1,0 +1,6 @@
+<div class="user-event">
+	<h2><%= user_event.title %></h2>
+	<% if @user == current_user %>
+		<p><%= link_to "Opt out of Event", home_optout_path(event_id: user_event.id) %></p>
+	<% end %>
+</div>

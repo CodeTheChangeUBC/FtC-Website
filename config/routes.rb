@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post    '/login',                          to: 'sessions#create'
   delete  '/logout',                         to: 'sessions#destroy'
   get     '/auth/:provider/callback',        to: 'sessions#create_with_api'
+  get    '/home/signup',                     to: 'users#sign_up_for_event'
+  get    '/home/optout',                     to: 'users#opt_out_of_event'
 
   # RESOURCES ==============================================================================================
   resources :users              

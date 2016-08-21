@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
+  has_and_belongs_to_many :events
   before_save :downcase_email
   before_create :create_activation_digest
   mount_uploader :avatar, AvatarUploader
@@ -74,6 +75,16 @@ class User < ActiveRecord::Base
   # Make this user an exec
   def make_exec
     self.exec = true
+  end
+
+  # Sign user up for an event
+  def sign_up_for_event(event)
+    self.events << event unless self.events.include?(event)
+  end
+
+  # Opt user of out event
+  def opt_out_of_event(event)
+    self.events.delete(event) unless !self.events.include?(event)
   end
 
   # Return true if user has image_url != nil
