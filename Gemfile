@@ -36,6 +36,8 @@ gem 'omniauth-facebook',        '2.0.1'
 gem 'omniauth-google-oauth2'
 # For cms
 gem 'phrasing'
+# For event calendar
+gem 'simple_calendar',          '~> 2.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'

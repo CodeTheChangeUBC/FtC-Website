@@ -3,6 +3,7 @@ is subject to this styling. -->
 
 <div>
   <h2><%= link_to event.title, event %></h2>
+  <p>Date: <%= event.start_time %></p>
   <% if admin? %>
   	<%= link_to "Update", edit_event_path(event) %>
   	| <%= link_to "Delete", event, 

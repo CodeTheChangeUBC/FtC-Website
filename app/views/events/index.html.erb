@@ -5,7 +5,17 @@
 	<h3><%= link_to "Create New Event", new_event_path, class: "btn btn-primary" %></h3>
  </div>
  <div class="container center events-calendar">
- 	<%= render @events %>
+ 	<%= month_calendar(events: @events) do |date, events| %>
+		<% #date %>
+		<% #day = date.day %>
+		<%= date.day %>
+
+		<% events.each do |event| %>
+			<div>
+				<%= link_to event.title, event_path(event) %>
+			</div>
+		<% end %>
+ 	<% end %>
  </div>
  <div class="jumbotron jumbotron-fundraising">
  	<h2><%= phrase('fundraising-progress-header') %></h2>

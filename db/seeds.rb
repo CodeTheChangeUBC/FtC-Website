@@ -34,7 +34,7 @@ User.create!(name:  "Example User",
 
 
 # For now, populate database with fake users. 
-99.times do |n|
+50.times do |n|
  		name  = Faker::Name.name
  		email = "example-#{n+1}@foobar.org"
 		password = "password"
@@ -70,6 +70,23 @@ end
   title = "Club Update #{n+1}"
   text = "This is a club update." * 10
   Article.create!(title: title, text: text)
+end
+
+# Fundraiser
+Fundraiser.create!(title: "Example Fundraiser", 
+                   description: "This is an example fundraiser" * 15, 
+                   progress: 362, 
+                   target: 500)
+
+# Events
+20.times do |n|
+  title = "Event #{n}"
+  description = "FTC Event."
+  start_time = Date.today + 2*n
+  Event.create!(title: title, 
+                description: description, 
+                start_time: start_time)
+
 end
 
 

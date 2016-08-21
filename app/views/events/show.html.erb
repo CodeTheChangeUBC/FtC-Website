@@ -5,6 +5,7 @@
 
  <div class="container center">
  	<h1><%= @event.title %></h1>
+  <p>Date: <%= @event.start_time %></p>
  	<h4>Description:</h4>
  	<p><%= @event.description %></p>
  	<% if admin? %>
