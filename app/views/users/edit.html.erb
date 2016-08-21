@@ -15,13 +15,15 @@
     			<p><strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/    gif,image/png', id: 'uploader' %> </p>
 
     			<%= f.label :name %> 
-				  <%= f.text_field :name, placeholder: 'name', class: 'form-control' %>
+				  <%= f.text_field :name, class: 'form-control' %>
 				  <%= f.label :email %>
-  				<%= f.email_field :email,placeholder: 'email', class: 'form-control' %>
+  				<%= f.email_field :email, class: 'form-control' %>
+          <%= f.label :a_little_about_yourself %>
+          <%= f.text_area :about, placeholder: '(Optional - Max 1000 words)', class: 'form-control' %>
   				<%= f.label :password %>
-  				<%= f.password_field :password, placeholder: 'password', class: 'form-control' %>
+  				<%= f.password_field :password, class: 'form-control' %>
   				<%= f.label :password_confirmation %>
-  				<%= f.password_field :password_confirmation, placeholder: 'password-confirmation', 
+  				<%= f.password_field :password_confirmation,
     				class: 'form-control' %>
   				<%= f.submit yield(:form_button), class: "btn btn-primary" %>
 			<% end %>

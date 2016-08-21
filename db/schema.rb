@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819165917) do
+ActiveRecord::Schema.define(version: 20160821032149) do
 
   create_table "Events_Users", id: false, force: :cascade do |t|
     t.integer "event_id", null: false
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20160819165917) do
     t.string   "avatar"
     t.boolean  "exec",              default: false
     t.string   "image_url"
+    t.text     "about"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

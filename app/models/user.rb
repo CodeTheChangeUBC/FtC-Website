@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validate :avatar_size
+  validates :about, length: { maximum: 1000 }
   # Here allow_nil: true for the password only takes effect when user is editing
   # their account. This does not allow user to sign up with no password. 
 
