@@ -1,0 +1,16 @@
+<div class="col-sm-4">
+	<div class="center exec-info">
+		<div class="picture-title">
+			<%= image_tag exec.picture, size: "100x100", class: "img-rounded" %> 
+			<ul>
+				<strong><%= link_to exec.name, exec %></strong>
+				<br />
+				<strong><%= phrase(exec.name + '-position') %></strong>
+        </br />
+        <%= link_to "Unmake Executive", home_unmake_exec_path(user_id: exec.id), data: { confirm: "Remove #{exec.name} as an executive?" } %>
+			</ul>
+		</div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. </p>
+	</div>
+</div>

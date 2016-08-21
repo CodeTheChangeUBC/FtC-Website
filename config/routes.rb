@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get     '/auth/:provider/callback',        to: 'sessions#create_with_api'
   get    '/home/signup',                     to: 'users#sign_up_for_event'
   get    '/home/optout',                     to: 'users#opt_out_of_event'
+  get    '/home/make_exec',                  to: 'users#make_exec'
+  get    '/home/unmake_exec',                to: 'users#unmake_exec'
 
   # RESOURCES ==============================================================================================
   resources :users              

@@ -2,22 +2,7 @@
 <h1 class="center">Meet our Executive Team!</h1>
 
 <div class="container execs">
-  <% @execs.each do |exec| %>
-  	<div class="col-sm-4">
-  		<div class="center exec-info">
-  			<div class="picture-title">
-  				<%= image_tag exec.picture, size: "100x100", class: "img-rounded" %> 
-  				<ul>
-  					<strong><%= link_to exec.name, exec %></strong>
-  					<br />
-  					<strong>Position</strong>
-  				</ul>
-  			</div>
-  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	  		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. </p>		
-  		</div>
-	</div>
-  <% end %>
+  <%= render partial: 'exec', collection: @execs %>
 </div>
 
 <h1 class="center">And our Members!</h1>

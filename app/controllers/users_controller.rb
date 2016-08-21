@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :logged_in_user,  only: [:edit, :update, :destroy]
   before_action :correct_user,    only: [:edit, :update]
-  before_action :admin_user,      only: :destroy
+  before_action :admin_user,      only: [:destroy, :make_exec, :unmake_exec,
+                                         :sign_up_for_event, :opt_out_of_event]
 
   def new
   	@user = User.new
@@ -64,6 +65,26 @@ class UsersController < ApplicationController
       flash[:info] = "You're no longer signed up for #{@event.title}"
     end
     redirect_back_or events_url
+  end
+
+  def make_exec 
+    @user = User.find(params[:user_id])
+    if @user.make_exec
+      flash[:success] = "#{@user.name} is now a club executive."
+    else
+      flash[:warning] = "Sorry, something went wrong."
+    end
+    redirect_back_or users_url
+  end
+
+  def unmake_exec
+    @user = User.find(params[:user_id])
+    if @user.unmake_exec
+      flash[:info] = "#{@user.name} is no longer an executive."
+    else
+      flash[:warning] = "Sorry, something went wrong."
+    end
+    redirect_back_or users_url
   end
 
   private 

@@ -74,7 +74,12 @@ class User < ActiveRecord::Base
 
   # Make this user an exec
   def make_exec
-    self.exec = true
+    update_attribute(:exec, true)
+  end
+
+  # Unmake this user an exec
+  def unmake_exec
+    update_attribute(:exec, false)
   end
 
   # Sign user up for an event
