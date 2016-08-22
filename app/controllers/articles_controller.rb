@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :admin_user, only: [:new, :edit, :update, :destroy]
+	before_action :admin_user, only: [:new, :edit, :update, :destroy, :delete_picture]
 
 	def create
 		@article = Article.new(article_params)
@@ -42,12 +42,25 @@ class ArticlesController < ApplicationController
 		redirect_to articles_url
 	end
 
+	def delete_picture
+		@article = Article.find(params[:article_id])
+		if @article.remove_picture(params[:picture_id])
+			flash[:info] = "Picture removed successfully"
+		else
+			flash[:warning] = "Whooooops, something went hayware.
+								Please try again."
+		end
+		redirect_to @article
+	end
+
 	private 
 
 		def article_params
 			params.require(:article).permit(:title, :text, 
-											:image1, :image2, 
-											:image3, :image4)
+											:image1, :image1_cache, 
+											:image2, :image2_cache,
+											:image3, :image3_cache,
+											:image4, :image4_cache)
 		end
 
 end

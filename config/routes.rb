@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get    '/home/optout',                     to: 'users#opt_out_of_event'
   get    '/home/make_exec',                  to: 'users#make_exec'
   get    '/home/unmake_exec',                to: 'users#unmake_exec'
+  get    '/home/delete_article_picture',     to: 'articles#delete_picture'
 
   # RESOURCES ==============================================================================================
   resources :users              
