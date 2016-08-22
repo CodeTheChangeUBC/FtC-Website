@@ -12,7 +12,7 @@
     			<div class="center avatar">
       				<p><%= image_tag(@user.picture, size: "150x150") %></p>
     			</div>
-    			<p><strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/    gif,image/png', id: 'uploader' %> </p>
+    			<p><strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %> </p>
 
     			<%= f.label :name %> 
 				  <%= f.text_field :name, class: 'form-control' %>

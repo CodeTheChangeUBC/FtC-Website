@@ -68,7 +68,7 @@ end
 # Articles
 12.times do |n|
   title = "Club Update #{n+1}"
-  text = "This is a club update." * 10
+  text = "This is a club update. " * 50
   Article.create!(title: title, text: text)
 end
 

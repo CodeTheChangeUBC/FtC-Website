@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 	before_action :admin_user, only: [:new, :edit, :update, :destroy]
 
 	def create
-		@article = Article.new(event_params)
+		@article = Article.new(article_params)
 		if @article.save
 			flash[:success] = "Article created successfully"
 			redirect_to articles_path
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
 
 	def update
 		@article = Article.find(params[:id])
-		if @article.update_attributes(event_params)
+		if @article.update_attributes(article_params)
 			flash[:success] = "Article updated!"
 			redirect_to @article
 		else
@@ -44,8 +44,10 @@ class ArticlesController < ApplicationController
 
 	private 
 
-		def event_params
-			params.require(:article).permit(:title, :text)
+		def article_params
+			params.require(:article).permit(:title, :text, 
+											:image1, :image2, 
+											:image3, :image4)
 		end
 
 end

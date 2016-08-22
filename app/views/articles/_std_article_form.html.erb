@@ -6,5 +6,12 @@
     <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
     <%= f.text_area :text, placeholder: 'Write your heart out!', class: 
    		'form-control' %>
+   	<div class="article-picture-uploads">
+   		<p><strong>Picture 1 (Primary Photo)</strong><%= f.file_field :image1, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %></p>
+		<p><strong>Picture 2 </strong><%= f.file_field :image2, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %></p>
+		<p><strong>Picture 3 </strong><%= f.file_field :image3, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %></p>
+		<p><strong>Picture 4 </strong><%= f.file_field :image4, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %></p>	
+	</div>
+	
     <%= f.submit yield(:form_button), class: "btn btn-primary" %>
 <% end %>

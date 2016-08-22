@@ -503,6 +503,12 @@ footer {
     border-width: 1px 0 0 0;
     padding-top: 10px;
   }
+  .image-holder {
+    img {
+      padding: 10px;
+      object-fit: cover;
+    }
+  }
 }
 
 .article-index {
@@ -530,8 +536,6 @@ footer {
   .article-picture {
     img {
       object-fit: cover;
-      height: 300px;
-      width: 300px;
     }
   }
 }
@@ -540,6 +544,13 @@ footer {
   h2 {
     color: $light_gray;
     padding-bottom: 20px;
+  }
+}
+
+.article-picture-uploads {
+  p, strong {
+    color: black;
+    font-size: 12;
   }
 }
 

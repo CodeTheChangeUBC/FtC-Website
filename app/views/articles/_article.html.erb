@@ -1,14 +1,18 @@
 <!-- Partial for showing a single article. Each article on index page
 is subject to this styling. -->
+<% toggle = article[:image1] %>
+<% capacity = toggle ? 200 : 300 %>
 
 <div class="col-sm-8 col-sm-offset-2 article-partial">
-  <div class="col-sm-4 article-picture">
-    TODO: Primary picture will go here. 
-  </div>
-  <div class="col-sm-8 article-text">
+  <% if toggle %>
+    <div class="col-sm-4 article-picture">
+      <%= image_tag(article.image1, size: "150x150") %>
+    </div>
+  <% end %>
+  <div class=<%= toggle ? "col-sm-8 article-text" : "col-sm-12 article-text" %> >
     <h2><%= link_to article.title, article_path(article) %></h2>
-    <p id="text"> <%= article.text[0..200] %>
-    <% if article.text.length >= 200 %>
+    <p id="text"> <%= article.text[0..capacity] %>
+    <% if article.text.length >= capacity %>
       ... <%= link_to "See more", article_path(article) %> </p>
     <% end %>
     <p id="errata">

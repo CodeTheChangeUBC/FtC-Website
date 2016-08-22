@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class AvatarUploader < CarrierWave::Uploader::Base
+class ArticleImagesUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   # Resize before upload
   process resize_to_limit: [500,500]
@@ -23,5 +23,4 @@ class AvatarUploader < CarrierWave::Uploader::Base
      %w(jpg jpeg gif png)
   end
 
-  
 end
