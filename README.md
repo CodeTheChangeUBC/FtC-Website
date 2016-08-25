@@ -19,14 +19,14 @@
 
 
 - Test Suite
-  * Run unit tests (found in directory /test) by typing "rails test" or "rake test:\<test_module>".   
+  *Run unit tests (found in directory /test) by typing "rails test" or "rake test:\<test_module>".   
 
 
 - Configuration
-  * Update the gems specified in the gemfile by running "bundle install"
+  *Update the gems specified in the gemfile by running "bundle install"
 
 
- - Database
+- Database
    * **Locally**
      1. To update database after update or adding a model run "rake db:migrate". This migrates the current schema. 
      2. To seed the database run "rake db:seed"
@@ -40,10 +40,13 @@
      4. To cover last two in one action, run "heroku run rake db:setup"
 
 
-### TODO 
-*See Milestones* 
+### Developers
 
-- Allow users to sign up for event
-- Update a user's profile to reflect their events
+**Project Lead**: Ben Chugg. **Contributors**: Preet Phandar.
 
+
+### How to Contribute
+*See issues and milestones* 
+
+Grab an issue, write some code and submit a pull request! 
 
