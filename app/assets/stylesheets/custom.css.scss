@@ -129,37 +129,54 @@ textarea {
 
 footer {
   margin-top: 50px;
-  padding-top: 5px;
+  padding-top: 10px;
   border-top: 1px solid $medium_gray;
   border-width: 100%;
   color: $light_gray;
-  margin-bottom: 30px;
+  .top {
+    padding-bottom: 20px;
+    #facebook_link {
+      padding-left: 20px;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
   a {
   	color: $gray;
   	&:hover {
   		color: $dark_gray;
   	}
   }
-  .ctc-left-nav {
-    float: left;
-    li {
-      float: left;
-    }
-  }
-  small {
-    float: left;
-    margin-left: 20px;
-    #ctclink {
-      color: $light_green;
-    }
-  }
   ul {
-    float: right;
+    list-style: none;
+  }
+  #ctc_link {
+    color: $light_green;
+  }
+  .right {
   	list-style: none;
   	li {
-  		float: left;
   		margin-left: 15px;
+      float: right;
+      b {
+        margin-top: 5px;
+      }
   	}
+  }
+  .legal {
+    background-color: $lighter_gray;
+    .col-sm-4 {
+      p {
+        padding-top: 10px;
+      }
+    }
+    .col-sm-8 {
+      p {
+        float: right;
+        padding-top: 10px;
+      }
+    }
   }
 }
 

@@ -18,7 +18,8 @@ User.create!(name:  "Admin",
   User.create!(name: name, 
                email: email, 
                password: password, 
-               password_confirmation: password, 
+               password_confirmation: password,
+               about: "This is some stuff about me! " * 20 
                activated: true,
                activated_at: Time.zone.now, 
                exec: true)
@@ -29,6 +30,7 @@ User.create!(name:  "Example User",
              email: "test@foobar.com",
              password:              "foobar",
              password_confirmation: "foobar",
+             about: "This is some stuff about me! " * 20 
              activated: true,
              activated_at: Time.zone.now)
 
@@ -42,6 +44,7 @@ User.create!(name:  "Example User",
        	       	 email: email,
            	   	 password: password,
             		 password_confirmation: password,
+                 about: "This is some stuff about me! " * 20 
                  activated: true,
                  activated_at: Time.zone.now)
 end
