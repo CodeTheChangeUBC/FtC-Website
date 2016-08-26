@@ -9,8 +9,9 @@
     <h3><%= phrase('mini-we-day-upcoming-event-info') %></h3>
     <p><%= phrase('mini-we-day-where-info') %></p>
     <p><%= phrase('mini-we-day-when-info') %></p>
-    <%= link_to "Register now!", get_involved_path, class: "btn btn-lg btn-primary" %> 
-    <%= link_to "Volunteer", get_involved_path, class: "btn btn-lg btn-primary" %> 
+    <% if logged_in? && @mini_we_day_event %>
+      <%= link_to "Sign up now!", event_path(@mini_we_day_event), class: "btn btn-lg btn-primary" %> 
+    <% end %>
   </div>
 
   	<div class="container center past">

@@ -2,7 +2,9 @@
 
  <div class="jumbotron jumbotron-all-events">
 	<h2><%= phrase('all-events-title') %></h2>
-	<h3><%= link_to "Create New Event", new_event_path, class: "btn btn-primary" %></h3>
+	<% if admin? %>
+		<h3><%= link_to "Create New Event", new_event_path, class: "btn btn-primary" %></h3>
+	<% end %>
  </div>
  <div class="container center events-calendar">
  	<%= month_calendar(events: @events) do |date, events| %>

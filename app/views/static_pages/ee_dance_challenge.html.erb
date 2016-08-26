@@ -9,8 +9,9 @@
 		<h3><%= phrase('ee-upcoming-event-info') %></h3>
 		<p><%= phrase('ee-where-info') %></p>
 		<p><%= phrase('ee-when-info') %></p>
-		<%= link_to "Register now!", get_involved_path, class: "btn btn-lg btn-primary" %> 
-		<%= link_to "Volunteer", get_involved_path, class: "btn btn-lg btn-primary" %> 
+    <% if logged_in? && @ee_challenge_event %>
+		  <%= link_to "Sign up now!", event_path(@ee_challenge_event), class: "btn btn-lg btn-primary" %> 
+    <% end %>
 	</div>
 
   	<div class="container center past">

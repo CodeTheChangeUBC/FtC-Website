@@ -11,5 +11,17 @@
     <%= f.text_area :description, placeholder: 'Description', class: 'form-control' %>
     <%= f.label :date %>
     <%= f.date_select :start_time, class: 'form-control' %>
+    <%= f.label :dance_challenge, class: 'checkbox inline' do %>
+        <%= f.check_box :ee_challenge %>
+        <span>Check if this event is the EE Dance Challenge</span>
+    <% end %> 
+    <%= f.label :vow_of_silence, class: 'checkbox inline' do %>
+        <%= f.check_box :vow_silence %>
+        <span>Check if this event is the Vow of Silence</span>
+    <% end %> 
+    <%= f.label :mini_we_day, class: 'checkbox inline' do %>
+        <%= f.check_box :we_day %>
+        <span>Check if this event is Mini We Day</span>
+    <% end %> 
     <%= f.submit "Create Event", class: "btn btn-primary" %>
 <% end %>
