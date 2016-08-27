@@ -2,15 +2,13 @@
 is subject to this styling. -->
 
 <div>
-  <h2><%= link_to event.title, event %></h2>
-  <p>Date: <%= event.start_time %></p>
-  <% if admin? %>
-  	<%= link_to "Update", edit_event_path(event) %>
-  	| <%= link_to "Delete", event, 
-  							method: :delete, 
-  							data: { confirm: "Are you sure you want to delete 
-  											 #{event.title}?" } %>
-  <% end %>
+  <h3><%= link_to event.title, event %></h3>
+  <p>Date: <%= Date::MONTHNAMES[event.start_time.month] %> <%= event.start_time.day %></p>
+  <p><%= event.description[0..30] %>
+    <% if event.description.length > 30 %>
+      ...
+    <% end %>
+  </p>
   <% if logged_in? && !current_user.events.include?(event) %>
   	<%= link_to "Sign up", home_signup_path(event_id: event.id) %>
   <% elsif logged_in? && current_user.events.include?(event) %>

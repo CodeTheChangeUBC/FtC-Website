@@ -21,7 +21,7 @@
     <% end %> 
     <%= f.label :mini_we_day, class: 'checkbox inline' do %>
         <%= f.check_box :we_day %>
-        <span>Check if this event is Mini We Day</span>
+        <span>Check if this event is a Mini We Day</span>
     <% end %> 
-    <%= f.submit "Create Event", class: "btn btn-primary" %>
+    <%= f.submit yield(:submit_button), class: "btn btn-primary" %>
 <% end %>

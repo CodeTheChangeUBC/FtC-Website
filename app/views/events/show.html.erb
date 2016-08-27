@@ -1,24 +1,43 @@
  <% provide(:title, @event.title) %>
 
- <h1>Show a single event</h1>
- <p><%= link_to "Back to all Events", events_url %></p>
-
- <div class="container center">
- 	<h1><%= @event.title %></h1>
-  <p>Date: <%= @event.start_time %></p>
- 	<h4>Description:</h4>
- 	<p><%= @event.description %></p>
- 	<% if admin? %>
-  	<%= link_to "Update", edit_event_path(@event) %>
-  	| <%= link_to "Delete", @event, 
-  							method: :delete, 
-  							data: { confirm: "Are you sure you want to delete 
-  											 #{@event.title}?" } %>
-  	<% end %>
-  	<p>
-  	<% if logged_in? && !current_user.events.include?(@event) %>
-      <%= link_to "Sign up", home_signup_path(event_id: @event.id) %>
-    <% elsif logged_in? && current_user.events.include?(@event) %>
-      <%= link_to "Opt out of Event", home_optout_path(event_id: @event.id) %>
+<div class="container-fluid event-show">
+ <div class="container">
+   <div class="col-sm-8 center event-details">
+      <h2><%= @event.title %></h2>
+      <p><%= link_to "Back to all Events", events_url %>
+      <% if admin? %>
+          | <%= link_to "Update", edit_event_path(@event) %>
+          | <%= link_to "Delete", @event, 
+                      method: :delete, 
+                      data: { confirm: "Are you sure you want to delete 
+                               #{@event.title}?" } %>
+      <% end %>
+      <% if logged_in? && !current_user.events.include?(@event) %>
+        </p><%= link_to "Sign up", home_signup_path(event_id: @event.id), class: 'btn btn-default' %>
+      <% elsif logged_in? && current_user.events.include?(@event) %>
+        | <%= link_to "Opt out of Event", home_optout_path(event_id: @event.id) %></p>
+      <% end %>
+      
+     
+    <h4 class="description">
+      <%= @event.description %>
+    </h4>
+    <p class="attending">Members attending this event: 
+    <% if @volunteers.empty? %>
+      None yet!
+    <% else %> 
+      <%= render @volunteers %>
     <% end %>
+    </p>
+   </div>
+   <div class="col-sm-4 events-sidebar">
+    <h3>Some upcoming events:</h3>
+    <% if @events.empty? %>
+      <h4>No Upcoming Events :(</h4>
+    <% else %>
+      <%= render @events %>
+    <% end %>
+   </div>
  </div>
+</div> 
+ 

@@ -477,6 +477,46 @@ footer {
   }
 }
 
+.event-show {
+  margin-top: -0.5%;
+  margin-bottom: -4%;
+  padding-bottom: 2%;
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, $lighter_gray , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(left, $lighter_gray, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(left, $light_gray, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to left, $lighter_gray, white); /* Standard syntax */
+  .events-sidebar {
+    border-left: 1px solid gray;
+    h3 {
+      a {
+        color: gray;
+        text-decoration: underline;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+    
+  }
+  .event-details {
+    h2 {
+      color: gray;
+      font-variant: small-caps;
+    }
+    .btn {
+      background-color: $ftc_green;
+      border-color: $ftc_green;
+      color: white;
+      &:hover {
+        background-color: white;
+        border-color: $ftc_green;
+        color: $ftc_green;
+      }
+    }
+  }
+}
+
 
 /* =================================================
 ================== ARTICLES ========================

@@ -16,7 +16,9 @@ class EventsController < ApplicationController
 	end
 
 	def show
+		@events = Event.first(3)
 		@event = Event.find(params[:id])
+		@volunteers = @event.users
 	end
 
 	def index
