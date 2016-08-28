@@ -5,5 +5,9 @@ class Event < ApplicationRecord
 	validates :title, presence: true
 	validates :description, presence: true
 	validates :start_time, presence: true
+
+	def has_passed?
+		self.start_time.past?
+	end
 	
 end

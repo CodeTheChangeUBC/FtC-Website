@@ -1,23 +1,34 @@
 <% provide(:title, @user.name) %> 
 
-<div class="container center">
-	<h1><%= @user.name %></h1>
-	<%= image_tag @user.picture %>
-</div>
-
-<div class="container">
-  <% if current_user == @user %>
-	<h3>My upcoming events</h3>
-  <% else %>
-    <h3>Their Upcoming Events</h3>
-  <% end %>
-</div>
-<div class="user-upcoming-events">
-    <%= render partial: 'user_event', collection: @user.events %>
-</div>
-
-<% if current_user == @user %>
-  <div class="container">
-	<h3>Upcoming Events for Free the Children</h3>
+<div class="container user-show">
+  <div class="col-sm-4 user-details">
+    <%= image_tag @user.picture, size: "250x250" %>
+    <h2><%= @user.name %></h2>
+    <% if @user.exec %>
+      <p><i>Free the Children Executive</i></p>
+    <% end %>
   </div>
-<% end %>
+  <div class="col-sm-8">
+    <div class="container user-about">
+      <h4><b>About:</b></h4>
+      <% if @user.about == nil || @user.about.empty? %>
+        <p>It looks like <%= @user.name %> prefers to keep an air of mystery about themselves.</p>
+      <% else %>
+        <p><%= @user.about %></p>
+      <% end %>
+    </div>
+    <div class="container user-events">
+      <% if current_user == @user %>
+        <h3>My upcoming events</h3>
+      <% else %>
+        <h3><%= @user.name %> is attending:</h3>
+      <% end %>
+      <% if @events.empty? %>
+        <p><%= @user.name %> has no upcoming events.</p>
+      <% else %>
+        <%= render partial: 'events/event', collection: @events %>
+      <% end %>
+      <%= link_to "See all events", events_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>

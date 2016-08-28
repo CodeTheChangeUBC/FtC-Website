@@ -16,7 +16,7 @@ class EventsController < ApplicationController
 	end
 
 	def show
-		@events = Event.first(3)
+		@events = Event.order(:start_time).select { |event| !event.has_passed? }.first(3)
 		@event = Event.find(params[:id])
 		@volunteers = @event.users
 	end

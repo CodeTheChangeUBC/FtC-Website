@@ -77,6 +77,9 @@ textarea {
       }
       .icon-bar {
         background-color: $ftc_green;
+      }
+      &:onclick {
+        background-color: $ftc_green;
       }     
     }
   }
@@ -88,6 +91,9 @@ textarea {
           color: white;
         }
         &:focus {
+          background-color: $ftc_green;
+        }
+        &:onclick {
           background-color: $ftc_green;
         }
       }
@@ -166,6 +172,8 @@ footer {
   }
   .legal {
     background-color: $lighter_gray;
+    margin-left: -2%;
+    margin-right: -2%;
     .col-sm-4 {
       p {
         padding-top: 10px;
@@ -754,7 +762,7 @@ input[type=file] {
 
 
 /* =================================================
-============ USERS EDIT ============================
+============ USERS =================================
 ===================================================*/
 
 
@@ -778,6 +786,7 @@ input[type=file] {
     border-style: solid;
     border-width: 2px;
     border-color: $ftc_green;
+    object-fit: cover;
   }
   .btn {
     background-color: $ftc_blue;
@@ -787,6 +796,70 @@ input[type=file] {
     }
   }
 }
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $lighter_gray;
+  }
+  .admin-options {
+    float: right;
+    padding-right: 20px;
+  }
+}
+
+.execs {
+  background-color: $lighter_gray;
+  border-radius: 10px;
+  .exec-info {
+    .picture-title {
+      display: inline-block;
+      img {
+        float: left;
+        border-radius: 50%;
+      }
+      ul {
+        float: right;
+      }
+    }
+    padding-top: 15px;
+    color: $light_gray;
+  }
+}
+
+.user-show {
+  margin-top: -0.5%;
+  .user-details {
+    padding-top: 10px;
+    padding-bottom: 8%;
+    img {
+      border-radius: 3%;
+      object-fit: cover;
+    }
+  }
+  .user-about {
+    color: gray;
+    border-bottom: 1px solid gray;
+    h4 {
+      font-variant: small-caps;
+    }
+  }
+  .user-events {
+    .btn {
+      background-color: $ftc_blue;
+      border-color: $ftc_blue;
+      color: white;
+      &:hover {
+        background-color: white;
+        color: $ftc_blue;
+      }
+    }
+  }
+}
+
 
 
 /* =================================================
@@ -861,43 +934,6 @@ input[type=file] {
 }
 
 
-/* =================================================
-============ USERS INDEX ===========================
-===================================================*/
-
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $lighter_gray;
-  }
-  .admin-options {
-    float: right;
-    padding-right: 20px;
-  }
-}
-
-.execs {
-  background-color: $lighter_gray;
-  border-radius: 10px;
-  .exec-info {
-    .picture-title {
-      display: inline-block;
-      img {
-        float: left;
-        border-radius: 50%;
-      }
-      ul {
-        float: right;
-      }
-    }
-    padding-top: 15px;
-    color: $light_gray;
-  }
-}
 
 
 /* DEBUG ENVIRONMENT (Leave at bottom) */ 

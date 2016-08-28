@@ -11,10 +11,10 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated
+    @events = @user.events.select { |event| !event.has_passed? }
   end
 
   def index
-    # Show users iff they are activated
     @execs = User.where(exec: true, activated: true, admin: false)
     @users = User.where(exec: false, activated: true, admin: false).paginate(page: params[:page])
   end
