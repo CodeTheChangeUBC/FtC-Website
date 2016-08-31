@@ -10,12 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825010405) do
+ActiveRecord::Schema.define(version: 20160831043323) do
 
-  create_table "Events_Users", id: false, force: :cascade do |t|
-    t.integer "event_id", null: false
-    t.integer "user_id",  null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -56,6 +54,11 @@ ActiveRecord::Schema.define(version: 20160825010405) do
     t.boolean  "we_day",       default: false
   end
 
+  create_table "events_users", id: false, force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "user_id",  null: false
+  end
+
   create_table "fundraisers", force: :cascade do |t|
     t.integer  "target"
     t.integer  "progress"
@@ -70,7 +73,7 @@ ActiveRecord::Schema.define(version: 20160825010405) do
     t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["phrasing_phrase_id"], name: "index_phrasing_phrase_versions_on_phrasing_phrase_id"
+    t.index ["phrasing_phrase_id"], name: "index_phrasing_phrase_versions_on_phrasing_phrase_id", using: :btree
   end
 
   create_table "phrasing_phrases", force: :cascade do |t|
@@ -101,7 +104,7 @@ ActiveRecord::Schema.define(version: 20160825010405) do
     t.boolean  "exec",              default: false
     t.string   "image_url"
     t.text     "about"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
 end

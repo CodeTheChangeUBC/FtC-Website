@@ -38,6 +38,7 @@ gem 'omniauth-google-oauth2'
 gem 'phrasing'
 # For event calendar
 gem 'simple_calendar',          '~> 2.0'
+gem 'pg',                       '0.18.4'          
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'
@@ -61,9 +62,9 @@ group :test do
   gem 'capybara'
 end
 
-group :production do
-  gem 'pg',   '0.18.4'
-end
+# group :production do
+#   gem 'pg',   '0.18.4'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

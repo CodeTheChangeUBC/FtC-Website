@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated
     @events = @user.events.select { |event| !event.has_passed? }
+    #@events = Event.joins(:users).first
+    #.where(users: { user: @user }).select { |event| !event.has_passed? }
   end
 
   def index

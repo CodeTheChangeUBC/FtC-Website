@@ -13,10 +13,10 @@ class ArticlesIndexTest < ActionDispatch::IntegrationTest
     get articles_path
     assert_template 'articles/index'
     assert_select 'div.pagination'
-    @articles = Article.first(5)
+    @articles = Article.paginate(page: 1)
     @articles.each do |article|
-      assert_select 'a[href=?]', article_path(article), text: article.title
-      assert_select 'a[href=?]', article_path(article), text: 'Delete'
+      assert_select 'a', text: 'Delete'
+      assert_select 'a', text: 'Update'
     end
     assert_difference 'Article.count', -1 do
       delete article_path(@article)
@@ -26,7 +26,7 @@ class ArticlesIndexTest < ActionDispatch::IntegrationTest
   test "index as non-admin" do
     log_in_as(@non_admin)
     get articles_path
-    assert_select 'a', text: 'delete', count: 0
+    assert_select 'a', text: 'Delete', count: 0
   end
   
 end
