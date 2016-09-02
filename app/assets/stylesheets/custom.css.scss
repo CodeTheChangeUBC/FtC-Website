@@ -147,6 +147,11 @@ footer {
         opacity: 0.6;
       }
     }
+    .col-sm-8 {
+      p {
+        float: right;
+      }
+    }
   }
   a {
   	color: $gray;
@@ -199,7 +204,7 @@ footer {
   background-position: center;
   background-size: cover;
   color: white;
-  height: 90vh;
+  height: 700px;
   margin-top: -0.5%;
   .container-fluid {
     padding-top: 95px;
@@ -266,7 +271,7 @@ footer {
 }
 
 .homepage-mission {
-  height: 40vh;
+  height: 200px;
   .container {
     background-color: white;
     text-align: left;
@@ -290,7 +295,7 @@ footer {
 
 .jumbotron-about {
   background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
-  height: 50vh;
+  height: 400px;
   margin-top: -0.5%;
   h1 {
     color: white; 
@@ -307,7 +312,7 @@ footer {
 
 .jumbotron-events {
   background: image-url("filler5.png");
-  height: 50vh;
+  height: 400px;
   margin-top: -0.5%;
   h1 {
     color: black; 
@@ -361,6 +366,9 @@ footer {
   } 
   .tile {
     height: 70vh;
+    &:hover {
+      opacity: 0.6;
+    }
   }
   img {
     object-fit: cover;
@@ -372,9 +380,9 @@ footer {
     height: 70vh;
     width: 100%;
     padding: 20px;
-    &:hover {
+    /*&:hover {
       opacity: 0.6;
-    }
+    }*/
   }
 }
 
@@ -386,7 +394,7 @@ footer {
 
 .jumbotron-all-events {
   background: image-url('filler6'); 
-  height: 50vh;
+  height: 400px;
   margin-top: -0.5%;
   h1, h2, h3 {
     color: white; 
@@ -397,7 +405,7 @@ footer {
 
 .jumbotron-fundraising {
   background: image-url('filler3'); 
-  height: 30vh;
+  height: 200px;
   h1, h2, h3 {
     color: white; 
     text-align: center;
@@ -533,7 +541,7 @@ footer {
 
 .jumbotron-articles {
   background: image-url('filler6'); 
-  height: 50vh;
+  height: 400px;
   margin-top: -2%;
   h1, h2, h3 {
     color: white; 
@@ -677,7 +685,7 @@ footer {
 
 .jumbotron-involved {
   background: image-url('filler3'); 
-  height: 50vh;
+  height: 400px;
   margin-top: -0.5%;
   h1 {
     color: white; 
@@ -765,6 +773,16 @@ input[type=file] {
 ============ USERS =================================
 ===================================================*/
 
+.jumbotron-users {
+  background: image-url('filler7'); 
+  height: 400px;
+  margin-top: -0.5%;
+  h2 {
+    color: white; 
+    text-align: center;
+    padding-top: 70px;
+  }
+} 
 
 .edit-info {
   background-color: $lighter_gray;
@@ -798,35 +816,37 @@ input[type=file] {
 }
 
 .users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $lighter_gray;
-  }
-  .admin-options {
-    float: right;
-    padding-right: 20px;
+  .index-user {
+    height: 200px;
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 5%;
+    }
+    .name {
+      h4 {
+        a {
+          color: gray;
+        }    
+      }
+    }
   }
 }
 
 .execs {
+  margin-top: 20px;
   background-color: $lighter_gray;
   border-radius: 10px;
-  .exec-info {
-    .picture-title {
-      display: inline-block;
-      img {
-        float: left;
-        border-radius: 50%;
-      }
-      ul {
-        float: right;
+  .index-exec {
+    padding-top: 10px;
+    img {
+      border-radius: 50%;
+    }
+    h3 {
+      a {
+        color: $ftc_green;
       }
     }
-    padding-top: 15px;
-    color: $light_gray;
   }
 }
 
@@ -859,6 +879,7 @@ input[type=file] {
     }
   }
 }
+
 
 
 

@@ -1,16 +1,14 @@
 <% provide(:title, 'All users') %>
-<h1 class="center">Meet our Executive Team!</h1>
-
+<div class="jumbotron jumbotron-users">
+	<h2>Meet our Team!</h2>
+</div>
 <div class="container execs">
   <%= render partial: 'exec', collection: @execs %>
 </div>
-
-<h1 class="center">And our Members!</h1>
 <div class="center"><%= will_paginate %></div>
-
-<ul class="users">
+<div class="container users">
   <!-- Render each user with content in _user partial -->
   <%= render @users %>
-</ul>
+</div>
 
 <div class="center"><%= will_paginate %></div>

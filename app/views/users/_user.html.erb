@@ -1,16 +1,18 @@
 <!-- Partial for showing a single user. Each user on index page
 is subject to this styling. -->
 
-<li>
-  <%= image_tag user.picture, size: "50x50" %>
-  <%= link_to user.name, user %>
-  <div class="admin-options">
-    <% if admin? && !current_user?(user) %>
-  	   <%= link_to "delete", user, 
-  							method: :delete, 
-  							data: { confirm: "Are you sure you want to delete #{user.name}				?" } %>
-     | <%= link_to "Set as exec", home_make_exec_url(user_id: user.id),
-  							data: { confirm: "Make #{user.name} an executive?" } %>
+<div class="col-sm-4 container index-user">
+  <div class="col-sm-4">
+    <%= image_tag user.picture %>  
+  </div>
+  <div class="col-sm-8 name">
+    <h4><%= link_to user.name, user %></h4>
+    <% if user.about_present? %>
+      <p><%= user.about[0..80] %>
+        <% if user.about.length >= 80 %>
+          ... <%= link_to "See More", user_path(user) %>
+        <% end %>
+      </p>
     <% end %>
   </div>
-</li>
+</div>

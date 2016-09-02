@@ -109,6 +109,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  # Returns true if user about field is present
+  def about_present?
+    !self.about.nil? && !self.about.empty?
+  end
+
   # For APIs
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
