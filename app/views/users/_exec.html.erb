@@ -5,7 +5,7 @@
     </br />
     <%= link_to "Unmake Executive", home_unmake_exec_path(user_id: exec.id), data: { confirm: "Remove #{exec.name} as an executive?" } %>
     <p>
-    	<% if exec.about_present %>
+    	<% if exec.about_present? %>
 			<p><%= exec.about[0..175] %>
 				<% if exec.about.length >= 175 %>
 					... <%= link_to "See More", user_path(exec) %>
@@ -14,22 +14,3 @@
 		<% end %>
 	</p>
 </div>
-
-<!-- <div class="col-sm-4">
-	<div class="center exec-info">
-		<div class="picture-title">
-			
-			<ul>
-				
-			</ul>
-		</div>
-		<% if !exec.about.empty? %>
-			<p><%= exec.about[0..175] %>
-				<% if exec.about.length >= 175 %>
-					... <%= link_to "See More", user_path(exec) %>
-				<% end %>
-			</p>
-		<% end %>
-	</div>
-</div>
- -->
