@@ -271,20 +271,22 @@ footer {
 }
 
 .homepage-mission {
-  height: 200px;
+  height: 230px;
+  margin-bottom: 30px;
   .container {
     background-color: white;
-    text-align: left;
+    text-align: center;
     color: gray;
     font-size: 150%;
     img {
       float: right;
+      border-radius: 3%;
     }
-    .col-sm-8 {
+    /*.col-sm-8 {
       border-style: solid;
       border-width: 0 2px 0 0;
       border-color: $ftc_green;
-    }
+    */
   }
 }
 
