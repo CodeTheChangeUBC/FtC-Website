@@ -22,7 +22,7 @@
   <div class="col-sm-8">
     <div class="container user-about">
       <h4><b>About:</b></h4>
-      <% if @user.about_present? %>
+      <% if !@user.about_present? %>
         <p>It looks like <%= @user.name %> prefers to keep an air of mystery about themselves.</p>
       <% else %>
         <p><%= @user.about %></p>
