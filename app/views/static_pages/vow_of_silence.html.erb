@@ -4,8 +4,10 @@
   <div class="center container-fluid event-background">
 	 <h1><%= phrase('vos-header') %></h1>  
     <p><%= phrase('vos-description') %></p>
-  
-    <div class="container center upcoming">
+    <div class="col-sm-6">
+      <%= image_tag('vow1.png', size:"300x350") %>
+    </div>
+    <div class="col-sm-6 center upcoming">
       <h3><%= phrase('vos-upcoming-event-info') %></h3>
       <p><%= phrase('vos-where-info') %></p>
       <p><%= phrase('vos-when-info') %></p>
@@ -13,5 +15,6 @@
         <%= link_to "Sign up now!", event_path(@vow_of_silence_event), class: "btn btn-lg btn-primary" %> 
       <% end %>
     </div>
-  	</div>
+    
+  </div>
 </div>

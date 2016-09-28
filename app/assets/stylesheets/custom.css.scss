@@ -363,14 +363,11 @@ footer {
   p {
     position: absolute;
     width: 100%;
-    top: 65%;
-    color: white;
+    top: 65%;  
+    color: gray;
   } 
   .tile {
     height: 70vh;
-    &:hover {
-      opacity: 0.6;
-    }
   }
   img {
     object-fit: cover;
@@ -427,9 +424,7 @@ footer {
       padding: 20px;
     }
     .upcoming {
-      padding-bottom: 30px;
-      border-style: solid;
-      border-width: 0px 0px 2px 0px;
+      
       .btn {
         background-color: $ftc_blue;
         border-color: $ftc_blue;
@@ -775,6 +770,7 @@ input[type=file] {
 
 .jumbotron-users {
   background: image-url('filler7'); 
+  background-size: cover;
   height: 400px;
   margin-top: -0.5%;
   h2 {

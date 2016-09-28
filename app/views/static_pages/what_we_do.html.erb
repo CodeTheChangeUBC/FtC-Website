@@ -11,34 +11,99 @@
 
 <div class="container what-we-do-info">
   <div class="col-sm-8 tile tile-1 center">
-    <%= link_to image_tag("filler2.png"), '#' %>
+    <%= image_tag("filler2.png") %>
     <h3><%= phrase('what-we-do-1') %></h3>
-    <p><%= phrase('hover-text-1') %></p>
+    <p><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tile1">Learn More</button></p>
+    <!-- Modal -->
+    <div id="tile1" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <%= phrase('hover-text-1') %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+  </div>
   </div>
   <div class="col-sm-4 tile tile-2 center">
-    <%= link_to image_tag("im2.png"), '#' %>
+    <%= image_tag("im2.png") %>
     <h3><%= phrase('what-we-do-2') %></h3>
-    <p><%= phrase('hover-text-2') %></p>
+    <p><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tile2">Learn More</button></p>
+    <!-- Modal -->
+    <div id="tile2" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <%= phrase('hover-text-2') %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
   <div class="col-sm-6 tile tile-3 center">
-    <%= link_to image_tag("filler1.png"), '#' %>
+    <%= image_tag("team1.png") %>
     <h3><%= phrase('what-we-do-3') %></h3>
-    <p><%= phrase('hover-text-3') %></p>
+    <p><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tile3">Learn More</button></p>
+    <!-- Modal -->
+    <div id="tile3" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <%= phrase('hover-text-3') %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
   <div class="col-sm-6 tile tile-4 center">
-    <%= link_to image_tag("filler4.png"), '#' %>
+    <%= image_tag("filler4.png") %>
     <h3><%= phrase('what-we-do-4') %></h3>
-    <p><%= phrase('hover-text-4') %></p>
-  </div>
-  <div class="col-sm-8 tile tile-5 center">
-    <%= link_to image_tag("filler3.png"), '#' %>
-    <h3><%= phrase('what-we-do-5') %></h3>
-    <p><%= phrase('hover-text-5') %></p>
-  </div>
-  <div class="col-sm-4 tile tile-6 center">
-    <%= link_to image_tag("im3.png"), '#' %>
-    <h3><%= phrase('what-we-do-6') %></h3>
-    <p><%= phrase('hover-text-6') %></p>
+    <p><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tile4">Learn More</button></p>
+    <!-- Modal -->
+    <div id="tile4" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <%= phrase('hover-text-4') %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+   </div>
   </div>
 </div>
 

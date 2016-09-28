@@ -5,13 +5,16 @@
 	<h1><%= phrase('ee-dance-challenge-header') %></h1>	
 	<p><%= phrase('ee-dance-challenge-description') %></p>
 	
-	<div class="container center upcoming">
+	<div class="col-sm-6 center upcoming">
 		<h3><%= phrase('ee-upcoming-event-info') %></h3>
 		<p><%= phrase('ee-where-info') %></p>
 		<p><%= phrase('ee-when-info') %></p>
-    <% if logged_in? && @ee_challenge_event %>
+    	<% if logged_in? && @ee_challenge_event %>
 		  <%= link_to "Sign up now!", event_path(@ee_challenge_event), class: "btn btn-lg btn-primary" %> 
-    <% end %>
+    	<% end %>
+	</div>
+	<div class="col-sm-6">
+		<%= image_tag('edc2.png', size:"400x300") %>
 	</div>
   </div>
 </div>
