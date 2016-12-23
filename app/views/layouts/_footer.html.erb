@@ -1,22 +1,17 @@
-<footer class="footer col-sm-12">
- <div class="container top">
-  <div class="col-sm-4">
-    <%= image_tag("ubcftc_logo", size: "120x50") %>
-    <%= link_to image_tag("facebook_logo_small", size: "30x30"), "https://www.facebook.com/ubcftc/", id: "facebook_link" %>
+<footer class="footer">
+ <div class="container top center">
+  <div class="facebook">
+    <%= link_to image_tag('facebook_logo_small.png', size: "40x40"), "https://www.facebook.com/ubcftc/", id: "facebook_link" %></b>     
   </div>
-  <nav>
-    <ul class="right">
-      <li><b><%= link_to "Parent Site", "https://freethechildren.com" %></b></li>
-      <li><b><%= link_to "About",   about_path %></b></li>
-      <li><b><%= link_to "Contact", contact_path %></b></li>
-      <li><b><%= link_to "The Team", users_path %></b></li>
-      <li><b><%= link_to "Join", get_involved_path %></b></li>
-    </ul>
-  </nav>
+    <b><%= link_to "Parent Site", "https://freethechildren.com" %></b>
+    <b><%= link_to "About",   about_path %></b>
+    <b><%= link_to "Contact", contact_path %></b>
+    <b><%= link_to "Join", get_involved_path %></b> 
  </div>
+ 
  <div class="container-fluid legal">
   <div class="col-sm-4">
-    <p>Site developed by <%= link_to  "Code the Change UBC", "http://www.codethechangeubc.org", id: "ctc_link" %></p>
+    <p>Site developed by <%= link_to  "Code the Change UBC", "https://codethechangeubc.org", id: "ctc_link" %></p>
   </div>
   <div class="col-sm-8">
     <p>&copy; Free the Children at UBC, <%= Time.now.year %>. All rights reserved.</p>

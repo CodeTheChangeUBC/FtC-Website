@@ -137,19 +137,22 @@ footer {
   margin-top: 50px;
   padding-top: 10px;
   border-top: 1px solid $medium_gray;
-  border-width: 100%;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
   color: $light_gray;
   .top {
     padding-bottom: 20px;
+    a {
+      padding: 0 5px 5px 5px;
+    }
+    .facebook {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
     #facebook_link {
-      padding-left: 20px;
       &:hover {
         opacity: 0.6;
-      }
-    }
-    .col-sm-8 {
-      p {
-        float: right;
       }
     }
   }
@@ -157,22 +160,6 @@ footer {
   	color: $gray;
   	&:hover {
   		color: $dark_gray;
-  	}
-  }
-  ul {
-    list-style: none;
-  }
-  #ctc_link {
-    color: $light_green;
-  }
-  .right {
-  	list-style: none;
-  	li {
-  		margin-left: 15px;
-      float: right;
-      b {
-        margin-top: 5px;
-      }
   	}
   }
   .legal {
