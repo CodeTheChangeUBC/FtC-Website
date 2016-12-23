@@ -7,6 +7,9 @@ class StaticPagesController < ApplicationController
   end
 
   def events
+    @vow_of_silence_event = Event.where(vow_silence: true).order(:created_at).first
+    @ee_challenge_event = Event.where(ee_challenge: true).order(:created_at).first
+    @mini_we_day_event = Event.where(we_day: true).order(:created_at).first
   end
 
   def contact

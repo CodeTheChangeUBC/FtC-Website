@@ -61,6 +61,7 @@ textarea {
 
 .navbar {
   background-color: $white; 
+  height: 56px;
   border-bottom-width: 5px;
   border-bottom-color: $ftc_green;
   padding-bottom: 0;
@@ -143,12 +144,11 @@ footer {
   color: $light_gray;
   .top {
     padding-bottom: 20px;
+    .links {
+      margin-top: 15px;
+    }
     a {
       padding: 0 5px 5px 5px;
-    }
-    .facebook {
-      padding-top: 10px;
-      padding-bottom: 10px;
     }
     #facebook_link {
       &:hover {
@@ -309,14 +309,35 @@ footer {
 ===================================================*/
 
 .jumbotron-about {
-  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
+  background: image-url('ftc1.jpg');
   height: 400px;
   margin-top: -0.5%;
-  h1 {
+  background-size: cover;
+  h2 {
     color: white; 
     text-align: center;
-    padding-top: 50px;
-    font-size: 100px;
+    padding-top: 80px;
+    font-style: bold;
+  }
+}
+
+.top-description {
+  color: gray;
+}
+
+.about-content {
+  img {
+    object-fit: cover;
+  }
+  .btn {
+    background-color: white;
+    border-color: $ftc_blue;
+    color: $ftc_blue;
+    &:hover {
+      background-color: $ftc_blue;
+      color: white;
+      transition: 0.3s ease;
+    }
   }
 }
 
@@ -329,16 +350,11 @@ footer {
   background: image-url("filler5.png");
   height: 400px;
   margin-top: -0.5%;
-  h1 {
-    color: black; 
-    text-align: center;
-    font-size: 100px;
-    margin-top: 0px;
-  }
+  background-position: cover;
   h2 {
     color: white;
     text-align: center;
-    padding-top: 70px;
+    padding-top: 80px;
   }
 } 
 
@@ -358,10 +374,12 @@ footer {
   border-style: solid;
   border-width: 1px 0 0 0;
   border-color: $lighter_gray;
-  p {
-    color: gray;
+  h4 {
     padding-top: 20px;
-    padding-bottom: 20px;
+    color: gray;
+  }
+  a {
+    color: black;
   }
 }
 
@@ -380,7 +398,11 @@ footer {
     color: gray;
   } 
   .tile {
-    height: 70vh;
+    height: 400px;
+    h3 {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
   img {
     object-fit: cover;
@@ -389,12 +411,9 @@ footer {
     right: 0;
     top: 0;
     bottom: 0;
-    height: 70vh;
+    height: 400px;
     width: 100%;
     padding: 20px;
-    /*&:hover {
-      opacity: 0.6;
-    }*/
   }
 }
 

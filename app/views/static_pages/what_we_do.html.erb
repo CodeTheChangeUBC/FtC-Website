@@ -1,7 +1,7 @@
 <% provide(:title, "What We Do") %>
 
 <div class="jumbotron jumbotron-events">
-	<h1><%= phrase('what-we-do-title') %></h1>
+	<h2><b><%= phrase('what-we-do-title') %></b></h2>
 </div>
 
 <div class="container center events-filler-top">
@@ -83,7 +83,7 @@
     </div>
   </div>
   <div class="col-sm-6 tile tile-4 center">
-    <%= image_tag("filler4.png") %>
+    <%= image_tag("filler5.png") %>
     <h3><%= phrase('what-we-do-4') %></h3>
     <p><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tile4">Learn More</button></p>
     <!-- Modal -->
@@ -108,5 +108,5 @@
 </div>
 
 <div class="container center events-filler-bottom">
-	<p><%= phrase('what-we-do-bottom-description') %></p>
+	<h4><%= phrase('what-we-do-bottom-description') %> <%= link_to phrase('bottom-description-link'), 'https://www.facebook.com/ubcftc' %> </h4>
 </div>

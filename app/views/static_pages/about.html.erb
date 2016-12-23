@@ -1,25 +1,20 @@
 <% provide(:title, "About") %>
 
 <div class="jumbotron jumbotron-about">
-    <h1><%= phrase('who-we-are-title') %></h1>  
+    <h2><b><%= phrase('who-we-are-title') %></b></h2>  
 </div>
 
-<br>
-<center>
-  <p><%= phrase('who-we-are-top-description') %></p>
-</center>
-<br>
+<div class="container center top-description">
+  <h4><%= phrase('who-we-are-top-description') %></h4>
+</div>
 <hr>
  
-<div class="container">     
+<div class="container about-content">     
 	<div class="row">
-
-    	<div class="col-md-7">
-        	<a href="#">
-            	<img class="img-responsive" src="http://cdn.freethechildren.com/wp-content/uploads/2015/12/who-we-are-1.jpg" alt="">
-       	 </a>
+    	<div class="col-md-5">
+        <%= image_tag('beading.jpg', size: "430x300") %>
     	</div>
-   	 <div class="col-md-5">
+   	 <div class="col-md-7">
         	<h3><%= phrase('who-we-are-div1-head') %></h3>
         	<h4><%= phrase('who-we-are-div1-subhead') %></h4>
        	 	<p><%= phrase('who-we-are-div1-description') %></p>
@@ -31,12 +26,10 @@
 	</div>
 	<hr>
 	<div class="row">
-    	<div class="col-md-7 col-md-push-5">
-        	<a href="#">
-            	<img class="img-responsive" src="http://cdn.freethechildren.com/wp-content/uploads/2015/12/who-we-are-3.jpg" alt="">
-       	 </a>
+    	<div class="col-md-5 col-md-push-7">
+        	<%= image_tag('edc.png', size: "430x300") %>
     	</div>
-   	 <div class="col-md-5 col-md-pull-7">
+   	 <div class="col-md-7 col-md-pull-5">
         	<h3><%= phrase('who-we-are-div2-head') %></h3>
           <h4><%= phrase('who-we-are-div2-subhead') %></h4>
           <p><%= phrase('who-we-are-div2-description') %></p>
@@ -48,17 +41,15 @@
 	</div>
 	<hr>
 	<div class="row">
-    	<div class="col-md-7">
-        	<a href="#">
-            	<img class="img-responsive" src="http://cdn.freethechildren.com/wp-content/uploads/2015/12/who-we-are-4.jpg" alt="">
-       	 </a>
+    	<div class="col-md-5">
+        	<%= image_tag('water.jpg', size: "430x300") %>
     	</div>
-   	 <div class="col-md-5">
+   	 <div class="col-md-7">
         	<h3><%= phrase('who-we-are-div3-head') %></h3>
           <h4><%= phrase('who-we-are-div3-subhead') %></h4>
           <p><%= phrase('who-we-are-div3-description') %></p>
           <%= link_to('#', href: 'https://www.we.org', class: "btn btn-primary") do %> 
-            We Charity Website
+            WE Charity Website
             <span class="glyphicon glyphicon-chevron-right"</span>
           <% end %> 
     	</div>

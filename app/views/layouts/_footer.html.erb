@@ -1,14 +1,17 @@
 <footer class="footer">
- <div class="container top center">
-  <div class="facebook">
-    <%= link_to image_tag('facebook_logo_small.png', size: "40x40"), "https://www.facebook.com/ubcftc/", id: "facebook_link" %></b>     
+ <div class="container top">
+  <div class="col-sm-4">
+    <%= link_to image_tag('me_to_we.png', size: "95x45"), 'https://www.we.org' %> 
+    <%= link_to image_tag('facebook_logo_small.png', size: "35x35"), "https://www.facebook.com/ubcftc/", id: "facebook_link" %>         
   </div>
+  <div class="col-sm-4 center links">
     <b><%= link_to "Parent Site", "https://freethechildren.com" %></b>
     <b><%= link_to "About",   about_path %></b>
     <b><%= link_to "Contact", contact_path %></b>
     <b><%= link_to "Join", get_involved_path %></b> 
+  </div>
+  <div class="col-sm-4"></div>
  </div>
- 
  <div class="container-fluid legal">
   <div class="col-sm-4">
     <p>Site developed by <%= link_to  "Code the Change UBC", "https://codethechangeubc.org", id: "ctc_link" %></p>
