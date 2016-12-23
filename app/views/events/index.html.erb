@@ -6,6 +6,24 @@
 		<h3><%= link_to "Create New Event", new_event_path, class: "btn btn-primary" %></h3>
 	<% end %>
  </div>
+ <div class="container event-page-links center">
+ 	<%= link_to('#', href: '#mini-we-day', class: "btn btn-primary") do %> 
+        Mini WE Day
+        <span class="glyphicon glyphicon-chevron-down"</span>
+    <% end %> 
+ 	<%= link_to('#', href: '#ee-dance-challenge', class: "btn btn-primary") do %> 
+        EE Dance Challenge
+        <span class="glyphicon glyphicon-chevron-down"</span>
+    <% end %> 
+ 	<%= link_to('#', href: '#vos', class: "btn btn-primary") do %> 
+        Vow of Silence
+        <span class="glyphicon glyphicon-chevron-down"</span>
+    <% end %>
+    <%= link_to('#', href: '#fundraising', class: "btn btn-primary") do %> 
+        Fundraising
+        <span class="glyphicon glyphicon-chevron-down"</span>
+    <% end %>  
+ </div>
  <div class="container center events-calendar">
  	<%= month_calendar(events: @events) do |date, events| %>
 		<% #date %>
@@ -19,31 +37,54 @@
 		<% end %>
  	<% end %>
  </div>
- <div class="jumbotron jumbotron-fundraising">
- 	<h2><%= phrase('fundraising-progress-header') %></h2>
- </div>
- <div class="container fundraising" id="fundraising">
- 	<% if admin? %>
-	 	<%= render 'fundraisers/new_fundraiser_modal' %>
-	<% end %>
- 	<div class="container center fundraiser">
- 			<%= render partial: 'fundraisers/fundraiser', collection: @fundraisers %>	
+ <div class="container signature-events">
+ 	<h2 class="center banner"><%= phrase('our-signature-events') %></h2>
+ 	<div class="container">
+		<div class="col-sm-7">
+			<h2 id="mini-we-day">Mini <%= link_to image_tag("WE_logo", alt: "WE", size: "60x60") %> Day</h2>
+			<p><%= phrase('mini-we-day-description') %></p>	
+ 			<h4><%= phrase('mini-we-day-upcoming-event-info') %></h4>
+		    <p><%= phrase('mini-we-day-where-info') %></p>
+		    <p><%= phrase('mini-we-day-when-info') %></p>
+		    <% if logged_in? && @mini_we_day_event %>
+		      <%= link_to "Sign up now!", event_path(@mini_we_day_event), class: "btn btn-primary" %> 
+		    <% end %>
+		    <hr>
+			<h2 id="ee-dance-challenge"><%= phrase('ee-dance-challenge-header') %></h2>
+			<p><%= phrase('ee-dance-challenge-description') %></p>
+			<h4><%= phrase('ee-upcoming-event-info') %></h4>
+			<p><%= phrase('ee-where-info') %></p>
+			<p><%= phrase('ee-when-info') %></p>
+	    	<% if logged_in? && @ee_challenge_event %>
+			  <%= link_to "Sign up now!", event_path(@ee_challenge_event), class: "btn btn-primary", id: 'vos' %> 
+	    	<% end %>	
+		</div>
+		<div class="col-sm-5">
+			<%= image_tag('vow1.png', size:"400x600") %>
+		</div>
+		<div class="col-sm-6">
+			<%= image_tag('edc2.png', size:"400x300") %>
+		</div>
+		<div class="col-sm-6">
+			<h2><%= phrase('vos-header') %></h2>  
+    		<p><%= phrase('vos-description') %></p>
+			<h3><%= phrase('vos-upcoming-event-info') %></h3>
+			<p><%= phrase('vos-where-info') %></p>
+			<p><%= phrase('vos-when-info') %></p>
+			<% if logged_in? && @vow_of_silence_event %>
+			<%= link_to "Sign up now!", event_path(@vow_of_silence_event), class: "btn btn-lg btn-primary"%> 
+		    <% end %>
+		</div>
+  	</div>
+
+  	<div class="container fundraising" id="fundraising">
+	 	<h2 class="center"><%= phrase('fundraising-progress-header') %></h2>
+	 	<% if admin? %>
+		 	<%= render 'fundraisers/new_fundraiser_modal' %>
+		<% end %>
+	 	<div class="container center fundraiser">
+	 			<%= render partial: 'fundraisers/fundraiser', collection: @fundraisers %>	
+	 	</div>
  	</div>
  </div>
- <div class="center container-fluid event-background">
-	<h1><%= phrase('ee-dance-challenge-header') %></h1>	
-	<p><%= phrase('ee-dance-challenge-description') %></p>
-	
-	<div class="col-sm-6 center upcoming">
-		<h3><%= phrase('ee-upcoming-event-info') %></h3>
-		<p><%= phrase('ee-where-info') %></p>
-		<p><%= phrase('ee-when-info') %></p>
-    	<% if logged_in? && @ee_challenge_event %>
-		  <%= link_to "Sign up now!", event_path(@ee_challenge_event), class: "btn btn-lg btn-primary" %> 
-    	<% end %>
-	</div>
-	<div class="col-sm-6">
-		<%= image_tag('edc2.png', size:"400x300") %>
-	</div>
-  </div>
-
+ 

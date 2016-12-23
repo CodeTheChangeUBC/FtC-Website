@@ -59,67 +59,30 @@ textarea {
 ===================================================*/
 
 
-.navbar {
+.global_header .navbar {
   background-color: $white; 
   height: 56px;
-  border-bottom-width: 5px;
-  border-bottom-color: $ftc_green;
+  border-bottom-width: 4px;
+  border-bottom-color: $ftc_blue;
   padding-bottom: 0;
-  .navbar-header {
-    .navbar-toggle {
-      border-width: 0px;
-      &:hover {
-        background-color: white;
-        border-width: 1px;
-        border-color: $ftc_green;
-      }
-      &:focus {
-        background-color: white;
-      }
-      .icon-bar {
-        background-color: $ftc_green;
-      }
-      &:onclick {
-        background-color: $ftc_green;
-      }     
-    }
-  }
-  .navbar-nav {
-    .open {
+  .navbar-collapse {
+    .navbar-nav {
       a {
+        font-weight: bold;
         &:hover {
-          background-color: $ftc_green;
-          color: white;
-        }
-        &:focus {
-          background-color: $ftc_green;
-        }
-        &:onclick {
-          background-color: $ftc_green;
-        }
-      }
-    }
-    li {
-      a {
-        color: $ftc_blue;
-      }
-      &:hover {
-        background-color: $ftc_green;
-      }
-    }
-    .dropdown-menu {
-      li {
-        a {
           color: $ftc_blue;
         }
       }
-      #list_of_main_events {
-        text-align: center;        
-      }
-    }
+      .open {
+       .dropdown-toggle {
+          background-color: white;
+          color: $ftc_blue;
+        } 
+      }  
+    }  
   }
 }
-
+ 
 #logo {
   float: left;
   margin-right: 10px;
@@ -432,44 +395,92 @@ footer {
     text-align: center;
     padding-top: 70px;
   }
-} 
+}
 
-.jumbotron-fundraising {
-  background: image-url('filler3'); 
-  height: 200px;
-  h1, h2, h3 {
-    color: white; 
-    text-align: center;
-    padding-top: 40px;
+.fundraising {
+  margin-top: 20px;
+  padding: 20px 0 20px 0;
+  border-top: solid 1px gray; 
+  h2 {
+    font-variant: small-caps;
+    font-weight: bold;
   }
-} 
-
-
-.jumbotron-event {
-  background-image: url('https://thegatewayonline.ca/wp-content/uploads/2015/02/Opinion-Supplied-Credit-freethechildren-Free-the-Children-Story-2.jpg'); 
-  .event-background {
-    margin-top: -50px;
-    background-color: rgba(250,250,250,0.8);
-    padding-bottom: 50px;
-    margin-bottom: -50px;
-    h1 {
-      padding: 20px;
+  .fundraiser {
+    h2 {
+      padding-bottom: 20px;
+      color: gray;
     }
-    .upcoming {
-      
-      .btn {
-        background-color: $ftc_blue;
-        border-color: $ftc_blue;
-        margin: 15px;
-        &:hover {
-          text-decoration: underline;
+    .col-sm-4 {
+      text-align: right;
+      border-style: solid;
+      border-width: 0 1px 0 0;
+      border-color: $lighter_gray;
+      h3 {
+        b {
+          color: $ftc_blue;
+        }
+      }
+    }
+    .col-sm-8 {
+      text-align: left;
+    }
+    .fundraising-bar {
+      padding-top: 13%;
+      padding-bottom: 9%;
+    }
+    #fundraising-bar {
+      background-color: $lighter_gray;
+      border-radius: 35px;
+      padding-top: 3px;
+      height: 40px;
+      div {
+        background-color: $ftc_green;
+        height: 90%;
+        border-radius: 20px;
+        p {
+          color: white;
+          padding-top: 7px;
         }
       }
     }
   }
-  p {
-    margin-left: 50px;
-    margin-right: 50px;
+}
+
+.event-page-links {
+  .btn {
+    margin: 0 10px 20px 10px;
+    background-color: white;
+    border-color: $ftc_blue;
+    color: $ftc_blue;
+    &:hover {
+      background-color: $ftc_blue;
+      color: white;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+.signature-events {
+  border-top: solid 1px $lighter_gray;
+  .banner {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    font-variant: small-caps;
+    font-weight: bold;
+  }
+  .btn {
+    background-color: $ftc_blue;
+    border-color: $ftc_blue;
+    margin-top: 15px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  #vos {
+    margin-top: 20px;
+    a.anchor {
+      top: -250px;
+    }
   }
 }
 
@@ -480,45 +491,6 @@ footer {
   }
 }
 
-.fundraiser {
-  h1 {
-    padding-bottom: 20px;
-    color: gray;
-  }
-  .col-sm-4 {
-    text-align: right;
-    border-style: solid;
-    border-width: 0 1px 0 0;
-    border-color: $lighter_gray;
-    h3 {
-      b {
-        color: $ftc_blue;
-      }
-    }
-  }
-  .col-sm-8 {
-    text-align: left;
-  }
-  .fundraising-bar {
-    padding-top: 13%;
-    padding-bottom: 9%;
-  }
-  #fundraising-bar {
-    background-color: $lighter_gray;
-    border-radius: 35px;
-    padding-top: 3px;
-    height: 40px;
-    div {
-      background-color: $ftc_green;
-      height: 90%;
-      border-radius: 20px;
-      p {
-        color: white;
-        padding-top: 7px;
-      }
-    }
-  }
-}
 
 .event-show {
   margin-top: -0.5%;

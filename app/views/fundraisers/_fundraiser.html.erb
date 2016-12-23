@@ -1,7 +1,7 @@
 <% fundraising_progress = (fundraiser.progress.to_f/fundraiser.target)*100 %>
 
 <div class="container fundraiser">
-	<h1><%= fundraiser.title %></h1>
+	<h2><%= fundraiser.title %></h2>
 	<% if admin? %>
 		<p><%= link_to "Edit Fundraiser", edit_fundraiser_path(fundraiser) %>
 			| <%= link_to "Delete", fundraiser, 
