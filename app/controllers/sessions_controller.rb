@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       if user.activated?
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-  		  redirect_back_or user
+  		  redirect_back_or edit_user_path(user)
       else
         message = "Account not activated. "
         message += "Check your email for the activation link. "
@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
         flash[:success] = "Log in successful! Please set a password and update 
                              any additional information."
       else 
-        redirect_back_or user
+        redirect_back_or edit_user_path(user)
       end
     rescue
       flash[:warning] = "There was an error during the authentication 

@@ -1,16 +1,7 @@
 <div class="col-sm-4 center index-exec">
 	<%= image_tag exec.picture, size: "100x100", class: "img-rounded" %> 
-	<h3><strong><%= link_to exec.name, exec %></strong></h3>
+	<h3><strong><%= exec.name %></strong></h3>
 	<strong><%= phrase(exec.name + '-position') %></strong>
     </br />
     <%= link_to "Unmake Executive", home_unmake_exec_path(user_id: exec.id), data: { confirm: "Remove #{exec.name} as an executive?" } %>
-    <p>
-    	<% if exec.about_present? %>
-			<p><%= exec.about[0..175] %>
-				<% if exec.about.length >= 175 %>
-					... <%= link_to "See More", user_path(exec) %>
-				<% end %>
-			</p>
-		<% end %>
-	</p>
 </div>

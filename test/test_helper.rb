@@ -23,7 +23,6 @@ class ActiveSupport::TestCase
 end
 
 class ActionDispatch::IntegrationTest
-  include Capybara::DSL
 
   # Log in as a particular user
   def log_in_as(user, password: 'password', remember_me: '1')
@@ -32,9 +31,5 @@ class ActionDispatch::IntegrationTest
                                           remember_me: remember_me } } 
   end
 
-  def teardown
-    Capybara.reset_sessions!
-    Capybara.use_default_driver
-  end
-
+  
 end

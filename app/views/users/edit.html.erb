@@ -1,36 +1,48 @@
 <% provide(:title, "Edit user") %>
 <% provide(:form_button, "Save changes") %>
 
-<div class="container col-sm-4 col-sm-offset-2 edit-info">
-	<h2>update your profile.</h2>
-	<div class="row">
-  		<div>
-    		<%= form_for(@user, html: { multipart: true }, id: "info-form") do |f| %>
-  				<% @object = @user %>
-  				<%= render 'shared/error_messages' %>
+<div class="container">
+  <div class="container col-sm-4 col-sm-offset-1 edit-info">
+  	<h2>update your profile.</h2>
+  	<div class="row">
+    		<div>
+      		<%= form_for(@user, html: { multipart: true }, id: "info-form") do |f| %>
+    				<% @object = @user %>
+    				<%= render 'shared/error_messages' %>
 
-    			<div class="center avatar">
-      				<p><%= image_tag(@user.picture, size: "150x150") %></p>
-    			</div>
-    			<p><strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %> </p>
+      			<div class="center avatar">
+        				<p><%= image_tag(@user.picture, size: "150x150") %></p>
+      			</div>
+      			<p><strong>Change picture:</strong><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', id: 'uploader' %> </p>
 
-    			<%= f.label :name %> 
-				  <%= f.text_field :name, class: 'form-control' %>
-				  <%= f.label :email %>
-  				<%= f.email_field :email, class: 'form-control' %>
-          <%= f.label :a_little_about_yourself %>
-          <%= f.text_area :about, placeholder: '(Optional - Max 1000 words)', class: 'form-control' %>
-  				<%= f.label :password %>
-  				<%= f.password_field :password, class: 'form-control' %>
-  				<%= f.label :password_confirmation %>
-  				<%= f.password_field :password_confirmation,
-    				class: 'form-control' %>
-  				<%= f.submit yield(:form_button), class: "btn btn-primary" %>
-			<% end %>
-  		</div>
-	</div>	
+      			<%= f.label :name %> 
+  				  <%= f.text_field :name, class: 'form-control' %>
+  				  <%= f.label :email %>
+    				<%= f.email_field :email, class: 'form-control' %>
+            <%= f.label :password %>
+    				<%= f.password_field :password, class: 'form-control' %>
+    				<%= f.label :password_confirmation %>
+    				<%= f.password_field :password_confirmation,
+      				class: 'form-control' %>
+    				<%= f.submit yield(:form_button), class: "btn btn-primary" %>
+  			<% end %>
+    		</div>
+  	</div>
+  </div>
+  <div class="container user-events col-sm-6 col-sm-offset-1">
+    <% if current_user == @user %>
+      <h3>My upcoming events</h3>
+    <% else %>
+      <h3><%= @user.name %> is attending:</h3>
+    <% end %>
+    <% if !@events.nil? and @events.empty? %>
+      <p>No upcoming events.</p>
+    <% else %>
+      <%= render partial: 'events/event', collection: @events %>
+    <% end %>
+    <%= link_to "See all events", events_path, class: 'btn btn-default' %>
+  </div>
 </div>
-
 <script type="text/javascript">
   $('#user_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;

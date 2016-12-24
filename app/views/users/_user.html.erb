@@ -1,11 +1,14 @@
 <!-- Partial for showing a single user. Each user on index page
 is subject to this styling. -->
 
-<div class="col-sm-4 container index-user">
-  <div class="col-sm-4">
-    <%= image_tag user.picture %>  
-  </div>
-  <div class="col-sm-8 name">
+<div class="col-sm-4 container index-user center">
+  <%= image_tag user.picture %>  
+  <p><b><%= user.name %></b></p>
+</div>
+  
+
+  <!-- Disable user content for now -->
+  <!-- <div class="col-sm-8 name">
     <h4><%= link_to user.name, user %></h4>
     <% if user.about_present? %>
       <p><%= user.about[0..80] %>
@@ -15,4 +18,4 @@ is subject to this styling. -->
       </p>
     <% end %>
   </div>
-</div>
+</div> -->

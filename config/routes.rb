@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get    '/home/delete_article_picture',     to: 'articles#delete_picture'
 
   # RESOURCES ==============================================================================================
-  resources :users              
+  resources :users,               except: [:show]              
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :events

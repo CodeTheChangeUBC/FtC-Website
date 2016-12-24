@@ -4,9 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
-  # Global variable to keep track of amount fundraised
-  AMOUNT_RAISED = 0
-
   private 
   	# Verifies if current user is an admin
 	def admin_user

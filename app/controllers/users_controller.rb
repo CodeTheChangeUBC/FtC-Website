@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user,  only: [:edit, :update, :destroy]
-  before_action :correct_user,    only: [:edit, :update]
+  before_action :correct_user_or_admin,    only: [:edit, :update]
   before_action :admin_user,      only: [:destroy, :make_exec, :unmake_exec,
                                          :sign_up_for_event, :opt_out_of_event]
 
@@ -12,8 +12,6 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated
     @events = @user.events.select { |event| !event.has_passed? }
-    #@events = Event.joins(:users).first
-    #.where(users: { user: @user }).select { |event| !event.has_passed? }
   end
 
   def index
@@ -34,12 +32,14 @@ class UsersController < ApplicationController
 
   def edit 
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated
+    @events = @user.events.select { |event| !event.has_passed? }
   end
 
   def update 
     if @user.update_attributes(user_params)
       flash[:success] = "Profile Updated!"
-      redirect_to @user
+      redirect_to edit_user_path(@user)
     else
       render 'edit'
     end
@@ -108,9 +108,9 @@ class UsersController < ApplicationController
     end
 
     # Confirms the correct user
-    def correct_user
+    def correct_user_or_admin
       @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      redirect_to(root_url) unless ( current_user?(@user) || admin? )
     end
 
 end

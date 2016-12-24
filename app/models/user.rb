@@ -16,11 +16,6 @@ class User < ActiveRecord::Base
   # Here allow_nil: true for the password only takes effect when user is editing
   # their account. This does not allow user to sign up with no password. 
 
-  # For postgresql queries 
-  # def events
-  #   Event.where("user_id = :id", id: id)
-  # end
-
   # Returns the hash digest of the given string. For testing user login/logout 
   # functionality. 
   def User.digest(string)

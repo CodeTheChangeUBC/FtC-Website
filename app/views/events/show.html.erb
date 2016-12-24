@@ -26,7 +26,9 @@
     <% if @volunteers.empty? %>
       None yet!
     <% else %> 
-      <%= render @volunteers %>
+      <% @volunteers.each do |vol| %>
+        <p><%= vol.name %></p>
+      <% end %>
     <% end %>
     </p>
    </div>
