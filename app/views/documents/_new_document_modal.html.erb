@@ -14,6 +14,9 @@
             <%= form_for new_document, html: { multipart: true }, url: { controller: 'documents', action: 'create' } do |f| %>
               <%= f.label :name %>
               <%= f.text_field :name, class: 'form-control' %>
+              <%= f.label :url %>
+              <small> Enter full URL (eg., 'https://imawesome.ca') </small>
+              <%= f.text_field :url %>
               <%= f.label :attachment %>
               <%= f.file_field :attachment, class: 'form-control' %>
               <%= f.label :public, class: 'checkbox inline' do %>

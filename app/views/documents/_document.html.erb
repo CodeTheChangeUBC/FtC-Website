@@ -1,6 +1,7 @@
 <% if document.public? || (!document.public? && logged_in?) %>
  <tr>
    <td><%= document.name %></td>
+   <td><%= link_to document.url, document.url %></td>
    <td><%= link_to "Download", document.attachment_url %></td>
    <% if admin? %>
      <td><%= link_to "Delete",  document, 

@@ -28,6 +28,6 @@ class DocumentsController < ApplicationController
   private 
 
   	def document_params
-  		params.require(:document).permit(:name, :attachment, :public)
+  		params.require(:document).permit(:name, :attachment, :public, :url)
   	end
 end
