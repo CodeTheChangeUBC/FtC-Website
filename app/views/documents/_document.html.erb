@@ -2,7 +2,9 @@
  <tr>
    <td><%= document.name %></td>
    <td><%= link_to document.url, document.url %></td>
-   <td><%= link_to "Download", document.attachment_url %></td>
+   <td><% if !document.attachment_url.nil? and !document.attachment_url.empty? %>
+   	<%= link_to "Download", document.attachment_url %>
+   <% end %></td>
    <% if admin? %>
      <td><%= link_to "Delete",  document, 
   	 					    	 method: :delete, 
