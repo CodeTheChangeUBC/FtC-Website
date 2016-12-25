@@ -19,10 +19,9 @@ class DocumentsController < ApplicationController
   end
 
   def destroy
-  	@document = Document.find(params[:id])
-  	@document.destroy
-  	flash[:success] = "#{@document.name} deleted successfully"
-  	redirect_to document_path
+  	Document.find(params[:id]).destroy
+  	flash[:success] = "Document deleted successfully"
+  	redirect_to documents_path
   end
 
   private 

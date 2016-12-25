@@ -22,7 +22,8 @@
     <%= link_to('#', href: '#fundraising', class: "btn btn-primary") do %> 
         Fundraising
         <span class="glyphicon glyphicon-chevron-down"</span>
-    <% end %>  
+    <% end %> 
+    <%= link_to "Club Documents", documents_path, class: 'btn btn-primary' %>
  </div>
  <div class="container center events-calendar">
  	<%= month_calendar(events: @events) do |date, events| %>
@@ -38,25 +39,25 @@
  	<% end %>
  </div>
  <div class="container signature-events">
- 	<h2 class="center banner"><%= phrase('our-signature-events') %></h2>
+ 	<h2 class="center banner" id="mini-we-day"><%= phrase('our-signature-events') %></h2>
  	<div class="container">
 		<div class="col-sm-7">
-			<h2 id="mini-we-day">Mini <%= link_to image_tag("WE_logo", alt: "WE", size: "60x60") %> Day</h2>
+			<h2>Mini <%= link_to image_tag("WE_logo", alt: "WE", size: "60x60") %> Day</h2>
 			<p><%= phrase('mini-we-day-description') %></p>	
  			<h4><%= phrase('mini-we-day-upcoming-event-info') %></h4>
 		    <p><%= phrase('mini-we-day-where-info') %></p>
-		    <p><%= phrase('mini-we-day-when-info') %></p>
+		    <p id="ee-dance-challenge"><%= phrase('mini-we-day-when-info') %></p>
 		    <% if logged_in? && @mini_we_day_event %>
 		      <%= link_to "Sign up now!", event_path(@mini_we_day_event), class: "btn btn-primary" %> 
 		    <% end %>
 		    <hr>
-			<h2 id="ee-dance-challenge"><%= phrase('ee-dance-challenge-header') %></h2>
+			<h2><%= phrase('ee-dance-challenge-header') %></h2>
 			<p><%= phrase('ee-dance-challenge-description') %></p>
 			<h4><%= phrase('ee-upcoming-event-info') %></h4>
 			<p><%= phrase('ee-where-info') %></p>
-			<p><%= phrase('ee-when-info') %></p>
+			<p id="vos"><%= phrase('ee-when-info') %></p>
 	    	<% if logged_in? && @ee_challenge_event %>
-			  <%= link_to "Sign up now!", event_path(@ee_challenge_event), class: "btn btn-primary", id: 'vos' %> 
+			  <%= link_to "Sign up now!", event_path(@ee_challenge_event), class: "btn btn-primary" %> 
 	    	<% end %>	
 		</div>
 		<div class="col-sm-5">
